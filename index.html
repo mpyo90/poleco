@@ -1029,21 +1029,22 @@
                                         <div class="value" id="g_effective-value">1,5 %</div>
                                     </div>
                                 </div>
-                                <button class="btn-validate" onclick="closeGapIn5Years()" style="margin-bottom: 15px; width: 100%;">Fermer l'écart en n+5</button>
                                 <div class="graph-container">
                                     <canvas id="outputGapCanvas" width="800" height="350"></canvas>
                                 </div>
-                                <div id="gap-status" style="text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-weight: 600;"></div>
                                 <div class="simulation-results-row">
                                     <div class="simulation-result-item">
-                                        <div class="label">Écart initial</div>
+                                        <div class="label">Écart de production initial</div>
                                         <div class="value" id="result-initial-gap">0 %</div>
+                                        <div id="gap-status-initial" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
                                     </div>
                                     <div class="simulation-result-item">
-                                        <div class="label">Écart après 5 ans</div>
+                                        <div class="label">Écart de production après 5 ans</div>
                                         <div class="value" id="result-final-gap">-</div>
+                                        <div id="gap-status-final" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
                                     </div>
                                 </div>
+                                <button id="btn-close-gap" class="btn-validate" onclick="closeGapIn5Years()" style="margin-bottom: 15px; width: 100%;">Fermer l'écart de production initial en n+5</button>
                                 <div class="simulation-explanation" id="simulation-explanation">
                                     <strong>Comment lire ce graphique :</strong> La courbe bleue représente le PIB effectif, la courbe rouge pointillée le PIB potentiel.
                                     Quand la croissance effective dépasse la croissance potentielle, l'écart de production se réduit progressivement.
@@ -1164,6 +1165,12 @@
             document.getElementById('g_potential-value').textContent = gPotential.toFixed(1).replace('.', ',') + ' %';
             document.getElementById('g_effective-value').textContent = gEffective.toFixed(1).replace('.', ',') + ' %';
 
+            // Afficher/masquer le bouton "Fermer l'écart" selon l'écart initial
+            const btnCloseGap = document.getElementById('btn-close-gap');
+            if (btnCloseGap) {
+                btnCloseGap.style.display = (initialGap !== 0) ? 'block' : 'none';
+            }
+
             // Calculer les données sur 5 ans (n+5)
             const years = 6;
             const pibPotentiel = [100]; // Base 100
@@ -1181,21 +1188,28 @@
             document.getElementById('result-initial-gap').textContent = initialGap.toFixed(1).replace('.', ',') + ' %';
             document.getElementById('result-final-gap').textContent = finalGap.toFixed(1).replace('.', ',') + ' %';
 
-            // Mettre à jour le statut (surchauffe ou sous-emploi)
-            const gapStatus = document.getElementById('gap-status');
-            if (Math.abs(finalGap) < 0.3) {
-                gapStatus.textContent = '✓ Économie à son potentiel';
-                gapStatus.style.background = 'var(--success-bg)';
-                gapStatus.style.color = 'var(--success)';
-            } else if (finalGap > 0) {
-                gapStatus.textContent = '🔥 Surchauffe : le PIB dépasse son potentiel';
-                gapStatus.style.background = '#fef3c7';
-                gapStatus.style.color = '#d97706';
-            } else {
-                gapStatus.textContent = '❄️ Sous-emploi : le PIB est sous son potentiel';
-                gapStatus.style.background = '#dbeafe';
-                gapStatus.style.color = '#2563eb';
+            // Fonction pour mettre à jour un statut d'écart
+            function updateGapStatus(elementId, gapValue) {
+                const statusEl = document.getElementById(elementId);
+                if (!statusEl) return;
+                if (Math.abs(gapValue) < 0.3) {
+                    statusEl.textContent = '✓ Économie à son potentiel';
+                    statusEl.style.background = 'var(--success-bg)';
+                    statusEl.style.color = 'var(--success)';
+                } else if (gapValue > 0) {
+                    statusEl.textContent = '🔥 Surchauffe';
+                    statusEl.style.background = '#fef3c7';
+                    statusEl.style.color = '#d97706';
+                } else {
+                    statusEl.textContent = '❄️ Sous-régime';
+                    statusEl.style.background = '#dbeafe';
+                    statusEl.style.color = '#2563eb';
+                }
             }
+
+            // Mettre à jour les statuts (surchauffe ou sous-emploi) pour les deux écarts
+            updateGapStatus('gap-status-initial', initialGap);
+            updateGapStatus('gap-status-final', finalGap);
 
             // Dessiner le graphique
             const canvas = document.getElementById('outputGapCanvas');
