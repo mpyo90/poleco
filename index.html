@@ -583,6 +583,15 @@
             .mode-buttons {
                 flex-direction: column;
             }
+
+            .exercise-input {
+                flex-wrap: wrap;
+            }
+
+            .exercise-input .btn-validate {
+                width: 100%;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -1000,7 +1009,10 @@
                         </div>
                     </div>
                 `;
-                document.getElementById('exercise-answer').focus();
+                // Ne pas focus sur mobile pour éviter l'ouverture du clavier
+                if (window.innerWidth > 600) {
+                    document.getElementById('exercise-answer').focus();
+                }
             } else if (currentMode === 'simulation') {
                 if (item.type === 'output_gap_graph') {
                     container.innerHTML = `
