@@ -280,16 +280,21 @@
 
         .answer-btn:disabled {
             cursor: default;
+            opacity: 1 !important;
+            color: var(--text) !important;
+            border-color: var(--border);
         }
 
         .answer-btn.correct {
-            border-color: var(--success);
-            background: var(--success-bg);
+            border-color: var(--success) !important;
+            background: var(--success-bg) !important;
+            color: var(--text) !important;
         }
 
         .answer-btn.incorrect {
-            border-color: var(--error);
-            background: var(--error-bg);
+            border-color: var(--error) !important;
+            background: var(--error-bg) !important;
+            color: var(--text) !important;
         }
 
         /* Explication */
@@ -326,7 +331,6 @@
             border: none;
             border-radius: 10px;
             font-size: 1rem;
-            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
             margin-top: 20px;
@@ -338,6 +342,10 @@
 
         .btn-next.show {
             display: block;
+        }
+
+        .btn-next {
+            white-space: nowrap;
         }
 
         /* Exercice chiffre */
@@ -360,6 +368,12 @@
 
         .exercise-input input:focus {
             border-color: var(--primary);
+        }
+
+        .exercise-input input:disabled {
+            color: var(--text) !important;
+            opacity: 1 !important;
+            -webkit-text-fill-color: var(--text) !important;
         }
 
         .exercise-input .unit {
@@ -806,13 +820,13 @@
             },
             {
                 chapter: 1,
-                question: "L'écart de production est actuellement de -2 %. La croissance potentielle est de 1 % et la croissance effective de 2 %. Quel sera l'écart de production à l'issue de l'exercice ?",
+                question: "L'écart de production est initialement de -2 %. La croissance potentielle est de 1 % et la croissance effective de 2 %. Quel sera l'écart de production à l'issue de l'exercice ?",
                 answer: -1,
                 unit: "%",
                 tolerance: 0.3,
                 explanation: "L'écart de production évolue chaque année de (croissance effective - croissance potentielle). Ici : 2 % - 1 % = +1 point. L'écart passe donc de - 2 % à - 1 %. L'économie se rapproche de son potentiel.",
                 alt: {
-                    question: "L'écart de production est actuellement de + 3 %. La croissance potentielle est de 1,5 % et la croissance effective de 1 %. Quel sera l'écart de production à l'issue de l'exercice ?",
+                    question: "L'écart de production est initialement de + 3 %. La croissance potentielle est de 1,5 % et la croissance effective de 1 %. Quel sera l'écart de production à l'issue de l'exercice ?",
                     answer: 2.5,
                     explanation: "L'écart de production évolue chaque année de (croissance effective - croissance potentielle). Ici : 1 % - 1,5 % = - 0,5 point. L'écart passe donc de + 3 % à + 2,5 %. L'économie se rapproche de son potentiel."
                 }
@@ -906,6 +920,17 @@
 
             document.getElementById('menu').style.display = 'none';
             document.getElementById('quiz').style.display = 'block';
+
+            // Adapter l'en-tête selon le mode
+            const quizInfo = document.querySelector('.quiz-info');
+            if (mode === 'simulation') {
+                quizInfo.innerHTML = `<span>Simulation <span id="current-q">1</span>/<span id="total-q">${currentQuestions.length}</span></span>`;
+            } else {
+                quizInfo.innerHTML = `
+                    <span>Question <span id="current-q">1</span>/<span id="total-q">${currentQuestions.length}</span></span>
+                    <span class="score">Score : <span id="score">0</span></span>
+                `;
+            }
 
             updateProgress();
             renderQuestion();
@@ -1104,9 +1129,12 @@
                     <p>${currentItem.explanation}</p>
                 `;
             } else {
+                // Déterminer le nombre de décimales à afficher
+                const decimalPlaces = correctAnswer % 1 !== 0 ? 1 : 0;
+                const formattedAnswer = formatNumber(correctAnswer, decimalPlaces);
                 explanationDiv.innerHTML = `
                     <h4 style="color: var(--error);">✗ Mauvaise réponse</h4>
-                    <p><strong>La bonne réponse était : ${correctAnswer} ${item.unit}</strong></p>
+                    <p><strong>La bonne réponse était : ${formattedAnswer} ${item.unit}</strong></p>
                     <p>${currentItem.explanation}</p>
                 `;
                 // Afficher le bouton réessayer si une version alternative existe et qu'on ne l'utilise pas déjà
@@ -1377,6 +1405,46 @@
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
+        }
+
+        // Formater un nombre selon les conventions françaises
+        // - Virgule comme séparateur décimal
+        // - Espace insécable comme séparateur de milliers
+        // - Espace après le signe moins
+        function formatNumber(num, decimals = null) {
+            const isNegative = num < 0;
+            const absNum = Math.abs(num);
+
+            // Formater avec les décimales
+            let formatted;
+            if (decimals !== null) {
+                formatted = absNum.toFixed(decimals);
+            } else {
+                // Garder les décimales existantes
+                formatted = absNum.toString();
+            }
+
+            // Séparer partie entière et décimale
+            const parts = formatted.split('.');
+            let intPart = parts[0];
+            const decPart = parts[1];
+
+            // Ajouter les séparateurs de milliers (espace insécable)
+            intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+            // Reconstruire avec virgule comme séparateur décimal
+            if (decPart) {
+                formatted = intPart + ',' + decPart;
+            } else {
+                formatted = intPart;
+            }
+
+            // Ajouter le signe moins avec espace
+            if (isNegative) {
+                formatted = '- ' + formatted;
+            }
+
+            return formatted;
         }
 
         // Démarrage
