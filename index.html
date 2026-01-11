@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique économique - Exercices</title>
+    <style>
+        :root {
+            --primary: #cc785c;
+            --primary-light: #e8a88c;
+            --primary-dark: #a85d45;
+            --bg: #f5f5f0;
+            --bg-card: #ffffff;
+            --text: #2d2d2d;
+            --text-light: #666666;
+            --border: #e0ddd5;
+            --success: #22c55e;
+            --success-bg: #dcfce7;
+            --error: #ef4444;
+            --error-bg: #fee2e2;
+            --info: #3b82f6;
+            --info-bg: #dbeafe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-dark);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Menu principal */
+        #menu {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 25px;
+        }
+
+        .menu-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .chapter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: var(--bg);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .chapter-checkbox:hover {
+            border-color: var(--primary-light);
+        }
+
+        .chapter-checkbox.selected {
+            background: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .chapter-checkbox.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .chapter-checkbox input {
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+        }
+
+        .chapter-checkbox span {
+            font-size: 0.95rem;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .mode-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 15px 20px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .mode-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--bg);
+        }
+
+        .mode-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .mode-btn .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .mode-btn .title {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .mode-btn .desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* Zone de quiz */
+        #quiz {
+            display: none;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .quiz-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .quiz-info span {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .quiz-info .score {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .btn-back {
+            padding: 8px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            background: var(--border);
+        }
+
+        /* Carte de question */
+        .question-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .question-meta {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .badge-chapter {
+            background: var(--info-bg);
+            color: var(--info);
+        }
+
+        .badge-type {
+            background: var(--bg);
+            color: var(--text-light);
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .answer-btn {
+            padding: 15px 20px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .answer-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--bg);
+        }
+
+        .answer-btn:disabled {
+            cursor: default;
+        }
+
+        .answer-btn.correct {
+            border-color: var(--success);
+            background: var(--success-bg);
+        }
+
+        .answer-btn.incorrect {
+            border-color: var(--error);
+            background: var(--error-bg);
+        }
+
+        /* Explication */
+        .explanation {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            display: none;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation h4 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .explanation p {
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Bouton suivant */
+        .btn-next {
+            display: none;
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+
+        .btn-next:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-next.show {
+            display: block;
+        }
+
+        /* Exercice chiffre */
+        .exercise-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .exercise-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .exercise-input input:focus {
+            border-color: var(--primary);
+        }
+
+        .exercise-input .unit {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .btn-validate {
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-validate:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Simulation */
+        .simulation-container {
+            margin-top: 20px;
+        }
+
+        .simulation-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .control-group {
+            background: var(--bg);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--primary);
+        }
+
+        .control-group .value {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-top: 5px;
+        }
+
+        .simulation-result {
+            background: var(--primary-light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .simulation-result .label {
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .simulation-result .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .simulation-explanation {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--bg);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .graph-container {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid var(--border);
+        }
+
+        .graph-container canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .simulation-results-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .simulation-result-item {
+            flex: 1;
+            min-width: 150px;
+            background: var(--bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .simulation-result-item .label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .simulation-result-item .value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        /* Résultats finaux */
+        .results-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .results-card h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .results-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .results-details {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .btn-restart {
+            padding: 15px 40px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-restart:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .question-card {
+                padding: 20px;
+            }
+
+            .quiz-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mode-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Politique économique</h1>
+            <p>Exercices de révision - Sciences Po</p>
+        </header>
+
+        <!-- Menu principal -->
+        <div id="menu">
+            <div class="menu-section">
+                <h3>Sélectionner les thèmes</h3>
+                <div class="chapters-grid" id="chapters-list">
+                    <!-- Généré par JS -->
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Choisir un mode</h3>
+                <div class="mode-buttons">
+                    <button class="mode-btn" id="btn-qcm" disabled>
+                        <div class="icon">✓✗</div>
+                        <div class="title">QCM</div>
+                        <div class="desc">Testez vos connaissances</div>
+                    </button>
+                    <button class="mode-btn" id="btn-exercice" disabled>
+                        <div class="icon">∑</div>
+                        <div class="title">Exercices</div>
+                        <div class="desc">Calculs et applications</div>
+                    </button>
+                    <button class="mode-btn" id="btn-simulation" disabled>
+                        <div class="icon">📈</div>
+                        <div class="title">Simulations</div>
+                        <div class="desc">Visualisez les mécanismes</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zone de quiz -->
+        <div id="quiz">
+            <div class="quiz-header">
+                <button class="btn-back" onclick="backToMenu()">Retour au menu</button>
+                <div class="quiz-info">
+                    <span>Question <span id="current-q">1</span>/<span id="total-q">10</span></span>
+                    <span class="score">Score: <span id="score">0</span></span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div id="question-container">
+                <!-- Genere par JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===========================================
+        // DONNÉES DU QUIZ
+        // ===========================================
+
+        const chapters = [
+            { id: 1, name: "La croissance", available: true },
+            { id: 2, name: "Politique budgétaire", available: false },
+            { id: 3, name: "Politique monétaire", available: false },
+            { id: 4, name: "Intégration commerciale", available: false },
+            { id: 5, name: "Politique de change", available: false },
+            { id: 6, name: "UE et zone euro", available: false },
+            { id: 7, name: "Marché du travail", available: false },
+            { id: 8, name: "Stabilité financière", available: false },
+            { id: 9, name: "Politique industrielle", available: false },
+            { id: 10, name: "Politique fiscale", available: false },
+            { id: 11, name: "Inégalités et pauvreté", available: false },
+            { id: 12, name: "Environnement", available: false }
+        ];
+
+        // QCM - Format: { chapter, type, question, answers, correct, explanation }
+        // Types: "concept", "chiffre", "definition"
+        const qcmQuestions = [
+            {
+                chapter: 1,
+                type: "concept",
+                question: "La valeur ajoutée créée par une multinationale française à l'étranger est comptabilisée dans le PIB de la France.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le PIB mesure la production réalisée sur le territoire national, quelle que soit la nationalité des producteurs. La valeur ajoutée créée à l'étranger par une entreprise française est comptabilisée dans le PIB du pays où elle est produite, pas dans le PIB français. C'est le PNB (Produit National Brut) qui prend en compte la nationalité des facteurs de production."
+            },
+            {
+                chapter: 1,
+                type: "concept",
+                question: "Un écart de production (output gap) négatif signifie que l'économie est en surchauffe.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Un écart de production négatif signifie que le PIB effectif est inférieur au PIB potentiel : l'économie sous-utilise ses capacités productives (travail, capital). C'est une situation de sous-emploi des facteurs de production, pas de surchauffe. La surchauffe correspond à un écart de production positif."
+            },
+            {
+                chapter: 1,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du taux de croissance potentielle de la France ?",
+                answers: ["Environ 0,5 %", "Environ 1,2 %", "Environ 2,5 %", "Environ 3,5 %"],
+                correct: 1,
+                explanation: "Le taux de croissance potentielle de la France est estimé autour de 1,2 % par an selon les estimations de la Commission européenne et du FMI. Ce taux a significativement baissé depuis les Trente Glorieuses (où il dépassait 5 %)."
+            },
+            {
+                chapter: 1,
+                type: "definition",
+                question: "La productivité globale des facteurs (PGF) mesure la part de la croissance non expliquée par l'accumulation des facteurs de production.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "La PGF, aussi appelée « résidu de Solow », correspond à la croissance qui n'est pas attribuable à l'augmentation des quantités de travail et de capital. Elle reflète principalement le progrès technique, mais aussi l'amélioration de l'organisation de la production, l'éducation, la qualité des institutions, etc."
+            },
+            {
+                chapter: 1,
+                type: "definition",
+                question: "Le taux de croissance du PIB en volume mesure l'évolution de la valeur ajoutée corrigée de l'inflation.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "Le PIB en volume (ou PIB réel) est calculé à prix constants (ceux d'une année de référence). Cela permet de neutraliser l'effet des variations de prix. C'est l'indicateur pertinent pour mesurer l'évolution de la production et du niveau de vie, contrairement au PIB en valeur (ou nominal) qui mélange effet volume et effet prix."
+            },
+            {
+                chapter: 1,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur de l'écart de PIB par habitant entre la France et les États-Unis ?",
+                answers: ["La France est environ 10 % en dessous", "La France est environ 30 % en dessous", "La France est environ 50 % en dessous", "Les deux pays sont au même niveau"],
+                correct: 1,
+                explanation: "La France a un PIB par habitant d'environ 30 % inférieur à celui des États-Unis. Cet écart s'est creusé depuis les années 2000 et reflète notamment un nombre d'heures travaillées plus faible en France, une productivité horaire légèrement inférieure et un taux d'emploi plus bas."
+            },
+            {
+                chapter: 1,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du PIB de la France en 2024 ?",
+                answers: ["Environ 2 000 milliards d'euros", "Environ 2 500 milliards d'euros", "Environ 2 900 milliards d'euros", "Environ 3 400 milliards d'euros"],
+                correct: 2,
+                explanation: "Le PIB de la France en 2024 est d'environ 2 900 milliards d'euros. À titre d'ordre de grandeur, 1 point de PIB représente donc environ 30 milliards d'euros."
+            },
+            {
+                chapter: 1,
+                type: "definition",
+                question: "Comment appelle-t-on le phénomène par lequel un choc négatif (comme une récession) peut réduire durablement le PIB potentiel (par exemple via la perte de compétences des chômeurs de longue durée ou le sous-investissement) ?",
+                answers: ["L'effet multiplicateur", "L'effet d'hystérèse", "L'effet d'éviction", "L'effet de rattrapage"],
+                correct: 1,
+                explanation: "L'effet d'hystérèse désigne le phénomène par lequel un choc négatif (comme une récession) a des effets permanents sur l'économie. Quand le PIB reste durablement éloigné de son niveau potentiel, cela peut entraîner une perte de compétences des chômeurs, une dépréciation du capital humain et un sous-investissement, réduisant à terme le PIB potentiel lui-même. C'est pour cette raison que l'on cherche à résorber au plus vite l'écart de production."
+            },
+            {
+                chapter: 1,
+                type: "concept",
+                question: "Le PIB potentiel peut être mesuré directement.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le PIB potentiel, la croissance potentielle et l'écart de production ne sont pas directement observables. Ils doivent être estimés à l'aide de modèles économiques. Selon les méthodologies utilisées (FMI, Commission européenne, OCDE...), les estimations peuvent différer significativement et faire l'objet de révisions importantes. Cette incertitude complique la conduite de la politique économique, car les décideurs ne savent pas précisément où se situe l'économie par rapport à son potentiel."
+            },
+            {
+                chapter: 1,
+                type: "chiffre",
+                question: "Quelle est la part de l'investissement dans le PIB de la France en 2024 ?",
+                answers: ["Environ 15 %", "Environ 22 %", "Environ 30 %", "Environ 40 %"],
+                correct: 1,
+                explanation: `L'investissement représente environ 22 % du PIB français.<br><br>
+<strong>Rappel :</strong> PIB = Consommation + Investissement + (Exportations − Importations) + Variation des stocks<br><br>
+<table style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em;">
+<tr style="background: var(--primary-light);"><th style="padding: 8px; text-align: left;">Composante</th><th style="padding: 8px; text-align: right;">Mds €</th><th style="padding: 8px; text-align: right;">% PIB</th></tr>
+<tr><td style="padding: 6px; border-bottom: 1px solid var(--border);">Consommation (ménages + APU)</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">2 301</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">78,8 %</td></tr>
+<tr><td style="padding: 6px; border-bottom: 1px solid var(--border);">Investissement (FBCF)</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">645</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);"><strong>22,1 %</strong></td></tr>
+<tr style="font-size: 0.85em; color: var(--text-light);"><td style="padding: 4px 6px;">   • Entreprises</td><td style="padding: 4px 6px; text-align: right;">344</td><td style="padding: 4px 6px; text-align: right;">11,8 %</td></tr>
+<tr style="font-size: 0.85em; color: var(--text-light);"><td style="padding: 4px 6px;">   • Ménages</td><td style="padding: 4px 6px; text-align: right;">138</td><td style="padding: 4px 6px; text-align: right;">4,7 %</td></tr>
+<tr style="font-size: 0.85em; color: var(--text-light);"><td style="padding: 4px 6px; border-bottom: 1px solid var(--border);">   • Administrations publiques</td><td style="padding: 4px 6px; text-align: right; border-bottom: 1px solid var(--border);">127</td><td style="padding: 4px 6px; text-align: right; border-bottom: 1px solid var(--border);">4,4 %</td></tr>
+<tr><td style="padding: 6px; border-bottom: 1px solid var(--border);">Exportations</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">990</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">33,9 %</td></tr>
+<tr><td style="padding: 6px; border-bottom: 1px solid var(--border);">− Importations</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">999</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">34,2 %</td></tr>
+<tr><td style="padding: 6px; border-bottom: 1px solid var(--border);">Variation des stocks</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">- 17</td><td style="padding: 6px; text-align: right; border-bottom: 1px solid var(--border);">- 0,6 %</td></tr>
+<tr style="font-weight: bold; background: var(--bg);"><td style="padding: 8px;">PIB</td><td style="padding: 8px; text-align: right;">2 920</td><td style="padding: 8px; text-align: right;">100 %</td></tr>
+</table>
+<p style="margin-top: 10px; font-size: 0.85em; color: var(--text-light);">Source : Insee, comptes nationaux 2024</p>`
+            }
+        ];
+
+        // Exercices chiffrés - Format: { chapter, question, answer, unit, tolerance, explanation, alt }
+        // alt = version alternative avec des valeurs différentes pour réessayer
+        const exercices = [
+            {
+                chapter: 1,
+                question: "Si le PIB potentiel est de 2 850 milliards d'euros et le PIB effectif de 2 800 milliards d'euros, quel est l'écart de production ?",
+                answer: -1.8,
+                unit: "%",
+                tolerance: 0.3,
+                explanation: "Écart de production = (PIB effectif - PIB potentiel) / PIB potentiel × 100 = (2 800 - 2 850) / 2 850 × 100 = -1,75 %, soit environ -1,8 %. Un écart négatif signifie que l'économie produit en dessous de son potentiel.",
+                alt: {
+                    question: "Si le PIB potentiel est de 3 000 milliards d'euros et le PIB effectif de 3 120 milliards d'euros, quel est l'écart de production ?",
+                    answer: 4,
+                    explanation: "Écart de production = (PIB effectif - PIB potentiel) / PIB potentiel × 100 = (3 120 - 3 000) / 3 000 × 100 = 4 %. Un écart positif signifie que l'économie produit au-dessus de son potentiel (surchauffe)."
+                }
+            },
+            {
+                chapter: 1,
+                question: "Si la croissance du PIB est de 2 % et que les contributions respectives du travail et du capital sont de 0,5 % et 0,7 %, quelle est la contribution de la productivité globale des facteurs (PGF) ?",
+                answer: 0.8,
+                unit: "%",
+                tolerance: 0.1,
+                explanation: "La décomposition comptable de la croissance s'écrit : g(PIB) = contribution du travail + contribution du capital + PGF. Donc PGF = 2 % - 0,5 % - 0,7 % = 0,8 %. La PGF représente la part « inexpliquée » de la croissance, souvent assimilée au progrès technique.",
+                alt: {
+                    question: "Si la croissance du PIB est de 1,5 % et que les contributions respectives du travail et du capital sont de 0,3 % et 0,6 %, quelle est la contribution de la productivité globale des facteurs (PGF) ?",
+                    answer: 0.6,
+                    explanation: "La décomposition comptable de la croissance s'écrit : g(PIB) = contribution du travail + contribution du capital + PGF. Donc PGF = 1,5 % - 0,3 % - 0,6 % = 0,6 %."
+                }
+            },
+            {
+                chapter: 1,
+                question: "Si la croissance du PIB en valeur (nominale) est de 3,5 % et l'inflation de 2,3 %, quel est le taux de croissance du PIB en volume (réel) ?",
+                answer: 1.2,
+                unit: "%",
+                tolerance: 0.2,
+                explanation: "Croissance réelle = croissance nominale - inflation = 3,5 % - 2,3 % = 1,2 %. Le PIB en volume (réel) mesure l'évolution des quantités produites, corrigée de l'évolution des prix.",
+                alt: {
+                    question: "Si la croissance du PIB en valeur (nominale) est de 4,2 % et l'inflation de 2,8 %, quel est le taux de croissance du PIB en volume (réel) ?",
+                    answer: 1.4,
+                    explanation: "Croissance réelle = croissance nominale - inflation = 4,2 % - 2,8 % = 1,4 %."
+                }
+            },
+            {
+                chapter: 1,
+                question: "Calculez le PIB par habitant de la France à partir des données suivantes : part de la population en âge de travailler = 60 %, taux d'emploi = 68 %, heures travaillées par employé = 1 500 h/an, productivité horaire = 70 €/h.",
+                answer: 42840,
+                unit: "€",
+                tolerance: 1000,
+                explanation: "PIB/habitant = Part en âge de travailler × Taux d'emploi × Heures par employé × Productivité horaire = 0,60 × 0,68 × 1 500 × 70 = 42 840 €. Cette décomposition montre les quatre leviers du PIB par habitant : la démographie (part en âge de travailler), le marché du travail (taux d'emploi), le temps de travail (heures par employé) et l'efficacité productive (productivité horaire).",
+                alt: {
+                    question: "Calculez le PIB par habitant de l'Allemagne à partir des données suivantes : part de la population en âge de travailler = 64 %, taux d'emploi = 77 %, heures travaillées par employé = 1 340 h/an, productivité horaire = 72 €/h.",
+                    answer: 47552,
+                    explanation: "PIB/habitant = 0,64 × 0,77 × 1 340 × 72 = 47 552 €. L'Allemagne a un taux d'emploi plus élevé que la France mais moins d'heures travaillées par employé."
+                }
+            },
+            {
+                chapter: 1,
+                question: "L'écart de production est actuellement de -2 %. La croissance potentielle est de 1 % et la croissance effective de 2 %. Quel sera l'écart de production à l'issue de l'exercice ?",
+                answer: -1,
+                unit: "%",
+                tolerance: 0.3,
+                explanation: "L'écart de production évolue chaque année de (croissance effective - croissance potentielle). Ici : 2 % - 1 % = +1 point. L'écart passe donc de - 2 % à - 1 %. L'économie se rapproche de son potentiel.",
+                alt: {
+                    question: "L'écart de production est actuellement de + 3 %. La croissance potentielle est de 1,5 % et la croissance effective de 1 %. Quel sera l'écart de production à l'issue de l'exercice ?",
+                    answer: 2.5,
+                    explanation: "L'écart de production évolue chaque année de (croissance effective - croissance potentielle). Ici : 1 % - 1,5 % = - 0,5 point. L'écart passe donc de + 3 % à + 2,5 %. L'économie se rapproche de son potentiel."
+                }
+            }
+        ];
+
+        // Simulations - Les simulations sont gérées de manière spéciale avec des graphiques
+        const simulations = [
+            {
+                chapter: 1,
+                title: "Évolution de l'écart de production",
+                description: "Observez comment le PIB effectif converge vers le PIB potentiel (ou s'en éloigne) selon les taux de croissance.",
+                type: "output_gap_graph"
+            }
+        ];
+
+        // ===========================================
+        // LOGIQUE DU QUIZ
+        // ===========================================
+
+        let selectedChapters = [];
+        let currentMode = null;
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let usingAltVersion = false;
+
+        // Initialisation
+        function init() {
+            renderChapters();
+            setupEventListeners();
+        }
+
+        function renderChapters() {
+            const container = document.getElementById('chapters-list');
+            container.innerHTML = chapters.map(ch => `
+                <label class="chapter-checkbox ${ch.available ? '' : 'disabled'}" data-id="${ch.id}">
+                    <input type="checkbox" ${ch.available ? '' : 'disabled'} onchange="toggleChapter(${ch.id})">
+                    <span>${ch.name}</span>
+                </label>
+            `).join('');
+        }
+
+        function toggleChapter(id) {
+            const index = selectedChapters.indexOf(id);
+            if (index === -1) {
+                selectedChapters.push(id);
+            } else {
+                selectedChapters.splice(index, 1);
+            }
+
+            // Update visual
+            document.querySelectorAll('.chapter-checkbox').forEach(el => {
+                const chId = parseInt(el.dataset.id);
+                el.classList.toggle('selected', selectedChapters.includes(chId));
+            });
+
+            // Enable/disable buttons
+            const hasSelection = selectedChapters.length > 0;
+            document.getElementById('btn-qcm').disabled = !hasSelection;
+            document.getElementById('btn-exercice').disabled = !hasSelection;
+            document.getElementById('btn-simulation').disabled = !hasSelection;
+        }
+
+        function setupEventListeners() {
+            document.getElementById('btn-qcm').onclick = () => startMode('qcm');
+            document.getElementById('btn-exercice').onclick = () => startMode('exercice');
+            document.getElementById('btn-simulation').onclick = () => startMode('simulation');
+        }
+
+        function startMode(mode) {
+            currentMode = mode;
+            currentIndex = 0;
+            score = 0;
+
+            // Filter questions by selected chapters
+            if (mode === 'qcm') {
+                currentQuestions = qcmQuestions.filter(q => selectedChapters.includes(q.chapter));
+                shuffleArray(currentQuestions);
+            } else if (mode === 'exercice') {
+                currentQuestions = exercices.filter(e => selectedChapters.includes(e.chapter));
+                shuffleArray(currentQuestions);
+            } else if (mode === 'simulation') {
+                currentQuestions = simulations.filter(s => selectedChapters.includes(s.chapter));
+            }
+
+            if (currentQuestions.length === 0) {
+                alert('Aucun contenu disponible pour les chapitres sélectionnés.');
+                return;
+            }
+
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+
+            updateProgress();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const container = document.getElementById('question-container');
+
+            if (currentIndex >= currentQuestions.length) {
+                showResults();
+                return;
+            }
+
+            const item = currentQuestions[currentIndex];
+            const chapter = chapters.find(c => c.id === item.chapter);
+
+            if (currentMode === 'qcm') {
+                container.innerHTML = `
+                    <div class="question-card">
+                        <div class="question-meta">
+                            <span class="badge badge-chapter">${chapter.name}</span>
+                            <span class="badge badge-type">${getTypeLabel(item.type)}</span>
+                        </div>
+                        <p class="question-text">${item.question}</p>
+                        <div class="answers">
+                            ${item.answers.map((a, i) => `
+                                <button class="answer-btn" onclick="checkAnswer(${i})">${a}</button>
+                            `).join('')}
+                        </div>
+                        <div class="explanation" id="explanation">
+                            <h4>Explication</h4>
+                            <p>${item.explanation}</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="btn-next show" id="btn-skip" onclick="nextQuestion()" style="background: var(--text-light);">Passer</button>
+                            <button class="btn-next" id="btn-next" onclick="nextQuestion()">Question suivante</button>
+                        </div>
+                    </div>
+                `;
+            } else if (currentMode === 'exercice') {
+                const currentItem = usingAltVersion && item.alt ? item.alt : item;
+                const questionText = currentItem.question;
+                const explanationText = currentItem.explanation;
+
+                container.innerHTML = `
+                    <div class="question-card">
+                        <div class="question-meta">
+                            <span class="badge badge-chapter">${chapter.name}</span>
+                            <span class="badge badge-type">Exercice chiffré</span>
+                        </div>
+                        <p class="question-text">${questionText}</p>
+                        <div class="exercise-input">
+                            <input type="number" id="exercise-answer" step="any" placeholder="Votre réponse" onkeydown="if(event.key === 'Enter') checkExercise()">
+                            <span class="unit">${item.unit}</span>
+                            <button class="btn-validate" onclick="checkExercise()">Valider</button>
+                        </div>
+                        <div class="explanation" id="explanation">
+                            <h4>Explication</h4>
+                            <p>${explanationText}</p>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="btn-next show" id="btn-skip" onclick="nextQuestion()" style="background: var(--text-light);">Passer</button>
+                            <div class="exercise-buttons" id="exercise-buttons" style="display: none; gap: 10px;">
+                                <button class="btn-next show" id="btn-retry" onclick="retryExercise()" style="display: none; background: var(--info);">Réessayer</button>
+                                <button class="btn-next show" id="btn-next" onclick="nextQuestion()">Exercice suivant</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('exercise-answer').focus();
+            } else if (currentMode === 'simulation') {
+                if (item.type === 'output_gap_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">${item.description}</p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Écart de production initial (% du PIB potentiel)</label>
+                                        <input type="range" id="initial_gap" min="-5" max="5" value="0" step="0.5" oninput="updateOutputGapGraph()">
+                                        <div class="value" id="initial_gap-value">0 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Croissance potentielle (% par an)</label>
+                                        <input type="range" id="g_potential" min="0.5" max="3" value="1.2" step="0.1" oninput="updateOutputGapGraph()">
+                                        <div class="value" id="g_potential-value">1,2 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Croissance effective (% par an)</label>
+                                        <input type="range" id="g_effective" min="-1" max="4" value="1.5" step="0.1" oninput="updateOutputGapGraph()">
+                                        <div class="value" id="g_effective-value">1,5 %</div>
+                                    </div>
+                                </div>
+                                <button class="btn-validate" onclick="closeGapIn5Years()" style="margin-bottom: 15px; width: 100%;">Fermer l'écart en n+5</button>
+                                <div class="graph-container">
+                                    <canvas id="outputGapCanvas" width="800" height="350"></canvas>
+                                </div>
+                                <div id="gap-status" style="text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-weight: 600;"></div>
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Écart initial</div>
+                                        <div class="value" id="result-initial-gap">0 %</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Écart après 5 ans</div>
+                                        <div class="value" id="result-final-gap">-</div>
+                                    </div>
+                                </div>
+                                <div class="simulation-explanation" id="simulation-explanation">
+                                    <strong>Comment lire ce graphique :</strong> La courbe bleue représente le PIB effectif, la courbe rouge pointillée le PIB potentiel.
+                                    Quand la croissance effective dépasse la croissance potentielle, l'écart de production se réduit progressivement.
+                                    Si la croissance effective est inférieure à la croissance potentielle, l'écart se creuse.
+                                </div>
+                            </div>
+                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                        </div>
+                    `;
+                    updateOutputGapGraph();
+                }
+            }
+        }
+
+        function getTypeLabel(type) {
+            const labels = {
+                'concept': 'Comprendre un concept',
+                'chiffre': 'Ordre de grandeur',
+                'definition': 'Définition'
+            };
+            return labels[type] || type;
+        }
+
+        function checkAnswer(index) {
+            const item = currentQuestions[currentIndex];
+            const buttons = document.querySelectorAll('.answer-btn');
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === item.correct) {
+                    btn.classList.add('correct');
+                } else if (i === index && index !== item.correct) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            const explanationDiv = document.getElementById('explanation');
+            if (index === item.correct) {
+                score++;
+                document.getElementById('score').textContent = score;
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--success);">✓ Bonne réponse</h4>
+                    <p>${item.explanation}</p>
+                `;
+            } else {
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--error);">✗ Mauvaise réponse</h4>
+                    <p>${item.explanation}</p>
+                `;
+            }
+
+            explanationDiv.classList.add('show');
+            document.getElementById('btn-skip').style.display = 'none';
+            document.getElementById('btn-next').classList.add('show');
+        }
+
+        function checkExercise() {
+            const item = currentQuestions[currentIndex];
+            const currentItem = usingAltVersion && item.alt ? item.alt : item;
+            const input = document.getElementById('exercise-answer');
+            // Accepter virgule ou point comme séparateur décimal
+            const userAnswer = parseFloat(input.value.replace(',', '.'));
+
+            if (isNaN(userAnswer)) {
+                alert('Veuillez entrer un nombre valide.');
+                return;
+            }
+
+            const correctAnswer = currentItem.answer;
+            const isCorrect = Math.abs(userAnswer - correctAnswer) <= item.tolerance;
+
+            input.disabled = true;
+            document.querySelector('.btn-validate').disabled = true;
+            input.style.borderColor = isCorrect ? 'var(--success)' : 'var(--error)';
+            input.style.background = isCorrect ? 'var(--success-bg)' : 'var(--error-bg)';
+
+            const explanationDiv = document.getElementById('explanation');
+            if (isCorrect) {
+                score++;
+                document.getElementById('score').textContent = score;
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--success);">✓ Bonne réponse</h4>
+                    <p>${currentItem.explanation}</p>
+                `;
+            } else {
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--error);">✗ Mauvaise réponse</h4>
+                    <p><strong>La bonne réponse était : ${correctAnswer} ${item.unit}</strong></p>
+                    <p>${currentItem.explanation}</p>
+                `;
+                // Afficher le bouton réessayer si une version alternative existe et qu'on ne l'utilise pas déjà
+                if (item.alt && !usingAltVersion) {
+                    document.getElementById('btn-retry').style.display = 'block';
+                }
+            }
+
+            explanationDiv.classList.add('show');
+            document.getElementById('btn-skip').style.display = 'none';
+            document.getElementById('exercise-buttons').style.display = 'flex';
+        }
+
+        function retryExercise() {
+            usingAltVersion = true;
+            renderQuestion();
+        }
+
+        function updateOutputGapGraph() {
+            // Récupérer les valeurs des curseurs
+            const initialGap = parseFloat(document.getElementById('initial_gap').value);
+            const gPotential = parseFloat(document.getElementById('g_potential').value);
+            const gEffective = parseFloat(document.getElementById('g_effective').value);
+
+            // Mettre à jour les affichages des valeurs
+            document.getElementById('initial_gap-value').textContent = initialGap.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('g_potential-value').textContent = gPotential.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('g_effective-value').textContent = gEffective.toFixed(1).replace('.', ',') + ' %';
+
+            // Calculer les données sur 5 ans (n+5)
+            const years = 6;
+            const pibPotentiel = [100]; // Base 100
+            const pibEffectif = [100 * (1 + initialGap / 100)]; // Ajusté de l'écart initial
+
+            for (let i = 1; i < years; i++) {
+                pibPotentiel.push(pibPotentiel[i-1] * (1 + gPotential / 100));
+                pibEffectif.push(pibEffectif[i-1] * (1 + gEffective / 100));
+            }
+
+            // Calculer l'écart final
+            const finalGap = ((pibEffectif[years-1] - pibPotentiel[years-1]) / pibPotentiel[years-1] * 100);
+
+            // Mettre à jour les résultats
+            document.getElementById('result-initial-gap').textContent = initialGap.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('result-final-gap').textContent = finalGap.toFixed(1).replace('.', ',') + ' %';
+
+            // Mettre à jour le statut (surchauffe ou sous-emploi)
+            const gapStatus = document.getElementById('gap-status');
+            if (Math.abs(finalGap) < 0.3) {
+                gapStatus.textContent = '✓ Économie à son potentiel';
+                gapStatus.style.background = 'var(--success-bg)';
+                gapStatus.style.color = 'var(--success)';
+            } else if (finalGap > 0) {
+                gapStatus.textContent = '🔥 Surchauffe : le PIB dépasse son potentiel';
+                gapStatus.style.background = '#fef3c7';
+                gapStatus.style.color = '#d97706';
+            } else {
+                gapStatus.textContent = '❄️ Sous-emploi : le PIB est sous son potentiel';
+                gapStatus.style.background = '#dbeafe';
+                gapStatus.style.color = '#2563eb';
+            }
+
+            // Dessiner le graphique
+            const canvas = document.getElementById('outputGapCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Dimensions
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 30, right: 30, bottom: 50, left: 60 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            // Effacer le canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Trouver les min/max pour l'échelle
+            const allValues = [...pibPotentiel, ...pibEffectif];
+            const minVal = Math.min(...allValues) * 0.98;
+            const maxVal = Math.max(...allValues) * 1.02;
+
+            // Fonctions de conversion
+            const xScale = (i) => padding.left + (i / (years - 1)) * graphWidth;
+            const yScale = (v) => padding.top + graphHeight - ((v - minVal) / (maxVal - minVal)) * graphHeight;
+
+            // Dessiner la grille
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * graphHeight;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+                ctx.stroke();
+            }
+
+            // Dessiner les axes
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, height - padding.bottom);
+            ctx.lineTo(width - padding.right, height - padding.bottom);
+            ctx.stroke();
+
+            // Labels axe X (années)
+            ctx.fillStyle = '#666';
+            ctx.font = '12px Segoe UI, sans-serif';
+            ctx.textAlign = 'center';
+            for (let i = 0; i < years; i++) {
+                const label = i === 0 ? '0' : 'n+' + i;
+                ctx.fillText(label, xScale(i), height - padding.bottom + 20);
+            }
+            ctx.fillText('Années', width / 2, height - 10);
+
+            // Labels axe Y
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const val = minVal + (i / 5) * (maxVal - minVal);
+                const y = padding.top + graphHeight - (i / 5) * graphHeight;
+                ctx.fillText(val.toFixed(0), padding.left - 10, y + 4);
+            }
+            ctx.save();
+            ctx.translate(15, height / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            ctx.fillText('PIB (base 100)', 0, 0);
+            ctx.restore();
+
+            // Dessiner la courbe du PIB potentiel (rouge pointillé)
+            ctx.strokeStyle = '#dc2626';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([8, 4]);
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) {
+                const x = xScale(i);
+                const y = yScale(pibPotentiel[i]);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Dessiner la courbe du PIB effectif (bleu plein)
+            ctx.strokeStyle = '#2563eb';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([]);
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) {
+                const x = xScale(i);
+                const y = yScale(pibEffectif[i]);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Colorier la zone entre les deux courbes
+            // Bleu froid = sous-emploi (PIB effectif < potentiel), Orange chaud = surchauffe (PIB effectif > potentiel)
+            ctx.fillStyle = finalGap < 0 ? 'rgba(59, 130, 246, 0.2)' : 'rgba(249, 115, 22, 0.2)';
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) {
+                const x = xScale(i);
+                const y = yScale(pibEffectif[i]);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            for (let i = years - 1; i >= 0; i--) {
+                const x = xScale(i);
+                const y = yScale(pibPotentiel[i]);
+                ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fill();
+
+            // Légende
+            ctx.font = '14px Segoe UI, sans-serif';
+            const legendX = width - padding.right - 180;
+            const legendY = padding.top + 10;
+
+            ctx.fillStyle = '#2563eb';
+            ctx.fillRect(legendX, legendY, 20, 3);
+            ctx.fillStyle = '#333';
+            ctx.textAlign = 'left';
+            ctx.fillText('PIB effectif', legendX + 30, legendY + 5);
+
+            ctx.strokeStyle = '#dc2626';
+            ctx.setLineDash([5, 3]);
+            ctx.beginPath();
+            ctx.moveTo(legendX, legendY + 25);
+            ctx.lineTo(legendX + 20, legendY + 25);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillText('PIB potentiel', legendX + 30, legendY + 28);
+        }
+
+        function closeGapIn5Years() {
+            const initialGap = parseFloat(document.getElementById('initial_gap').value);
+            const gPotential = parseFloat(document.getElementById('g_potential').value);
+
+            if (initialGap === 0) {
+                document.getElementById('simulation-explanation').innerHTML =
+                    '<strong>L\'écart est déjà nul !</strong> Le PIB effectif est égal au PIB potentiel.';
+                return;
+            }
+
+            // Calculer le taux de croissance effective nécessaire pour fermer l'écart en 5 ans
+            // PIB effectif initial * (1 + g_eff)^5 = PIB potentiel initial * (1 + g_pot)^5
+            const pibEffectifInitial = 100 * (1 + initialGap / 100);
+            const pibPotentielFinal = 100 * Math.pow(1 + gPotential / 100, 5);
+            const gEffectiveNeeded = (Math.pow(pibPotentielFinal / pibEffectifInitial, 1/5) - 1) * 100;
+
+            // Limiter aux bornes du curseur
+            const gEffectiveClamped = Math.max(-1, Math.min(4, gEffectiveNeeded));
+
+            // Mettre à jour le curseur
+            document.getElementById('g_effective').value = gEffectiveClamped.toFixed(1);
+            updateOutputGapGraph();
+
+            // Afficher le message pédagogique
+            const message = `<strong>Fermeture de l'écart en 5 ans :</strong> Avec un écart de production initial de ${initialGap.toFixed(1).replace('.', ',')} % et une croissance potentielle de ${gPotential.toFixed(1).replace('.', ',')} %, il faut que la croissance effective s'élève à ${gEffectiveClamped.toFixed(1).replace('.', ',')} % par an sur la période pour ramener le PIB à son niveau potentiel après 5 ans.`;
+
+            if (gEffectiveNeeded > 4 || gEffectiveNeeded < -1) {
+                document.getElementById('simulation-explanation').innerHTML = message +
+                    `<br><br><em>Note : le taux calculé (${gEffectiveNeeded.toFixed(1).replace('.', ',')} %) dépasse les bornes réalistes du curseur.</em>`;
+            } else {
+                document.getElementById('simulation-explanation').innerHTML = message;
+            }
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            usingAltVersion = false;
+            updateProgress();
+            renderQuestion();
+        }
+
+        function updateProgress() {
+            document.getElementById('current-q').textContent = Math.min(currentIndex + 1, currentQuestions.length);
+            document.getElementById('total-q').textContent = currentQuestions.length;
+
+            const progress = currentQuestions.length > 0 ? (currentIndex / currentQuestions.length) * 100 : 0;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+        }
+
+        function showResults() {
+            const container = document.getElementById('question-container');
+            const percentage = Math.round((score / currentQuestions.length) * 100);
+
+            container.innerHTML = `
+                <div class="results-card">
+                    <h2>Résultats</h2>
+                    <div class="results-score">${score}/${currentQuestions.length}</div>
+                    <p class="results-details">${percentage}% de bonnes réponses</p>
+                    <button class="btn-restart" onclick="backToMenu()">Retour au menu</button>
+                </div>
+            `;
+        }
+
+        function backToMenu() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('menu').style.display = 'block';
+            currentQuestions = [];
+            currentIndex = 0;
+            score = 0;
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Démarrage
+        init();
+    </script>
+</body>
+</html>
