@@ -660,7 +660,7 @@
 
         const chapters = [
             { id: 1, name: "La croissance", available: true },
-            { id: 2, name: "Politique budgétaire", available: false },
+            { id: 2, name: "Politique budgétaire", available: true },
             { id: 3, name: "Politique monétaire", available: false },
             { id: 4, name: "Intégration commerciale", available: false },
             { id: 5, name: "Politique de change", available: false },
@@ -769,6 +769,129 @@
 <tr style="font-weight: bold; background: var(--bg);"><td style="padding: 8px;">PIB</td><td style="padding: 8px; text-align: right;">2 920</td><td style="padding: 8px; text-align: right;">100 %</td></tr>
 </table>
 <p style="margin-top: 10px; font-size: 0.85em; color: var(--text-light);">Source : Insee, comptes nationaux 2024</p>`
+            },
+            // ========================================
+            // CHAPITRE 2 : POLITIQUE BUDGÉTAIRE
+            // ========================================
+            {
+                chapter: 2,
+                type: "concept",
+                question: "Si l'État vend une participation dans une entreprise publique, est-ce que cela réduit la dette publique au sens de Maastricht ?",
+                answers: ["Oui", "Non"],
+                correct: 0,
+                explanation: "Oui, car la dette publique au sens de Maastricht est une dette brute : elle ne tient pas compte des actifs détenus par les administrations publiques. Ainsi, une cession d'actifs (comme la vente de participations dans une entreprise publique) réduit la dette brute car elle génère des recettes qui permettent de rembourser des emprunts. Toutefois, une telle opération n'est financièrement avantageuse que si elle améliore le patrimoine net des administrations publiques, c'est-à-dire si le prix de vente est supérieur à la valeur actualisée des revenus futurs que l'actif aurait générés."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quelle est l'année du dernier excédent primaire (déficit hors charge de la dette) enregistré par la France ?",
+                answers: ["1995", "2001", "2007", "2019"],
+                correct: 1,
+                explanation: "Le dernier excédent primaire de la France remonte à 2001. Depuis, la France n'a jamais réussi à dégager un solde primaire positif. C'est une situation exceptionnelle parmi les grandes économies : à titre de comparaison, l'Italie a dégagé des excédents primaires presque chaque année entre 1995 et 2019, ce qui n'a pas suffi à réduire son endettement en raison d'un effet « boule de neige » défavorable (taux d'intérêt supérieur à la croissance)."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quelle part des dépenses publiques françaises les dépenses de retraite représentent-elles environ ?",
+                answers: ["Environ 10 %", "Environ un quart", "Environ un tiers", "Environ la moitié"],
+                correct: 1,
+                explanation: "Les dépenses du système de retraite s'élèvent à environ 407 milliards d'euros, soit 13,9 % du PIB. Elles représentent ainsi près d'un quart de l'ensemble des dépenses publiques françaises (qui s'élèvent à environ 57 % du PIB). C'est un niveau significativement supérieur à la moyenne de la zone euro (environ 2,5 points de PIB de plus) et à l'Allemagne (environ 3,8 points de PIB de plus). L'âge de départ effectif plus bas en France explique une grande partie de cet écart, et dans une moindre mesure une pension moyenne plus élevée."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur des recettes publiques totales en France, en points de PIB ?",
+                answers: ["Environ 35 %", "Environ 43 %", "Environ 52 %", "Environ 60 %"],
+                correct: 2,
+                explanation: "Les recettes publiques totales représentent environ 52 % du PIB en France. Attention à ne pas confondre avec les prélèvements obligatoires (impôts + cotisations sociales), qui représentent environ 43 % du PIB. La différence (environ 9 points) correspond aux autres recettes publiques : revenus du patrimoine, ventes de biens et services, transferts reçus, etc."
+            },
+            {
+                chapter: 2,
+                type: "concept",
+                question: "Un pays peut voir son ratio d'endettement public augmenter même s'il dégage un excédent primaire.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "C'est l'effet « boule de neige » : lorsque le taux d'intérêt moyen payé sur la dette est supérieur au taux de croissance nominal de l'économie (r > g), l'endettement « augmente tout seul » même avec un excédent primaire. C'est ce qui s'est passé en Italie entre 1995 et 2017 : malgré des excédents primaires presque chaque année, le ratio d'endettement n'a pas diminué en raison d'un différentiel intérêt-croissance très défavorable."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quelle part de la dette publique française est détenue par la Banque centrale (BCE et Banque de France) ?",
+                answers: ["Environ 5 %", "Environ 20 %", "Environ 35 %", "Environ la moitié"],
+                correct: 1,
+                explanation: "La Banque centrale (via l'Eurosystème) détient environ 20 % de la dette publique française en 2024, suite aux programmes d'achats d'actifs (APP puis PEPP). Cette part était quasi nulle au début des années 2000, a fortement augmenté après la crise financière de 2008 puis la crise sanitaire (jusqu'à environ un tiers), avant de redescendre avec la fin des programmes d'achat. Cette détention contribue à réduire la charge d'intérêts car la BCE reverse ses bénéfices aux États membres."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur de l'effort d'économies nécessaire pour que la France stabilise son ratio d'endettement ?",
+                answers: ["Environ 30 milliards d'euros", "Environ 60 milliards d'euros", "Environ 110 milliards d'euros", "Environ 200 milliards d'euros"],
+                correct: 2,
+                explanation: "Pour stabiliser l'endettement français, il faut atteindre l'équilibre primaire. En 2024, le déficit primaire structurel était d'environ 3,6 points de PIB. Le ramener à zéro représente ainsi un effort d'économies de l'ordre de 110 milliards d'euros. Le Conseil d'analyse économique recommande même d'aller au-delà (vers un surplus primaire de 1 % du PIB) pour réduire l'endettement et retrouver des marges de manœuvre avant la prochaine crise."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du montant des baisses de prélèvements obligatoires décidées en France entre 2018 et 2023 ?",
+                answers: ["Environ 20 milliards d'euros", "Environ 40 milliards d'euros", "Environ 60 milliards d'euros", "Environ 100 milliards d'euros"],
+                correct: 2,
+                explanation: "Entre 2018 et 2023, les baisses de prélèvements obligatoires ont atteint environ 62 milliards d'euros selon la Cour des comptes, soit près de 2 points de PIB. Ces baisses (suppression de la taxe d'habitation, baisse des impôts de production, baisse du taux d'IS de 33 % à 25 %, etc.) ont freiné le redressement des comptes publics qui avait été amorcé après la crise des dettes souveraines."
+            },
+            {
+                chapter: 2,
+                type: "definition",
+                question: "Que désigne la « règle des 3T » en matière de politique budgétaire ?",
+                answers: ["Taxation, Transferts, Trésorerie", "Timely, Targeted, Temporary", "Timing, Transmission, Trajectory", "Transitory, Transparent, Transformative"],
+                correct: 1,
+                explanation: "La règle des 3T (timely, targeted, temporary) définit les critères d'un bon plan de relance budgétaire : il doit être mis en œuvre au bon moment (timely), être ciblé sur les mesures les plus efficaces pour soutenir l'activité (targeted) et être temporaire pour ne pas dégrader durablement les finances publiques (temporary). Le plan de relance français post-Covid a notamment été critiqué pour ne pas respecter le critère « temporaire », certaines mesures (comme la baisse des impôts de production) étant pérennes."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "De combien le ratio de déficit public (en points de PIB) s'améliore-t-il si la croissance est plus élevée de 1 point en France ?",
+                answers: ["0,2 point de PIB", "0,6 point de PIB", "1 point de PIB", "1,5 point de PIB"],
+                correct: 1,
+                explanation: "La semi-élasticité budgétaire de la France est d'environ 0,6. Cela signifie qu'une hausse de 1 point du PIB améliore le solde public de 0,6 point de PIB. Cette amélioration provient principalement du fait que les recettes fiscales augmentent avec l'activité (TVA, impôt sur le revenu, cotisations...), alors que les dépenses restent globalement assez stables. En sens inverse, une récession dégrade le déficit de 0,6 point par point de PIB perdu."
+            },
+            {
+                chapter: 2,
+                type: "concept",
+                question: "Le patrimoine net des administrations publiques françaises (actifs moins passifs) est négatif.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le patrimoine net des administrations publiques françaises reste positif : il s'élevait à 633 milliards d'euros fin 2024, soit 21,7 % du PIB. La dette brute (au sens de Maastricht) dépasse 3 200 milliards, mais les administrations publiques détiennent aussi des actifs importants (immobilier, infrastructures, participations financières). Toutefois, la plupart de ces actifs ne sont pas cessibles (routes, écoles, hôpitaux...) et la valeur du patrimoine net s'est fortement dégradée : elle représentait encore 60 % du PIB en 2007, avant la crise financière."
+            },
+            {
+                chapter: 2,
+                type: "definition",
+                question: "Le multiplicateur budgétaire mesure l'impact sur le PIB d'un effort d'économies (ou d'une relance) de 1 point de PIB.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "Le multiplicateur budgétaire représente la variation du PIB engendrée à court terme par un effort d'économies (ou une impulsion budgétaire) de 1 point de PIB. Il est généralement compris entre 0,5 et 1,5, avec une valeur de référence de 0,75 retenue par la Commission européenne. Le multiplicateur est plus élevé en bas de cycle économique (quand l'économie sous-utilise ses capacités) et pour les dépenses publiques (par rapport aux recettes)."
+            },
+            {
+                chapter: 2,
+                type: "definition",
+                question: "Le déficit structurel est le déficit public corrigé des effets du cycle économique et des mesures exceptionnelles.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "Le déficit structurel correspond au déficit public qui existerait si l'économie était à son niveau potentiel (écart de production nul). Il est calculé en retirant du déficit public la composante conjoncturelle (liée au cycle économique) et les mesures exceptionnelles et temporaires. En France, la formule simplifiée de la Commission européenne est : déficit structurel = déficit public + 0,6 × écart de production. C'est l'indicateur pertinent pour évaluer l'orientation de la politique budgétaire."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quelle est la durée de vie moyenne de la dette publique française ?",
+                answers: ["Environ 5 ans", "Environ 8 ans", "Environ 12 ans", "Environ 16 ans"],
+                correct: 1,
+                explanation: "La durée de vie moyenne de la dette publique française est d'environ 8 ans fin 2025. Cette maturité relativement longue explique pourquoi une hausse des taux d'intérêt met du temps à se transmettre à la charge de la dette : seule la part de la dette qui arrive à échéance chaque année doit être refinancée aux nouveaux taux. Ainsi, même si les taux à l'émission ont fortement augmenté depuis 2022, le taux moyen payé sur l'ensemble de la dette n'augmente que progressivement."
+            },
+            {
+                chapter: 2,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du taux d'intérêt moyen sur la dette française émise en 2025 ?",
+                answers: ["Environ 1 %", "Environ 3 %", "Environ 5 %", "Environ 7 %"],
+                correct: 1,
+                explanation: "Le taux d'intérêt moyen sur la dette française émise en 2025 est d'environ 3,1 %. C'est une hausse considérable par rapport au point bas atteint pendant la crise sanitaire, où ce taux était proche de 0 % (voire négatif pour certaines émissions). Cette remontée des taux, liée au resserrement monétaire de la BCE face à l'inflation, pèsera progressivement sur la charge de la dette à mesure que les anciennes émissions à taux bas arrivent à échéance."
             }
         ];
 
@@ -839,6 +962,112 @@
                     answer: 2.5,
                     explanation: "L'écart de production évolue chaque année de (croissance effective - croissance potentielle). Ici : 1 % - 1,5 % = - 0,5 point. L'écart passe donc de + 3 % à + 2,5 %. L'économie se rapproche de son potentiel."
                 }
+            },
+            // ========================================
+            // CHAPITRE 2 : POLITIQUE BUDGÉTAIRE
+            // ========================================
+            {
+                chapter: 2,
+                question: `Un pays a un déficit public initial de 5 % du PIB. Le gouvernement décide d'un plan d'économies de 2 points de PIB. Si le multiplicateur budgétaire est de 0,8 et la semi-élasticité budgétaire de 0,6, quel sera le déficit public un an après le plan d'économies ?`,
+                answer: 4,
+                unit: "% du PIB",
+                tolerance: 0.2,
+                explanation: `<strong>Calcul en deux étapes :</strong><br><br>
+<strong>1. Effet récessif du plan d'économies :</strong><br>
+Le plan d'économies de 2 points de PIB réduit le PIB de : 2 × 0,8 (multiplicateur) = 1,6 %<br><br>
+<strong>2. Impact sur le déficit :</strong><br>
+• Amélioration directe (économies) : - 2 points de PIB<br>
+• Dégradation indirecte (effet récessif) : 1,6 % × 0,6 (semi-élasticité) = + 0,96 point de PIB<br><br>
+<strong>Amélioration nette du déficit :</strong> 2 - 0,96 ≈ 1 point de PIB<br><br>
+<strong>Déficit final :</strong> 5 % - 1 % = <strong>4 % du PIB</strong><br><br>
+Ainsi, pour un effort de 2 points, on ne réduit le déficit que d'environ 1 point la première année : la moitié de l'effort « s'évapore » du fait de l'effet récessif de la consolidation budgétaire. Toutefois, l'effet multiplicateur s'estompe progressivement (il disparaît généralement à horizon de 5 ans), si bien que l'amélioration du déficit se rapproche ensuite des 2 points d'effort initial.`,
+                alt: {
+                    question: `Un pays a un déficit public initial de 6 % du PIB. Le gouvernement décide d'un plan d'économies de 1,5 point de PIB. Si le multiplicateur budgétaire est de 0,75 et la semi-élasticité budgétaire de 0,6, quel sera le déficit public après le plan d'économies ?`,
+                    answer: 5.3,
+                    explanation: `<strong>Calcul en deux étapes :</strong><br><br>
+<strong>1. Effet récessif du plan d'économies :</strong><br>
+Le plan d'économies de 1,5 point de PIB réduit le PIB de : 1,5 × 0,75 = 1,125 %<br><br>
+<strong>2. Impact sur le déficit :</strong><br>
+• Amélioration directe : - 1,5 point de PIB<br>
+• Dégradation indirecte : 1,125 % × 0,6 = + 0,675 point de PIB<br><br>
+<strong>Amélioration nette :</strong> 1,5 - 0,675 ≈ 0,83 point de PIB<br><br>
+<strong>Déficit final :</strong> 6 % - 0,83 % ≈ <strong>5,2 à 5,3 % du PIB</strong>`
+                }
+            },
+            {
+                chapter: 2,
+                question: `Un pays a un taux d'endettement initial de 110 % du PIB. La croissance nominale (croissance réelle + inflation) est de 3 % et le taux d'intérêt moyen payé sur la dette est de 4 %. Le solde primaire est à l'équilibre (0 %). Quel sera le taux d'endettement l'année suivante ?`,
+                answer: 111.1,
+                unit: "% du PIB",
+                tolerance: 0.5,
+                explanation: `<strong>Équation simplifiée de la dynamique de l'endettement :</strong><br><br>
+Δd = d × (r - g) - s<br><br>
+où d = endettement initial, r = taux d'intérêt, g = croissance nominale, s = solde primaire<br><br>
+<strong>Application numérique :</strong><br>
+Δd = 110 % × (4 % - 3 %) - 0 %<br>
+Δd = 110 % × 1 % = <strong>1,1 point de PIB</strong><br><br>
+<strong>Endettement final :</strong> 110 % + 1,1 % = <strong>111,1 % du PIB</strong><br><br>
+C'est l'effet « boule de neige » : même avec un solde primaire à l'équilibre, l'endettement augmente car le taux d'intérêt (4 %) est supérieur à la croissance nominale (3 %). L'écart de 1 point, appliqué à une dette de 110 % du PIB, génère mécaniquement une hausse de l'endettement de 1,1 point.`,
+                alt: {
+                    question: `Un pays a un taux d'endettement initial de 150 % du PIB. La croissance nominale est de 2 % et le taux d'intérêt moyen payé sur la dette est de 3,5 %. Le solde primaire est excédentaire de 1 % du PIB. Quel sera le taux d'endettement l'année suivante ?`,
+                    answer: 151.3,
+                    explanation: `<strong>Équation :</strong> Δd = d × (r - g) - s<br><br>
+<strong>Application :</strong><br>
+Δd = 150 % × (3,5 % - 2 %) - 1 %<br>
+Δd = 150 % × 1,5 % - 1 %<br>
+Δd = 2,25 % - 1 % = <strong>1,25 point de PIB</strong><br><br>
+<strong>Endettement final :</strong> 150 % + 1,25 % ≈ <strong>151,3 % du PIB</strong><br><br>
+Malgré un excédent primaire de 1 %, l'endettement augmente car l'effet boule de neige (2,25 points) est supérieur à l'effort budgétaire (1 point). C'est la situation de l'Italie pendant de nombreuses années.`
+                }
+            },
+            {
+                chapter: 2,
+                question: `Un pays souhaite stabiliser son ratio d'endettement à 112 % du PIB. Le taux d'intérêt moyen sur la dette est de 3,3 % et la croissance nominale de 3 %. Quel solde primaire (en points de PIB) doit-il dégager pour y parvenir ?`,
+                answer: 0.3,
+                unit: "% du PIB",
+                tolerance: 0.2,
+                explanation: `<strong>Solde primaire stabilisant :</strong><br><br>
+Pour que l'endettement reste stable (Δd = 0), il faut que :<br>
+s* = d × (r - g)<br><br>
+<strong>Application numérique :</strong><br>
+s* = 112 % × (3,3 % - 3 %)<br>
+s* = 112 % × 0,3 %<br>
+s* = <strong>0,34 % du PIB</strong>, soit environ <strong>0,3 % du PIB</strong><br><br>
+Avec ces paramètres proches de la situation française actuelle (r ≈ g), un léger excédent primaire suffirait à stabiliser l'endettement. Toutefois, la France affiche actuellement un déficit primaire de l'ordre de 3 à 4 points de PIB, ce qui explique la hausse continue du ratio d'endettement.`,
+                alt: {
+                    question: `Un pays souhaite stabiliser son ratio d'endettement à 130 % du PIB. Le taux d'intérêt moyen sur la dette est de 4 % et la croissance nominale de 2,5 %. Quel solde primaire (en points de PIB) doit-il dégager pour y parvenir ?`,
+                    answer: 2,
+                    explanation: `<strong>Solde primaire stabilisant :</strong> s* = d × (r - g)<br><br>
+<strong>Application :</strong><br>
+s* = 130 % × (4 % - 2,5 %)<br>
+s* = 130 % × 1,5 %<br>
+s* = <strong>1,95 % du PIB</strong>, soit environ <strong>2 % du PIB</strong><br><br>
+Avec un différentiel intérêt-croissance de 1,5 point et un endettement de 130 % du PIB, l'effort budgétaire requis devient substantiel. C'est le défi auquel font face des pays comme l'Italie, où l'effet boule de neige impose de dégager des excédents primaires importants uniquement pour stabiliser la dette.`
+                }
+            },
+            {
+                chapter: 2,
+                question: `Le déficit public de la France est de 5,5 % du PIB et l'écart de production est estimé à - 1,5 %. Si la semi-élasticité budgétaire est de 0,6, quel est le déficit structurel ?`,
+                answer: 4.6,
+                unit: "% du PIB",
+                tolerance: 0.2,
+                explanation: `<strong>Formule du déficit structurel :</strong><br><br>
+Déficit structurel = Déficit public + semi-élasticité × écart de production<br><br>
+<strong>Application numérique :</strong><br>
+Déficit structurel = 5,5 % + 0,6 × (- 1,5 %)<br>
+Déficit structurel = 5,5 % - 0,9 %<br>
+Déficit structurel = <strong>4,6 % du PIB</strong><br><br>
+<strong>Interprétation :</strong> L'écart de production négatif (économie en sous-régime) dégrade automatiquement le déficit public de 0,9 point de PIB (composante conjoncturelle). Une fois cette composante retirée, le déficit structurel – qui reflète l'orientation de la politique budgétaire – est de 4,6 % du PIB.`,
+                alt: {
+                    question: `Le déficit public d'un pays est de 3 % du PIB et l'écart de production est estimé à + 2 %. Si la semi-élasticité budgétaire est de 0,5, quel est le déficit structurel ?`,
+                    answer: 4,
+                    explanation: `<strong>Formule :</strong> Déficit structurel = Déficit public + semi-élasticité × écart de production<br><br>
+<strong>Application :</strong><br>
+Déficit structurel = 3 % + 0,5 × (+ 2 %)<br>
+Déficit structurel = 3 % + 1 %<br>
+Déficit structurel = <strong>4 % du PIB</strong><br><br>
+<strong>Interprétation :</strong> L'écart de production positif (économie en surchauffe) améliore artificiellement le déficit public de 1 point de PIB. Le déficit structurel (4 %) est donc plus dégradé que le déficit apparent (3 %) : la bonne conjoncture masque une situation budgétaire sous-jacente plus fragile.`
+                }
             }
         ];
 
@@ -849,6 +1078,12 @@
                 title: "Évolution de l'écart de production",
                 description: "Observez comment le PIB effectif converge vers le PIB potentiel (ou s'en éloigne) selon les taux de croissance.",
                 type: "output_gap_graph"
+            },
+            {
+                chapter: 2,
+                title: "Dynamique de l'endettement public",
+                description: "Explorez comment le ratio dette/PIB évolue selon la croissance, l'inflation, les taux d'intérêt et le solde primaire. Comprenez l'effet « boule de neige » en action.",
+                type: "debt_dynamics_graph"
             }
         ];
 
@@ -1067,6 +1302,73 @@
                         </div>
                     `;
                     updateOutputGapGraph();
+                } else if (item.type === 'debt_dynamics_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">${item.description}</p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Endettement initial (% du PIB)</label>
+                                        <input type="range" id="debt_initial" min="60" max="200" value="112" step="5" oninput="updateDebtDynamicsGraph()">
+                                        <div class="value" id="debt_initial-value">112 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Croissance réelle (% par an)</label>
+                                        <input type="range" id="g_real" min="-1" max="4" value="1" step="0.1" oninput="updateDebtDynamicsGraph()">
+                                        <div class="value" id="g_real-value">1 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Inflation (% par an)</label>
+                                        <input type="range" id="inflation" min="0" max="6" value="2" step="0.1" oninput="updateDebtDynamicsGraph()">
+                                        <div class="value" id="inflation-value">2 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Taux d'intérêt moyen sur la dette (% par an)</label>
+                                        <input type="range" id="r_interest" min="1" max="7" value="3" step="0.1" oninput="updateDebtDynamicsGraph()">
+                                        <div class="value" id="r_interest-value">3 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Solde primaire (% du PIB) <span style="font-size: 0.85em; color: var(--text-light);">positif = excédent</span></label>
+                                        <input type="range" id="primary_balance" min="-5" max="3" value="0" step="0.1" oninput="updateDebtDynamicsGraph()">
+                                        <div class="value" id="primary_balance-value">0 %</div>
+                                    </div>
+                                </div>
+                                <div class="graph-container">
+                                    <canvas id="debtDynamicsCanvas" width="800" height="400"></canvas>
+                                </div>
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Croissance nominale (g)</div>
+                                        <div class="value" id="result-g-nominal">3 %</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Différentiel r - g</div>
+                                        <div class="value" id="result-r-minus-g">0 %</div>
+                                        <div id="snowball-status" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Endettement en n+10</div>
+                                        <div class="value" id="result-debt-final">-</div>
+                                        <div id="debt-trend" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
+                                    </div>
+                                </div>
+                                <button id="btn-stabilize-debt" class="btn-validate" onclick="stabilizeDebt()" style="margin-bottom: 15px; width: 100%;">Calculer le solde primaire stabilisant</button>
+                                <div class="simulation-explanation" id="debt-simulation-explanation">
+                                    <strong>Équation simplifiée :</strong> Δd = d × (r - g) - s<br><br>
+                                    où d = dette/PIB, r = taux d'intérêt moyen, g = croissance nominale (réelle + inflation), s = solde primaire.<br><br>
+                                    <strong>Effet « boule de neige » :</strong> Si r > g (différentiel positif), la dette « augmente toute seule » même avec un solde primaire équilibré. Plus la dette initiale est élevée, plus cet effet est important.
+                                </div>
+                            </div>
+                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                        </div>
+                    `;
+                    updateDebtDynamicsGraph();
                 }
             }
         }
@@ -1147,7 +1449,7 @@
                 const formattedAnswer = formatNumber(correctAnswer, decimalPlaces);
                 explanationDiv.innerHTML = `
                     <h4 style="color: var(--error);">✗ Mauvaise réponse</h4>
-                    <p><strong>La bonne réponse était : ${formattedAnswer} ${item.unit}</strong></p>
+                    <p style="margin-bottom: 15px;"><strong>La bonne réponse était : ${formattedAnswer} ${item.unit}</strong></p>
                     <p>${currentItem.explanation}</p>
                 `;
                 // Afficher le bouton réessayer si une version alternative existe et qu'on ne l'utilise pas déjà
@@ -1387,6 +1689,247 @@
             } else {
                 document.getElementById('simulation-explanation').innerHTML = message;
             }
+        }
+
+        // ==========================================
+        // SIMULATION : DYNAMIQUE DE L'ENDETTEMENT
+        // ==========================================
+        function updateDebtDynamicsGraph() {
+            // Récupérer les valeurs des curseurs
+            const debtInitial = parseFloat(document.getElementById('debt_initial').value);
+            const gReal = parseFloat(document.getElementById('g_real').value);
+            const inflation = parseFloat(document.getElementById('inflation').value);
+            const rInterest = parseFloat(document.getElementById('r_interest').value);
+            const primaryBalance = parseFloat(document.getElementById('primary_balance').value);
+
+            // Calculer la croissance nominale
+            const gNominal = gReal + inflation;
+            const rMinusG = rInterest - gNominal;
+
+            // Mettre à jour les affichages des valeurs
+            document.getElementById('debt_initial-value').textContent = debtInitial.toFixed(0) + ' %';
+            document.getElementById('g_real-value').textContent = gReal.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('inflation-value').textContent = inflation.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('r_interest-value').textContent = rInterest.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('primary_balance-value').textContent = (primaryBalance >= 0 ? '+' : '') + primaryBalance.toFixed(1).replace('.', ',') + ' %';
+
+            // Calculer l'évolution de la dette sur 10 ans
+            const years = 11;
+            const debtPath = [debtInitial];
+
+            for (let i = 1; i < years; i++) {
+                // Équation simplifiée : d(t+1) = d(t) + d(t) * (r - g) - s
+                const snowballEffect = debtPath[i-1] * rMinusG / 100;
+                const newDebt = debtPath[i-1] + snowballEffect - primaryBalance;
+                debtPath.push(Math.max(0, newDebt)); // La dette ne peut pas être négative
+            }
+
+            const finalDebt = debtPath[years - 1];
+            const debtChange = finalDebt - debtInitial;
+
+            // Mettre à jour les résultats
+            document.getElementById('result-g-nominal').textContent = gNominal.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('result-r-minus-g').textContent = (rMinusG >= 0 ? '+' : '') + rMinusG.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('result-debt-final').textContent = finalDebt.toFixed(0).replace('.', ',') + ' %';
+
+            // Mettre à jour le statut de l'effet boule de neige
+            const snowballStatus = document.getElementById('snowball-status');
+            if (Math.abs(rMinusG) < 0.2) {
+                snowballStatus.textContent = '≈ Neutre';
+                snowballStatus.style.background = '#f3f4f6';
+                snowballStatus.style.color = '#6b7280';
+            } else if (rMinusG > 0) {
+                snowballStatus.textContent = '⚠️ Effet boule de neige';
+                snowballStatus.style.background = '#fef3c7';
+                snowballStatus.style.color = '#d97706';
+            } else {
+                snowballStatus.textContent = '✓ Effet siphon';
+                snowballStatus.style.background = 'var(--success-bg)';
+                snowballStatus.style.color = 'var(--success)';
+            }
+
+            // Mettre à jour le statut de la tendance de la dette
+            const debtTrend = document.getElementById('debt-trend');
+            if (Math.abs(debtChange) < 2) {
+                debtTrend.textContent = '≈ Stable';
+                debtTrend.style.background = 'var(--success-bg)';
+                debtTrend.style.color = 'var(--success)';
+            } else if (debtChange > 0) {
+                debtTrend.textContent = '📈 En hausse (' + (debtChange > 0 ? '+' : '') + debtChange.toFixed(0) + ' pts)';
+                debtTrend.style.background = 'var(--error-bg)';
+                debtTrend.style.color = 'var(--error)';
+            } else {
+                debtTrend.textContent = '📉 En baisse (' + debtChange.toFixed(0) + ' pts)';
+                debtTrend.style.background = 'var(--success-bg)';
+                debtTrend.style.color = 'var(--success)';
+            }
+
+            // Dessiner le graphique
+            const canvas = document.getElementById('debtDynamicsCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Dimensions
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 30, right: 30, bottom: 50, left: 70 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            // Effacer le canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Trouver les min/max pour l'échelle
+            const minVal = Math.min(...debtPath, debtInitial * 0.9) * 0.95;
+            const maxVal = Math.max(...debtPath, debtInitial * 1.1) * 1.05;
+
+            // Fonctions de conversion
+            const xScale = (i) => padding.left + (i / (years - 1)) * graphWidth;
+            const yScale = (v) => padding.top + graphHeight - ((v - minVal) / (maxVal - minVal)) * graphHeight;
+
+            // Dessiner la grille horizontale
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * graphHeight;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+                ctx.stroke();
+            }
+
+            // Dessiner la ligne de référence (endettement initial)
+            ctx.strokeStyle = '#9ca3af';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            const yInitial = yScale(debtInitial);
+            ctx.beginPath();
+            ctx.moveTo(padding.left, yInitial);
+            ctx.lineTo(width - padding.right, yInitial);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Dessiner les axes
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, height - padding.bottom);
+            ctx.lineTo(width - padding.right, height - padding.bottom);
+            ctx.stroke();
+
+            // Labels axe X (années)
+            ctx.fillStyle = '#666';
+            ctx.font = '12px Segoe UI, sans-serif';
+            ctx.textAlign = 'center';
+            for (let i = 0; i < years; i++) {
+                const label = i === 0 ? 'n' : 'n+' + i;
+                ctx.fillText(label, xScale(i), height - padding.bottom + 20);
+            }
+            ctx.fillText('Années', width / 2, height - 10);
+
+            // Labels axe Y
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const val = minVal + (i / 5) * (maxVal - minVal);
+                const y = padding.top + graphHeight - (i / 5) * graphHeight;
+                ctx.fillText(val.toFixed(0) + ' %', padding.left - 10, y + 4);
+            }
+            ctx.save();
+            ctx.translate(18, height / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            ctx.fillText('Dette / PIB', 0, 0);
+            ctx.restore();
+
+            // Colorier la zone sous la courbe
+            const isIncreasing = finalDebt > debtInitial;
+            ctx.fillStyle = isIncreasing ? 'rgba(239, 68, 68, 0.15)' : 'rgba(34, 197, 94, 0.15)';
+            ctx.beginPath();
+            ctx.moveTo(xScale(0), yScale(debtInitial));
+            for (let i = 0; i < years; i++) {
+                ctx.lineTo(xScale(i), yScale(debtPath[i]));
+            }
+            ctx.lineTo(xScale(years - 1), yScale(debtInitial));
+            ctx.closePath();
+            ctx.fill();
+
+            // Dessiner la courbe de la dette
+            ctx.strokeStyle = isIncreasing ? '#dc2626' : '#22c55e';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) {
+                const x = xScale(i);
+                const y = yScale(debtPath[i]);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Dessiner les points
+            ctx.fillStyle = isIncreasing ? '#dc2626' : '#22c55e';
+            for (let i = 0; i < years; i++) {
+                ctx.beginPath();
+                ctx.arc(xScale(i), yScale(debtPath[i]), 4, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Légende
+            ctx.font = '12px Segoe UI, sans-serif';
+            const legendX = width - padding.right - 200;
+            const legendY = padding.top + 10;
+
+            ctx.fillStyle = isIncreasing ? '#dc2626' : '#22c55e';
+            ctx.fillRect(legendX, legendY, 20, 3);
+            ctx.fillStyle = '#333';
+            ctx.textAlign = 'left';
+            ctx.fillText('Trajectoire de la dette', legendX + 30, legendY + 5);
+
+            ctx.strokeStyle = '#9ca3af';
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(legendX, legendY + 20);
+            ctx.lineTo(legendX + 20, legendY + 20);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillText('Niveau initial (' + debtInitial + ' %)', legendX + 30, legendY + 23);
+        }
+
+        function stabilizeDebt() {
+            const debtInitial = parseFloat(document.getElementById('debt_initial').value);
+            const gReal = parseFloat(document.getElementById('g_real').value);
+            const inflation = parseFloat(document.getElementById('inflation').value);
+            const rInterest = parseFloat(document.getElementById('r_interest').value);
+
+            const gNominal = gReal + inflation;
+            const rMinusG = rInterest - gNominal;
+
+            // Solde primaire stabilisant : s* = d * (r - g)
+            const stabilizingBalance = debtInitial * rMinusG / 100;
+
+            // Limiter aux bornes du curseur
+            const balanceClamped = Math.max(-5, Math.min(3, stabilizingBalance));
+
+            // Mettre à jour le curseur
+            document.getElementById('primary_balance').value = balanceClamped.toFixed(1);
+            updateDebtDynamicsGraph();
+
+            // Afficher le message pédagogique
+            const balanceType = stabilizingBalance >= 0 ? 'excédent' : 'déficit';
+            const balanceAbs = Math.abs(stabilizingBalance).toFixed(1).replace('.', ',');
+
+            let message = `<strong>Solde primaire stabilisant :</strong> Avec un endettement de ${debtInitial} % du PIB, un taux d'intérêt de ${rInterest.toFixed(1).replace('.', ',')} % et une croissance nominale de ${gNominal.toFixed(1).replace('.', ',')} %, il faut un ${balanceType} primaire de <strong>${balanceAbs} % du PIB</strong> pour stabiliser le ratio d'endettement.`;
+
+            if (rMinusG > 0) {
+                message += `<br><br><em>Note : l'effet boule de neige étant défavorable (r > g), il faut dégager un excédent primaire pour simplement stabiliser la dette.</em>`;
+            } else if (rMinusG < 0) {
+                message += `<br><br><em>Note : l'effet siphon étant favorable (r < g), la dette peut être stabilisée même avec un léger déficit primaire.</em>`;
+            }
+
+            if (stabilizingBalance > 3 || stabilizingBalance < -5) {
+                message += `<br><br><em>⚠️ Le solde calculé (${stabilizingBalance.toFixed(1).replace('.', ',')} %) dépasse les bornes réalistes du curseur.</em>`;
+            }
+
+            document.getElementById('debt-simulation-explanation').innerHTML = message;
         }
 
         function nextQuestion() {
