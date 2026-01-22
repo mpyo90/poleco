@@ -661,7 +661,7 @@
         const chapters = [
             { id: 1, name: "La croissance", available: true },
             { id: 2, name: "Politique budgétaire", available: true },
-            { id: 3, name: "Politique monétaire", available: false },
+            { id: 3, name: "Politique monétaire", available: true },
             { id: 4, name: "Intégration commerciale", available: false },
             { id: 5, name: "Politique de change", available: false },
             { id: 6, name: "UE et zone euro", available: false },
@@ -892,6 +892,97 @@
                 answers: ["Environ 1 %", "Environ 3 %", "Environ 5 %", "Environ 7 %"],
                 correct: 1,
                 explanation: "Le taux d'intérêt moyen sur la dette française émise en 2025 est d'environ 3,1 %. C'est une hausse considérable par rapport au point bas atteint pendant la crise sanitaire, où ce taux était proche de 0 % (voire négatif pour certaines émissions). Cette remontée des taux, liée au resserrement monétaire de la BCE face à l'inflation, pèsera progressivement sur la charge de la dette à mesure que les anciennes émissions à taux bas arrivent à échéance."
+            },
+            // ========================================
+            // CHAPITRE 3 : POLITIQUE MONÉTAIRE
+            // ========================================
+            {
+                chapter: 3,
+                type: "chiffre",
+                question: "Selon les estimations de la BCE (Lane, 2023), quel est l'ordre de grandeur de l'impact d'une hausse de 1 point de pourcentage des taux directeurs sur l'activité économique ?",
+                answers: ["Une réduction du PIB de 0,3 point", "Une réduction du PIB de 1 point", "Une réduction du PIB de 2 points", "Une réduction du PIB de 0,5 point"],
+                correct: 1,
+                explanation: "La BCE estime qu'une hausse de 1 point de ses taux réduit le PIB de 1 point et l'inflation de 0,3 point au maximum de leurs effets respectifs. Il s'agit d'ordres de grandeur issus de travaux de modélisation, dont les résultats peuvent varier d'un modèle à l'autre. L'effet sur l'activité est bien plus fort que l'effet sur l'inflation, ce qui explique pourquoi il était impossible de contenir l'inflation à 2 % lors du choc inflationniste de 2022 sans provoquer une récession majeure."
+            },
+            {
+                chapter: 3,
+                type: "chiffre",
+                question: "Selon les estimations de la BCE (Lane, 2023), quel est l'ordre de grandeur de l'impact d'une hausse de 1 point de pourcentage des taux directeurs sur l'inflation ?",
+                answers: ["Une baisse de l'inflation de 1 point", "Une baisse de l'inflation de 0,5 point", "Une baisse de l'inflation de 0,3 point", "Une baisse de l'inflation de 0,1 point"],
+                correct: 2,
+                explanation: "La BCE estime qu'une hausse de 1 point de ses taux réduit l'inflation de 0,3 point seulement au maximum de son effet. Il s'agit d'ordres de grandeur issus de travaux de modélisation, dont les résultats peuvent varier d'un modèle à l'autre. C'est le corollaire de la question précédente : freiner l'inflation par la politique monétaire a un coût élevé en termes d'activité (1 point de PIB pour seulement 0,3 point d'inflation en moins)."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "En principe, une hausse de taux décidée par la BCE provoque...",
+                answers: ["Une baisse du prix des actifs et une dépréciation de l'euro", "Une hausse du prix des actifs et une dépréciation de l'euro", "Une baisse du prix des actifs et une appréciation de l'euro", "Une hausse du prix des actifs et une appréciation de l'euro"],
+                correct: 2,
+                explanation: "Une hausse des taux réduit la valeur actualisée des actifs (actions, obligations, immobilier). En effet, la valeur d'un actif correspond à la somme de ses revenus futurs actualisés : plus le taux d'actualisation est élevé, plus cette valeur est faible. Par ailleurs, des taux plus élevés attirent les capitaux étrangers, ce qui augmente la demande d'euros et provoque une appréciation de la monnaie. Ces deux canaux (effet richesse et canal du taux de change) contribuent à freiner la demande agrégée."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "Le taux d'intérêt réel naturel (ou « neutre ») est directement observable.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le taux d'intérêt réel naturel n'est pas directement observable. Il est défini comme le taux qui place l'économie sur un sentier de croissance équilibrée (écart de production nul), mais il doit être estimé à l'aide de modèles. Les estimations les plus récentes pour la zone euro s'inscrivent dans une large fourchette comprise entre - 0,5 % et + 0,5 %, ce qui témoigne de la grande incertitude qui entoure cette variable pourtant centrale pour la conduite de la politique monétaire."
+            },
+            {
+                chapter: 3,
+                type: "chiffre",
+                question: "Quelle est la cible d'inflation de la BCE ?",
+                answers: ["Inférieure à, mais proche de 2 %", "Inférieure à 2 %", "2 % à moyen terme", "Aucune de ces réponses"],
+                correct: 2,
+                explanation: "Depuis juillet 2021, la BCE vise une cible d'inflation de 2 % à moyen terme. Cette formulation a remplacé l'ancienne définition (« inférieure à, mais proche de 2 % ») pour rendre la cible plus claire et symétrique : un dépassement temporaire au-dessus de 2 % est tout aussi indésirable qu'un passage en dessous. L'orientation à moyen terme permet de ne pas réagir à des chocs temporaires sur l'offre (énergie, goulets d'étranglement)."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "Le taux directeur nominal de la BCE est de 3 %. L'inflation est de 2,5 %. Le taux d'intérêt réel naturel est estimé à 0 %. La politique monétaire est...",
+                answers: ["Accommodante", "Restrictive", "Neutre", "On ne peut pas conclure"],
+                correct: 1,
+                explanation: "Le taux d'intérêt réel = taux nominal - inflation = 3 % - 2,5 % = 0,5 %. Comme le taux réel (0,5 %) est supérieur au taux naturel (0 %), la politique monétaire freine l'activité : elle est restrictive. Si le taux réel était égal au taux naturel, la politique serait neutre ; s'il était inférieur, elle serait accommodante."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "Face à un choc temporaire d'offre (par exemple une hausse ponctuelle des prix de l'énergie), la banque centrale doit systématiquement relever ses taux pour contenir l'inflation.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Il est inutile et contreproductif de freiner l'économie pour faire face à un choc d'offre ponctuel correctement interprété par les acteurs économiques, qui n'est pas de nature à remettre en cause l'objectif d'inflation à moyen terme. Cela amplifierait sans raison un choc déjà récessif. La banque centrale doit réagir lorsque l'inflation résulte d'un excès de demande ou d'un choc d'offre susceptible d'entraîner une boucle prix-salaires. On a d'ailleurs reproché à Jean-Claude Trichet d'avoir brutalement augmenté les taux en 2008 à cause d'une hausse temporaire du pétrole, juste avant la faillite de Lehman Brothers."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "Le programme d'achats d'actifs (quantitative easing) fait partie des instruments conventionnels de la BCE.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le programme d'achats d'actifs est un instrument non conventionnel, mobilisé lorsque les taux directeurs ont atteint leur plancher (proche de zéro ou négatif) et que les outils classiques ne suffisent plus. Les trois instruments conventionnels de la BCE sont : les opérations d'open market (appels d'offres pour fixer le taux directeur), les facilités permanentes (dépôt et prêt marginal, pour 24h) et les réserves obligatoires. Les principaux outils non conventionnels sont l'assouplissement quantitatif (achats d'actifs), la forward guidance (orientation prospective) et les taux d'intérêt négatifs sur les réserves excédentaires."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "En union monétaire, face à un choc asymétrique (qui ne touche qu'un pays membre), la politique monétaire est l'instrument le plus adapté pour stabiliser l'économie du pays touché.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "En union monétaire, la politique monétaire est unique et s'applique à l'ensemble de la zone. Face à un choc asymétrique (qui ne frappe qu'un pays), elle ne peut pas être calibrée pour répondre aux besoins spécifiques de ce pays sans déstabiliser les autres. C'est la politique budgétaire nationale qui constitue alors l'instrument de stabilisation le plus adapté."
+            },
+            {
+                chapter: 3,
+                type: "chiffre",
+                question: "Depuis un siècle, à quelle fréquence la France connaît-elle en moyenne une année de récession ?",
+                answers: ["Tous les 3 ans", "Tous les 7 ans", "Tous les 12 ans", "Tous les 20 ans"],
+                correct: 1,
+                explanation: "Depuis un siècle, la France connaît en moyenne une année de récession tous les sept ans, avec des causes variées : chocs financiers (1929, 2008), chocs pétroliers (1975), crises monétaires et de change (1927, 1993), chocs sanitaires (2020) ou guerres. Cette fréquence relativement élevée justifie l'existence d'instruments de stabilisation macroéconomique (politique monétaire, politique budgétaire) capables de limiter l'ampleur et la durée des récessions."
+            },
+            {
+                chapter: 3,
+                type: "concept",
+                question: "En 2023, le taux directeur de la BCE était de 4 % et l'inflation moyenne en zone euro de 5,4 %. En 2024, le taux directeur est de 3,75 % et l'inflation de 2,4 %. Au cours de laquelle de ces deux années la politique monétaire était-elle la plus restrictive ?",
+                answers: ["2023, car le taux directeur nominal était plus élevé", "2024, car le taux d'intérêt réel était plus élevé", "Les deux années sont équivalentes", "On ne peut pas conclure sans connaître le taux naturel"],
+                correct: 1,
+                explanation: "Taux réel 2023 = 4 % - 5,4 % = - 1,4 % (accommodant). Taux réel 2024 = 3,75 % - 2,4 % = + 1,35 % (restrictif). Paradoxalement, la politique monétaire est devenue plus restrictive en 2024 alors même que le taux nominal a baissé, car l'inflation a reculé plus vite que le taux directeur. C'est un piège classique : un taux nominal élevé n'est pas synonyme de politique restrictive si l'inflation est encore plus élevée."
             }
         ];
 
@@ -1068,6 +1159,29 @@ Déficit structurel = 3 % + 1 %<br>
 Déficit structurel = <strong>4 % du PIB</strong><br><br>
 <strong>Interprétation :</strong> L'écart de production positif (économie en surchauffe) améliore artificiellement le déficit public de 1 point de PIB. Le déficit structurel (4 %) est donc plus dégradé que le déficit apparent (3 %) : la bonne conjoncture masque une situation budgétaire sous-jacente plus fragile.`
                 }
+            },
+            // ========================================
+            // CHAPITRE 3 : POLITIQUE MONÉTAIRE
+            // ========================================
+            {
+                chapter: 3,
+                question: "L'inflation en zone euro est de 2 %. Le taux d'intérêt réel naturel est estimé à 0,5 %. À quel niveau la BCE devrait-elle fixer son taux directeur nominal pour que sa politique monétaire soit neutre ?",
+                answer: 2.5,
+                unit: "%",
+                tolerance: 0.1,
+                explanation: `<strong>Formule :</strong> La politique monétaire est neutre lorsque le taux réel est égal au taux naturel.<br><br>
+D'après l'équation de Fisher : taux nominal = taux réel + inflation.<br><br>
+<strong>Application :</strong><br>
+Taux nominal neutre = taux naturel + inflation = 0,5 % + 2 % = <strong>2,5 %</strong><br><br>
+<strong>Interprétation :</strong> Si le taux nominal est fixé au-dessus de 2,5 %, la politique est restrictive (elle freine l'activité) ; en dessous, elle est accommodante (elle stimule l'activité).`,
+                alt: {
+                    question: "L'inflation en zone euro est de 3,5 %. Le taux d'intérêt réel naturel est estimé à 0 %. À quel niveau la BCE devrait-elle fixer son taux directeur nominal pour que sa politique monétaire soit neutre ?",
+                    answer: 3.5,
+                    explanation: `<strong>Formule :</strong> Taux nominal neutre = taux naturel + inflation<br><br>
+<strong>Application :</strong><br>
+Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
+<strong>Interprétation :</strong> Avec un taux directeur à 3,5 %, le taux réel serait de 0 %, égal au taux naturel : la politique monétaire ne stimule ni ne freine l'activité.`
+                }
             }
         ];
 
@@ -1084,6 +1198,12 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
                 title: "Dynamique de l'endettement public",
                 description: "Explorez comment le ratio dette/PIB évolue selon la croissance, l'inflation, les taux d'intérêt et le solde primaire. Comprenez l'effet « boule de neige » en action.",
                 type: "debt_dynamics_graph"
+            },
+            {
+                chapter: 3,
+                title: "La règle de Taylor : dans la peau du banquier central",
+                description: "Face à une situation économique (inflation, conjoncture), quelle décision de taux prendriez-vous ? Comparez votre intuition à la règle de Taylor et comprenez la logique du banquier central.",
+                type: "taylor_rule_graph"
             }
         ];
 
@@ -1369,6 +1489,72 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
                         </div>
                     `;
                     updateDebtDynamicsGraph();
+                } else if (item.type === 'taylor_rule_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 10px;">${item.title}</h3>
+                            <p class="question-text" style="margin-bottom: 15px;">
+                                La banque centrale a pour mission de maintenir l'inflation autour de <strong>2 %</strong> : c'est sa cible d'inflation (π*). Elle dispose d'un outil principal : le <strong>taux directeur</strong>, qui influence le coût du crédit dans l'économie. On suppose que le taux d'intérêt réel « neutre » — celui qui ne stimule ni ne freine l'économie — est de <strong>2 %</strong> (r*).<br><br>
+                                <strong>À vous de jouer :</strong> face à la situation économique ci-dessous, choisissez votre taux directeur, puis comparez-le à ce que prescrirait la <em>règle de Taylor</em> — une formule qui traduit l'arbitrage permanent du banquier central entre maîtrise de l'inflation et soutien à l'activité.
+                            </p>
+
+                            <div class="simulation-container">
+                                <!-- Contrôles compacts -->
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Inflation actuelle</label>
+                                        <input type="range" id="taylor_inflation" min="0" max="8" value="3.5" step="0.1" oninput="updateTaylorRuleGraph()">
+                                        <div class="value" id="taylor_inflation-value">3,5 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Écart de production</label>
+                                        <input type="range" id="taylor_output_gap" min="-4" max="4" value="-1" step="0.5" oninput="updateTaylorRuleGraph()">
+                                        <div class="value" id="taylor_output_gap-value">- 1 %</div>
+                                    </div>
+                                    <div class="control-group" style="background: #fff7ed; padding: 10px; border-radius: 8px; border: 2px solid #f97316;">
+                                        <label style="color: #c2410c; font-weight: 600;">Votre taux directeur</label>
+                                        <input type="range" id="taylor_user_rate" min="0" max="10" value="4" step="0.25" oninput="updateTaylorRuleGraph()">
+                                        <div class="value" id="taylor_user_rate-value" style="font-size: 1.2em; font-weight: bold; color: #f97316;">4,00 %</div>
+                                    </div>
+                                </div>
+
+                                <!-- Graphique -->
+                                <div class="graph-container">
+                                    <canvas id="taylorRuleCanvas" width="800" height="400"></canvas>
+                                </div>
+
+                                <!-- Résultats -->
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Votre taux</div>
+                                        <div class="value" id="result-user-rate" style="color: #f97316;">4,00 %</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Taux Taylor</div>
+                                        <div class="value" id="result-taylor-rate" style="color: #2563eb;">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Votre positionnement</div>
+                                        <div class="value" id="result-stance">-</div>
+                                        <div id="taylor-stance-status" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Inputs cachés pour les valeurs fixes -->
+                                <input type="hidden" id="taylor_target_inflation" value="2">
+                                <input type="hidden" id="taylor_r_star" value="2">
+
+                                <!-- Explication pédagogique (contenu généré dynamiquement) -->
+                                <div class="simulation-explanation" id="taylor-simulation-explanation"></div>
+                            </div>
+                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                        </div>
+                    `;
+                    updateTaylorRuleGraph();
                 }
             }
         }
@@ -1711,7 +1897,7 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
             document.getElementById('g_real-value').textContent = gReal.toFixed(1).replace('.', ',') + ' %';
             document.getElementById('inflation-value').textContent = inflation.toFixed(1).replace('.', ',') + ' %';
             document.getElementById('r_interest-value').textContent = rInterest.toFixed(1).replace('.', ',') + ' %';
-            document.getElementById('primary_balance-value').textContent = (primaryBalance >= 0 ? '+' : '') + primaryBalance.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('primary_balance-value').textContent = (primaryBalance >= 0 ? '+ ' : '- ') + Math.abs(primaryBalance).toFixed(1).replace('.', ',') + ' %';
 
             // Calculer l'évolution de la dette sur 10 ans
             const years = 11;
@@ -1729,7 +1915,7 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
 
             // Mettre à jour les résultats
             document.getElementById('result-g-nominal').textContent = gNominal.toFixed(1).replace('.', ',') + ' %';
-            document.getElementById('result-r-minus-g').textContent = (rMinusG >= 0 ? '+' : '') + rMinusG.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('result-r-minus-g').textContent = (rMinusG >= 0 ? '+ ' : '- ') + Math.abs(rMinusG).toFixed(1).replace('.', ',') + ' %';
             document.getElementById('result-debt-final').textContent = finalDebt.toFixed(0).replace('.', ',') + ' %';
 
             // Mettre à jour le statut de l'effet boule de neige
@@ -1755,11 +1941,11 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
                 debtTrend.style.background = 'var(--success-bg)';
                 debtTrend.style.color = 'var(--success)';
             } else if (debtChange > 0) {
-                debtTrend.textContent = '📈 En hausse (' + (debtChange > 0 ? '+' : '') + debtChange.toFixed(0) + ' pts)';
+                debtTrend.textContent = '📈 En hausse (+ ' + debtChange.toFixed(0) + ' pts)';
                 debtTrend.style.background = 'var(--error-bg)';
                 debtTrend.style.color = 'var(--error)';
             } else {
-                debtTrend.textContent = '📉 En baisse (' + debtChange.toFixed(0) + ' pts)';
+                debtTrend.textContent = '📉 En baisse (- ' + Math.abs(debtChange).toFixed(0) + ' pts)';
                 debtTrend.style.background = 'var(--success-bg)';
                 debtTrend.style.color = 'var(--success)';
             }
@@ -1930,6 +2116,336 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
             }
 
             document.getElementById('debt-simulation-explanation').innerHTML = message;
+        }
+
+        // ==========================================
+        // SIMULATION : RÈGLE DE TAYLOR
+        // ==========================================
+        function updateTaylorRuleGraph() {
+            // Récupérer les valeurs des curseurs
+            const inflation = parseFloat(document.getElementById('taylor_inflation').value);
+            const outputGap = parseFloat(document.getElementById('taylor_output_gap').value);
+            const userRate = parseFloat(document.getElementById('taylor_user_rate').value);
+            const targetInflation = parseFloat(document.getElementById('taylor_target_inflation').value);
+            const rStar = parseFloat(document.getElementById('taylor_r_star').value);
+
+            // Calculer le taux Taylor
+            // i = r* + π + 0.5*(π - π*) + 0.5*y
+            const taylorRate = rStar + inflation + 0.5 * (inflation - targetInflation) + 0.5 * outputGap;
+
+            // Mettre à jour les affichages des valeurs
+            document.getElementById('taylor_inflation-value').textContent = inflation.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('taylor_output_gap-value').textContent = (outputGap >= 0 ? '+ ' : '- ') + Math.abs(outputGap).toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('taylor_user_rate-value').textContent = userRate.toFixed(2).replace('.', ',') + ' %';
+
+            // Mettre à jour les résultats
+            document.getElementById('result-user-rate').textContent = userRate.toFixed(2).replace('.', ',') + ' %';
+            document.getElementById('result-taylor-rate').textContent = taylorRate.toFixed(2).replace('.', ',') + ' %';
+
+            // Calculer l'écart et le positionnement
+            const ecart = userRate - taylorRate;
+            const stanceStatus = document.getElementById('taylor-stance-status');
+            const stanceValue = document.getElementById('result-stance');
+
+            if (Math.abs(ecart) < 0.3) {
+                stanceValue.textContent = '≈ Conforme';
+                stanceStatus.textContent = 'Vous suivez Taylor';
+                stanceStatus.style.background = 'var(--success-bg)';
+                stanceStatus.style.color = 'var(--success)';
+            } else if (ecart > 0) {
+                stanceValue.textContent = '+ ' + ecart.toFixed(1).replace('.', ',') + ' pts';
+                stanceStatus.textContent = 'Plus restrictif';
+                stanceStatus.style.background = '#fef3c7';
+                stanceStatus.style.color = '#d97706';
+            } else {
+                stanceValue.textContent = '- ' + Math.abs(ecart).toFixed(1).replace('.', ',') + ' pts';
+                stanceStatus.textContent = 'Plus accommodant';
+                stanceStatus.style.background = '#dbeafe';
+                stanceStatus.style.color = '#2563eb';
+            }
+
+            // Dessiner le graphique
+            const canvas = document.getElementById('taylorRuleCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Dimensions
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 40, right: 30, bottom: 60, left: 70 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            // Effacer le canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Plage d'inflation pour le graphique (0 à 8%)
+            const inflationMin = 0;
+            const inflationMax = 8;
+
+            // Calculer les taux Taylor pour différentes inflations (avec l'écart de production actuel)
+            const taylorLine = [];
+            for (let pi = inflationMin; pi <= inflationMax; pi += 0.1) {
+                const rate = rStar + pi + 0.5 * (pi - targetInflation) + 0.5 * outputGap;
+                taylorLine.push({ inflation: pi, rate: rate });
+            }
+
+            // Déterminer l'échelle Y
+            const allRates = taylorLine.map(p => p.rate).concat([userRate, 0]);
+            const rateMin = Math.min(...allRates) - 1;
+            const rateMax = Math.max(...allRates) + 1;
+
+            // Fonctions de conversion
+            const xScale = (pi) => padding.left + ((pi - inflationMin) / (inflationMax - inflationMin)) * graphWidth;
+            const yScale = (r) => padding.top + graphHeight - ((r - rateMin) / (rateMax - rateMin)) * graphHeight;
+
+            // Dessiner les zones (accommodante vs restrictive)
+            // Zone accommodante (sous la ligne Taylor)
+            ctx.fillStyle = 'rgba(59, 130, 246, 0.08)';
+            ctx.beginPath();
+            ctx.moveTo(padding.left, yScale(taylorLine[0].rate));
+            taylorLine.forEach(p => ctx.lineTo(xScale(p.inflation), yScale(p.rate)));
+            ctx.lineTo(width - padding.right, height - padding.bottom);
+            ctx.lineTo(padding.left, height - padding.bottom);
+            ctx.closePath();
+            ctx.fill();
+
+            // Zone restrictive (au-dessus de la ligne Taylor)
+            ctx.fillStyle = 'rgba(245, 158, 11, 0.08)';
+            ctx.beginPath();
+            ctx.moveTo(padding.left, yScale(taylorLine[0].rate));
+            taylorLine.forEach(p => ctx.lineTo(xScale(p.inflation), yScale(p.rate)));
+            ctx.lineTo(width - padding.right, padding.top);
+            ctx.lineTo(padding.left, padding.top);
+            ctx.closePath();
+            ctx.fill();
+
+            // Dessiner la grille horizontale
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            const yTicks = 6;
+            for (let i = 0; i <= yTicks; i++) {
+                const y = padding.top + (i / yTicks) * graphHeight;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+                ctx.stroke();
+            }
+
+            // Dessiner la grille verticale
+            for (let pi = 0; pi <= 8; pi += 1) {
+                const x = xScale(pi);
+                ctx.beginPath();
+                ctx.moveTo(x, padding.top);
+                ctx.lineTo(x, height - padding.bottom);
+                ctx.stroke();
+            }
+
+            // Dessiner la ligne de cible d'inflation (verticale)
+            ctx.strokeStyle = '#9ca3af';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            const xTarget = xScale(targetInflation);
+            ctx.beginPath();
+            ctx.moveTo(xTarget, padding.top);
+            ctx.lineTo(xTarget, height - padding.bottom);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Dessiner les axes
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, padding.top);
+            ctx.lineTo(padding.left, height - padding.bottom);
+            ctx.lineTo(width - padding.right, height - padding.bottom);
+            ctx.stroke();
+
+            // Labels axe X (inflation)
+            ctx.fillStyle = '#666';
+            ctx.font = '12px Segoe UI, sans-serif';
+            ctx.textAlign = 'center';
+            for (let pi = 0; pi <= 8; pi += 1) {
+                ctx.fillText(pi + ' %', xScale(pi), height - padding.bottom + 20);
+            }
+            ctx.fillText('Inflation', width / 2, height - 15);
+
+            // Labels axe Y (taux directeur)
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= yTicks; i++) {
+                const val = rateMax - (i / yTicks) * (rateMax - rateMin);
+                const y = padding.top + (i / yTicks) * graphHeight;
+                ctx.fillText(val.toFixed(1).replace('.', ',') + ' %', padding.left - 10, y + 4);
+            }
+            ctx.save();
+            ctx.translate(18, height / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            ctx.fillText('Taux directeur', 0, 0);
+            ctx.restore();
+
+            // Dessiner la courbe de Taylor
+            ctx.strokeStyle = '#2563eb';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            taylorLine.forEach((p, i) => {
+                const x = xScale(p.inflation);
+                const y = yScale(p.rate);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            // Dessiner le point Taylor (intersection avec l'inflation actuelle)
+            const xTaylor = xScale(inflation);
+            const yTaylor = yScale(taylorRate);
+            ctx.fillStyle = '#2563eb';
+            ctx.beginPath();
+            ctx.arc(xTaylor, yTaylor, 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(xTaylor, yTaylor, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Dessiner le point utilisateur
+            const yUser = yScale(userRate);
+            ctx.fillStyle = '#f97316';
+            ctx.beginPath();
+            ctx.arc(xTaylor, yUser, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(xTaylor, yUser, 5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Dessiner la ligne d'écart entre les deux points
+            if (Math.abs(ecart) > 0.1) {
+                ctx.strokeStyle = ecart > 0 ? '#d97706' : '#2563eb';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 3]);
+                ctx.beginPath();
+                ctx.moveTo(xTaylor, yTaylor);
+                ctx.lineTo(xTaylor, yUser);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Afficher l'écart
+                ctx.fillStyle = ecart > 0 ? '#d97706' : '#2563eb';
+                ctx.font = 'bold 11px Segoe UI, sans-serif';
+                ctx.textAlign = 'left';
+                const ecartLabel = (ecart > 0 ? '+ ' : '- ') + Math.abs(ecart).toFixed(1).replace('.', ',') + ' pts';
+                ctx.fillText(ecartLabel, xTaylor + 15, (yTaylor + yUser) / 2);
+            }
+
+            // Légende
+            ctx.font = '12px Segoe UI, sans-serif';
+            const legendX = width - padding.right - 180;
+            const legendY = padding.top + 10;
+
+            // Ligne Taylor
+            ctx.strokeStyle = '#2563eb';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(legendX, legendY);
+            ctx.lineTo(legendX + 25, legendY);
+            ctx.stroke();
+            ctx.fillStyle = '#333';
+            ctx.textAlign = 'left';
+            ctx.fillText('Taux Taylor', legendX + 35, legendY + 4);
+
+            // Point utilisateur
+            ctx.fillStyle = '#f97316';
+            ctx.beginPath();
+            ctx.arc(legendX + 12, legendY + 20, 6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#333';
+            ctx.fillText('Votre décision', legendX + 35, legendY + 24);
+
+            // Cible d'inflation
+            ctx.strokeStyle = '#9ca3af';
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(legendX, legendY + 40);
+            ctx.lineTo(legendX + 25, legendY + 40);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#333';
+            ctx.fillText('Cible π* = ' + targetInflation + ' %', legendX + 35, legendY + 44);
+
+            // Mettre à jour l'explication dynamique
+            updateTaylorExplanation(inflation, outputGap, targetInflation, rStar, taylorRate, userRate, ecart);
+        }
+
+        function updateTaylorExplanation(inflation, outputGap, targetInflation, rStar, taylorRate, userRate, ecart) {
+            const explanationDiv = document.getElementById('taylor-simulation-explanation');
+
+            // Décomposition du taux Taylor
+            const inflationGap = inflation - targetInflation;
+            const inflationContrib = 0.5 * inflationGap;
+            const outputContrib = 0.5 * outputGap;
+
+            let html = `<strong>La règle de Taylor :</strong>`;
+            html += `<div style="background: #f1f5f9; padding: 10px; border-radius: 8px; font-family: monospace; margin: 8px 0; text-align: center;">`;
+            html += `i = r* + π + 0,5 × (π − π*) + 0,5 × écart de production`;
+            html += `</div>`;
+            html += `<div style="text-align: right; margin-bottom: 10px;"><a href="#" onclick="setTaylorOptimal(); return false;" style="color: var(--primary); font-size: 0.9em;">→ Appliquer ce taux</a></div>`;
+            html += `<p style="margin: 10px 0; font-size: 0.9em; color: var(--text-light);">Avec vos données, cela donne :</p>`;
+            html += `<table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">`;
+            html += `<tr><td style="padding: 4px 8px;">Taux réel d'équilibre (r*)</td><td style="padding: 4px 8px; text-align: right; font-weight: 600;">${rStar.toFixed(1).replace('.', ',')} %</td></tr>`;
+            html += `<tr><td style="padding: 4px 8px;">+ Inflation actuelle (π)</td><td style="padding: 4px 8px; text-align: right; font-weight: 600;">+ ${inflation.toFixed(1).replace('.', ',')} %</td></tr>`;
+            html += `<tr><td style="padding: 4px 8px;">+ Réaction à l'écart d'inflation <span style="color: var(--text-light); font-size: 0.85em;">[0,5 × (${inflation.toFixed(1).replace('.', ',')} − ${targetInflation.toFixed(1).replace('.', ',')})]</span></td><td style="padding: 4px 8px; text-align: right; font-weight: 600; color: ${inflationContrib >= 0 ? '#d97706' : '#2563eb'};">${inflationContrib >= 0 ? '+ ' : '- '}${Math.abs(inflationContrib).toFixed(1).replace('.', ',')} %</td></tr>`;
+            html += `<tr><td style="padding: 4px 8px;">+ Réaction à l'écart de production <span style="color: var(--text-light); font-size: 0.85em;">[0,5 × (${outputGap >= 0 ? '+ ' : '- '}${Math.abs(outputGap).toFixed(1).replace('.', ',')})]</span></td><td style="padding: 4px 8px; text-align: right; font-weight: 600; color: ${outputContrib >= 0 ? '#d97706' : '#2563eb'};">${outputContrib >= 0 ? '+ ' : '- '}${Math.abs(outputContrib).toFixed(1).replace('.', ',')} %</td></tr>`;
+            html += `<tr style="border-top: 2px solid var(--border); background: #f8f9fa;"><td style="padding: 8px;"><strong>= Taux Taylor prescrit</strong></td><td style="padding: 8px; text-align: right; font-weight: bold; font-size: 1.1em; color: #2563eb;">${taylorRate.toFixed(2).replace('.', ',')} %</td></tr>`;
+            html += `</table>`;
+
+            // Interprétation
+            html += `<br><strong>Ce que fait la règle :</strong><br>`;
+            html += `Le point de départ (r* + π = ${rStar.toFixed(0)} % + ${inflation.toFixed(1).replace('.', ',')} % = ${(rStar + inflation).toFixed(1).replace('.', ',')} %) assure la <em>neutralité</em> : avec une inflation de ${inflation.toFixed(1).replace('.', ',')} %, un taux nominal de ${(rStar + inflation).toFixed(1).replace('.', ',')} % donne un taux réel de ${rStar.toFixed(0)} % (${(rStar + inflation).toFixed(1).replace('.', ',')} % − ${inflation.toFixed(1).replace('.', ',')} % = ${rStar.toFixed(0)} %) — celui qui ne stimule ni ne freine l'économie. Ensuite, la règle ajuste selon la situation :<br>`;
+
+            if (inflationGap > 0.5) {
+                html += `• L'inflation est à ${inflation.toFixed(1).replace('.', ',')} %, soit au-dessus de la cible de ${targetInflation.toFixed(1).replace('.', ',')} %. Pour la faire redescendre, la règle prescrit de <span style="color: #d97706;">monter les taux</span> : cela renchérit le crédit et freine la demande.<br>`;
+            } else if (inflationGap < -0.5) {
+                html += `• L'inflation est à ${inflation.toFixed(1).replace('.', ',')} %, soit en dessous de la cible. La règle permet des <span style="color: #2563eb;">taux plus bas</span> pour stimuler l'activité sans risque inflationniste.<br>`;
+            } else {
+                html += `• L'inflation (${inflation.toFixed(1).replace('.', ',')} %) est proche de la cible : pas de correction nécessaire de ce côté.<br>`;
+            }
+
+            if (outputGap < -0.5) {
+                html += `• L'écart de production est négatif (${outputGap.toFixed(1).replace('.', ',')} %) : le PIB est en dessous de son potentiel. La règle prescrit de <span style="color: #2563eb;">baisser les taux</span> pour soutenir l'activité.<br>`;
+            } else if (outputGap > 0.5) {
+                html += `• L'écart de production est positif (+${outputGap.toFixed(1).replace('.', ',')} %) : le PIB dépasse son potentiel. La règle prescrit de <span style="color: #d97706;">monter les taux</span> pour éviter les tensions inflationnistes.<br>`;
+            } else {
+                html += `• L'écart de production est quasi nul : l'économie tourne à son rythme potentiel.<br>`;
+            }
+
+            // Commentaire sur la décision de l'utilisateur
+            html += `<br><strong>Votre choix :</strong><br>`;
+            if (Math.abs(ecart) < 0.3) {
+                html += `Votre taux (${userRate.toFixed(2).replace('.', ',')} %) correspond à ce que prescrit Taylor. Vous suivez la règle.`;
+            } else if (ecart > 0) {
+                html += `Votre taux est ${ecart.toFixed(1).replace('.', ',')} point${Math.abs(ecart) >= 1.5 ? 's' : ''} au-dessus de Taylor. C'est une posture <strong>restrictive</strong> : vous donnez la priorité à la lutte contre l'inflation, quitte à freiner davantage l'activité.`;
+            } else {
+                html += `Votre taux est ${Math.abs(ecart).toFixed(1).replace('.', ',')} point${Math.abs(ecart) >= 1.5 ? 's' : ''} en dessous de Taylor. C'est une posture <strong>accommodante</strong> : vous donnez la priorité au soutien de l'activité, quitte à tolérer plus d'inflation.`;
+            }
+
+            explanationDiv.innerHTML = html;
+        }
+
+        function setTaylorOptimal() {
+            const inflation = parseFloat(document.getElementById('taylor_inflation').value);
+            const outputGap = parseFloat(document.getElementById('taylor_output_gap').value);
+            const targetInflation = parseFloat(document.getElementById('taylor_target_inflation').value);
+            const rStar = parseFloat(document.getElementById('taylor_r_star').value);
+
+            // Calculer le taux Taylor
+            const taylorRate = rStar + inflation + 0.5 * (inflation - targetInflation) + 0.5 * outputGap;
+
+            // Limiter aux bornes du curseur
+            const taylorClamped = Math.max(0, Math.min(10, taylorRate));
+
+            // Mettre à jour le curseur
+            document.getElementById('taylor_user_rate').value = taylorClamped.toFixed(2);
+            updateTaylorRuleGraph();
         }
 
         function nextQuestion() {
