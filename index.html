@@ -1165,6 +1165,25 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
             // ========================================
             {
                 chapter: 3,
+                question: "Un salarié gagne 2 500 € nets par mois. Il obtient une augmentation nominale de 1,5 %. L'inflation sur l'année est de 4 %. Quelle est l'évolution réelle de son pouvoir d'achat ?",
+                answer: -2.5,
+                unit: "%",
+                tolerance: 0.2,
+                explanation: `<strong>Calcul :</strong><br><br>
+Évolution réelle ≈ hausse nominale − inflation = 1,5 % − 4 % = <strong>−2,5 %</strong><br><br>
+Le salaire passe de 2 500 € à 2 537,50 € (+37,50 €), mais les prix ont augmenté de 4 % : pour maintenir son pouvoir d'achat, il aurait fallu atteindre 2 600 €. Le salarié subit une <strong>baisse de salaire réel</strong> malgré une augmentation nominale.<br><br>
+<strong>Le risque de boucle prix-salaires :</strong> Face à cette perte de pouvoir d'achat, les salariés sont tentés de demander des hausses de salaire plus fortes. Mais si les entreprises répercutent ces hausses de coûts sur leurs prix, l'inflation s'accélère à nouveau, provoquant de nouvelles revendications salariales, et ainsi de suite. C'est cette spirale auto-entretenue que les banques centrales cherchent à empêcher en ancrant les anticipations d'inflation.`,
+                alt: {
+                    question: "Un épargnant place 10 000 € sur un livret à taux fixe rémunéré 2 % par an. L'inflation est de 5 % sur l'année. Quel est le rendement réel ex post de ce placement après un an ?",
+                    answer: -3,
+                    explanation: `<strong>Calcul :</strong><br><br>
+Rendement réel ≈ rendement nominal − inflation = 2 % − 5 % = <strong>−3 %</strong><br><br>
+Concrètement, le livret rapporte 200 € en un an (10 000 × 2 %), mais les prix ont augmenté de 5 % : il faudrait 10 500 € pour acheter la même chose qu'un an plus tôt. L'épargnant a donc <strong>perdu du pouvoir d'achat</strong>.<br><br>
+<strong>À retenir :</strong> Un taux d'intérêt nominal positif ne protège pas l'épargne si l'inflation le dépasse. C'est pourquoi les épargnants exigent une rémunération supérieure à l'inflation anticipée pour accepter de prêter.`
+                }
+            },
+            {
+                chapter: 3,
                 question: "L'inflation en zone euro est de 2 %. Le taux d'intérêt réel naturel est estimé à 0,5 %. À quel niveau la BCE devrait-elle fixer son taux directeur nominal pour que sa politique monétaire soit neutre ?",
                 answer: 2.5,
                 unit: "%",
