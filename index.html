@@ -659,25 +659,24 @@
         // ===========================================
 
         const chapters = [
-            { id: 1, name: "La croissance", available: true },
-            { id: 2, name: "Politique budgétaire", available: true },
-            { id: 3, name: "Politique monétaire", available: true },
-            { id: 4, name: "Intégration commerciale", available: false },
-            { id: 5, name: "Politique de change", available: false },
-            { id: 6, name: "UE et zone euro", available: false },
-            { id: 7, name: "Marché du travail", available: false },
-            { id: 8, name: "Stabilité financière", available: false },
-            { id: 9, name: "Politique industrielle", available: false },
-            { id: 10, name: "Politique fiscale", available: false },
-            { id: 11, name: "Inégalités et pauvreté", available: false },
-            { id: 12, name: "Environnement", available: false }
+            { id: 1, name: "La politique budgétaire", available: true },
+            { id: 2, name: "La politique monétaire", available: true },
+            { id: 3, name: "La croissance", available: true },
+            { id: 4, name: "L'environnement", available: false },
+            { id: 5, name: "L'Union européenne et la zone euro face aux crises", available: false },
+            { id: 6, name: "L'intégration commerciale", available: false },
+            { id: 7, name: "L'intégration financière", available: false },
+            { id: 8, name: "Marché du travail", available: false },
+            { id: 9, name: "Innovation et concurrence", available: false },
+            { id: 10, name: "La politique fiscale", available: false },
+            { id: 11, name: "Inégalités et pauvreté", available: false }
         ];
 
         // QCM - Format: { chapter, type, question, answers, correct, explanation }
         // Types: "concept", "chiffre", "definition"
         const qcmQuestions = [
             {
-                chapter: 1,
+                chapter: 3,
                 type: "concept",
                 question: "La valeur ajoutée créée par une multinationale française à l'étranger est comptabilisée dans le PIB de la France.",
                 answers: ["Vrai", "Faux"],
@@ -685,7 +684,7 @@
                 explanation: "Le PIB mesure la production réalisée sur le territoire national, quelle que soit la nationalité des producteurs. La valeur ajoutée créée à l'étranger par une entreprise française est comptabilisée dans le PIB du pays où elle est produite, pas dans le PIB français. C'est le PNB (Produit National Brut) qui prend en compte la nationalité des facteurs de production."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "concept",
                 question: "Un écart de production (output gap) négatif signifie que l'économie est en surchauffe.",
                 answers: ["Vrai", "Faux"],
@@ -693,7 +692,7 @@
                 explanation: "Un écart de production négatif signifie que le PIB effectif est inférieur au PIB potentiel : l'économie sous-utilise ses capacités productives (travail, capital). C'est une situation de sous-emploi des facteurs de production, pas de surchauffe. La surchauffe correspond à un écart de production positif."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur du taux de croissance potentielle de la France ?",
                 answers: ["Environ 0,5 %", "Environ 1,2 %", "Environ 2,5 %", "Environ 3,5 %"],
@@ -701,7 +700,7 @@
                 explanation: "Le taux de croissance potentielle de la France est estimé autour de 1,2 % par an selon les estimations de la Commission européenne et du FMI. Ce taux a significativement baissé depuis les Trente Glorieuses (où il dépassait 5 %)."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "definition",
                 question: "La productivité globale des facteurs (PGF) mesure la part de la croissance non expliquée par l'accumulation des facteurs de production.",
                 answers: ["Vrai", "Faux"],
@@ -709,7 +708,7 @@
                 explanation: "La PGF, aussi appelée « résidu de Solow », correspond à la croissance qui n'est pas attribuable à l'augmentation des quantités de travail et de capital. Elle reflète principalement le progrès technique, mais aussi l'amélioration de l'organisation de la production, l'éducation, la qualité des institutions, etc."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "definition",
                 question: "Le taux de croissance du PIB en volume mesure l'évolution de la valeur ajoutée corrigée de l'inflation.",
                 answers: ["Vrai", "Faux"],
@@ -717,7 +716,7 @@
                 explanation: "Le PIB en volume (ou PIB réel) est calculé à prix constants (ceux d'une année de référence). Cela permet de neutraliser l'effet des variations de prix. C'est l'indicateur pertinent pour mesurer l'évolution de la production et du niveau de vie, contrairement au PIB en valeur (ou nominal) qui mélange effet volume et effet prix."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur de l'écart de PIB par habitant entre la France et les États-Unis ?",
                 answers: ["La France est environ 10 % en dessous", "La France est environ 30 % en dessous", "La France est environ 50 % en dessous", "Les deux pays sont au même niveau"],
@@ -725,7 +724,7 @@
                 explanation: "La France a un PIB par habitant d'environ 30 % inférieur à celui des États-Unis. Cet écart s'est creusé depuis les années 2000 et reflète notamment un nombre d'heures travaillées plus faible en France, une productivité horaire légèrement inférieure et un taux d'emploi plus bas."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur du PIB de la France en 2024 ?",
                 answers: ["Environ 2 000 milliards d'euros", "Environ 2 500 milliards d'euros", "Environ 2 900 milliards d'euros", "Environ 3 400 milliards d'euros"],
@@ -733,7 +732,7 @@
                 explanation: "Le PIB de la France en 2024 est d'environ 2 900 milliards d'euros. À titre d'ordre de grandeur, 1 point de PIB représente donc environ 30 milliards d'euros."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "definition",
                 question: "Comment appelle-t-on le phénomène par lequel un choc négatif (comme une récession) peut réduire durablement le PIB potentiel (par exemple via la perte de compétences des chômeurs de longue durée ou le sous-investissement) ?",
                 answers: ["L'effet multiplicateur", "L'effet d'hystérèse", "L'effet d'éviction", "L'effet de rattrapage"],
@@ -741,7 +740,7 @@
                 explanation: "L'effet d'hystérèse désigne le phénomène par lequel un choc négatif (comme une récession) a des effets permanents sur l'économie. Quand le PIB reste durablement éloigné de son niveau potentiel, cela peut entraîner une perte de compétences des chômeurs, une dépréciation du capital humain et un sous-investissement, réduisant à terme le PIB potentiel lui-même. C'est pour cette raison que l'on cherche à résorber au plus vite l'écart de production."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "concept",
                 question: "Le PIB potentiel peut être mesuré directement.",
                 answers: ["Vrai", "Faux"],
@@ -749,7 +748,7 @@
                 explanation: "Le PIB potentiel, la croissance potentielle et l'écart de production ne sont pas directement observables. Ils doivent être estimés à l'aide de modèles économiques. Selon les méthodologies utilisées (FMI, Commission européenne, OCDE...), les estimations peuvent différer significativement et faire l'objet de révisions importantes. Cette incertitude complique la conduite de la politique économique, car les décideurs ne savent pas précisément où se situe l'économie par rapport à son potentiel."
             },
             {
-                chapter: 1,
+                chapter: 3,
                 type: "chiffre",
                 question: "Quelle est la part de l'investissement dans le PIB de la France en 2024 ?",
                 answers: ["Environ 15 %", "Environ 22 %", "Environ 30 %", "Environ 40 %"],
@@ -774,7 +773,7 @@
             // CHAPITRE 2 : POLITIQUE BUDGÉTAIRE
             // ========================================
             {
-                chapter: 2,
+                chapter: 1,
                 type: "concept",
                 question: "Si l'État vend une participation dans une entreprise publique, est-ce que cela réduit la dette publique au sens de Maastricht ?",
                 answers: ["Oui", "Non"],
@@ -782,7 +781,7 @@
                 explanation: "Oui, car la dette publique au sens de Maastricht est une dette brute : elle ne tient pas compte des actifs détenus par les administrations publiques. Ainsi, une cession d'actifs (comme la vente de participations dans une entreprise publique) réduit la dette brute car elle génère des recettes qui permettent de rembourser des emprunts. Toutefois, une telle opération n'est financièrement avantageuse que si elle améliore le patrimoine net des administrations publiques, c'est-à-dire si le prix de vente est supérieur à la valeur actualisée des revenus futurs que l'actif aurait générés."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quelle est l'année du dernier excédent primaire (déficit hors charge de la dette) enregistré par la France ?",
                 answers: ["1995", "2001", "2007", "2019"],
@@ -790,7 +789,7 @@
                 explanation: "Le dernier excédent primaire de la France remonte à 2001. Depuis, la France n'a jamais réussi à dégager un solde primaire positif. C'est une situation exceptionnelle parmi les grandes économies : à titre de comparaison, l'Italie a dégagé des excédents primaires presque chaque année entre 1995 et 2019, ce qui n'a pas suffi à réduire son endettement en raison d'un effet « boule de neige » défavorable (taux d'intérêt supérieur à la croissance)."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quelle part des dépenses publiques françaises les dépenses de retraite représentent-elles environ ?",
                 answers: ["Environ 10 %", "Environ un quart", "Environ un tiers", "Environ la moitié"],
@@ -798,7 +797,7 @@
                 explanation: "Les dépenses du système de retraite s'élèvent à environ 407 milliards d'euros, soit 13,9 % du PIB. Elles représentent ainsi près d'un quart de l'ensemble des dépenses publiques françaises (qui s'élèvent à environ 57 % du PIB). C'est un niveau significativement supérieur à la moyenne de la zone euro (environ 2,5 points de PIB de plus) et à l'Allemagne (environ 3,8 points de PIB de plus). L'âge de départ effectif plus bas en France explique une grande partie de cet écart, et dans une moindre mesure une pension moyenne plus élevée."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur des recettes publiques totales en France, en points de PIB ?",
                 answers: ["Environ 35 %", "Environ 43 %", "Environ 52 %", "Environ 60 %"],
@@ -806,7 +805,7 @@
                 explanation: "Les recettes publiques totales représentent environ 52 % du PIB en France. Attention à ne pas confondre avec les prélèvements obligatoires (impôts + cotisations sociales), qui représentent environ 43 % du PIB. La différence (environ 9 points) correspond aux autres recettes publiques : revenus du patrimoine, ventes de biens et services, transferts reçus, etc."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "concept",
                 question: "Un pays peut voir son ratio d'endettement public augmenter même s'il dégage un excédent primaire.",
                 answers: ["Vrai", "Faux"],
@@ -814,7 +813,7 @@
                 explanation: "C'est l'effet « boule de neige » : lorsque le taux d'intérêt moyen payé sur la dette est supérieur au taux de croissance nominal de l'économie (r > g), l'endettement « augmente tout seul » même avec un excédent primaire. C'est ce qui s'est passé en Italie entre 1995 et 2017 : malgré des excédents primaires presque chaque année, le ratio d'endettement n'a pas diminué en raison d'un différentiel intérêt-croissance très défavorable."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quelle part de la dette publique française est détenue par la Banque centrale (BCE et Banque de France) ?",
                 answers: ["Environ 5 %", "Environ 20 %", "Environ 35 %", "Environ la moitié"],
@@ -822,7 +821,7 @@
                 explanation: "La Banque centrale (via l'Eurosystème) détient environ 20 % de la dette publique française en 2024, suite aux programmes d'achats d'actifs (APP puis PEPP). Cette part était quasi nulle au début des années 2000, a fortement augmenté après la crise financière de 2008 puis la crise sanitaire (jusqu'à environ un tiers), avant de redescendre avec la fin des programmes d'achat. Cette détention contribue à réduire la charge d'intérêts car la BCE reverse ses bénéfices aux États membres."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur de l'effort d'économies nécessaire pour que la France stabilise son ratio d'endettement ?",
                 answers: ["Environ 30 milliards d'euros", "Environ 60 milliards d'euros", "Environ 110 milliards d'euros", "Environ 200 milliards d'euros"],
@@ -830,7 +829,7 @@
                 explanation: "Pour stabiliser l'endettement français, il faut atteindre l'équilibre primaire. En 2024, le déficit primaire structurel était d'environ 3,6 points de PIB. Le ramener à zéro représente ainsi un effort d'économies de l'ordre de 110 milliards d'euros. Le Conseil d'analyse économique recommande même d'aller au-delà (vers un surplus primaire de 1 % du PIB) pour réduire l'endettement et retrouver des marges de manœuvre avant la prochaine crise."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur du montant des baisses de prélèvements obligatoires décidées en France entre 2018 et 2023 ?",
                 answers: ["Environ 20 milliards d'euros", "Environ 40 milliards d'euros", "Environ 60 milliards d'euros", "Environ 100 milliards d'euros"],
@@ -838,7 +837,7 @@
                 explanation: "Entre 2018 et 2023, les baisses de prélèvements obligatoires ont atteint environ 62 milliards d'euros selon la Cour des comptes, soit près de 2 points de PIB. Ces baisses (suppression de la taxe d'habitation, baisse des impôts de production, baisse du taux d'IS de 33 % à 25 %, etc.) ont freiné le redressement des comptes publics qui avait été amorcé après la crise des dettes souveraines."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "definition",
                 question: "Que désigne la « règle des 3T » en matière de politique budgétaire ?",
                 answers: ["Taxation, Transferts, Trésorerie", "Timely, Targeted, Temporary", "Timing, Transmission, Trajectory", "Transitory, Transparent, Transformative"],
@@ -846,7 +845,7 @@
                 explanation: "La règle des 3T (timely, targeted, temporary) définit les critères d'un bon plan de relance budgétaire : il doit être mis en œuvre au bon moment (timely), être ciblé sur les mesures les plus efficaces pour soutenir l'activité (targeted) et être temporaire pour ne pas dégrader durablement les finances publiques (temporary). Le plan de relance français post-Covid a notamment été critiqué pour ne pas respecter le critère « temporaire », certaines mesures (comme la baisse des impôts de production) étant pérennes."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "De combien le ratio de déficit public (en points de PIB) s'améliore-t-il si la croissance est plus élevée de 1 point en France ?",
                 answers: ["0,2 point de PIB", "0,6 point de PIB", "1 point de PIB", "1,5 point de PIB"],
@@ -854,7 +853,7 @@
                 explanation: "La semi-élasticité budgétaire de la France est d'environ 0,6. Cela signifie qu'une hausse de 1 point du PIB améliore le solde public de 0,6 point de PIB. Cette amélioration provient principalement du fait que les recettes fiscales augmentent avec l'activité (TVA, impôt sur le revenu, cotisations...), alors que les dépenses restent globalement assez stables. En sens inverse, une récession dégrade le déficit de 0,6 point par point de PIB perdu."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "concept",
                 question: "Le patrimoine net des administrations publiques françaises (actifs moins passifs) est négatif.",
                 answers: ["Vrai", "Faux"],
@@ -862,7 +861,7 @@
                 explanation: "Le patrimoine net des administrations publiques françaises reste positif : il s'élevait à 633 milliards d'euros fin 2024, soit 21,7 % du PIB. La dette brute (au sens de Maastricht) dépasse 3 200 milliards, mais les administrations publiques détiennent aussi des actifs importants (immobilier, infrastructures, participations financières). Toutefois, la plupart de ces actifs ne sont pas cessibles (routes, écoles, hôpitaux...) et la valeur du patrimoine net s'est fortement dégradée : elle représentait encore 60 % du PIB en 2007, avant la crise financière."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "definition",
                 question: "Le multiplicateur budgétaire mesure l'impact sur le PIB d'un effort d'économies (ou d'une relance) de 1 point de PIB.",
                 answers: ["Vrai", "Faux"],
@@ -870,7 +869,7 @@
                 explanation: "Le multiplicateur budgétaire représente la variation du PIB engendrée à court terme par un effort d'économies (ou une impulsion budgétaire) de 1 point de PIB. Il est généralement compris entre 0,5 et 1,5, avec une valeur de référence de 0,75 retenue par la Commission européenne. Le multiplicateur est plus élevé en bas de cycle économique (quand l'économie sous-utilise ses capacités) et pour les dépenses publiques (par rapport aux recettes)."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "definition",
                 question: "Le déficit structurel correspond au déficit public hors charge de la dette.",
                 answers: ["Vrai", "Faux"],
@@ -878,7 +877,7 @@
                 explanation: "<strong>Attention à ne pas confondre déficit primaire et déficit structurel !</strong><br><br><strong>Le déficit primaire</strong> est le déficit public hors charge de la dette (c'est-à-dire hors paiement des intérêts). Il permet d'isoler la situation budgétaire courante, indépendamment du poids du passé (les intérêts de la dette).<br><br><strong>Le déficit structurel</strong> est le déficit public corrigé des effets du cycle économique et des mesures ponctuelles et temporaires (comme l’impact d’un contentieux fiscal exceptionnel). C'est un indicateur pertinent pour apprécier la soutenabilité de la politique budgétaire, car il neutralise les fluctuations conjoncturelles des recettes et dépenses."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quelle est la durée de vie moyenne de la dette publique française ?",
                 answers: ["Environ 5 ans", "Environ 8 ans", "Environ 12 ans", "Environ 16 ans"],
@@ -886,7 +885,7 @@
                 explanation: "La durée de vie moyenne de la dette publique française est d'environ 8 ans fin 2025. Cette maturité relativement longue explique pourquoi une hausse des taux d'intérêt met du temps à se transmettre à la charge de la dette : seule la part de la dette qui arrive à échéance chaque année doit être refinancée aux nouveaux taux. Ainsi, même si les taux à l'émission ont fortement augmenté depuis 2022, le taux moyen payé sur l'ensemble de la dette n'augmente que progressivement."
             },
             {
-                chapter: 2,
+                chapter: 1,
                 type: "chiffre",
                 question: "Quel est l'ordre de grandeur du taux d'intérêt moyen sur la dette française émise en 2025 ?",
                 answers: ["Environ 1 %", "Environ 3 %", "Environ 5 %", "Environ 7 %"],
@@ -897,7 +896,7 @@
             // CHAPITRE 3 : POLITIQUE MONÉTAIRE
             // ========================================
             {
-                chapter: 3,
+                chapter: 2,
                 type: "chiffre",
                 question: "Selon les estimations de la BCE (Lane, 2023), quel est l'ordre de grandeur de l'impact d'une hausse de 1 point de pourcentage des taux directeurs sur l'activité économique ?",
                 answers: ["Une réduction du PIB de 0,3 point", "Une réduction du PIB de 1 point", "Une réduction du PIB de 2 points", "Une réduction du PIB de 0,5 point"],
@@ -905,7 +904,7 @@
                 explanation: "La BCE estime qu'une hausse de 1 point de ses taux réduit le PIB de 1 point et l'inflation de 0,3 point au maximum de leurs effets respectifs. Il s'agit d'ordres de grandeur issus de travaux de modélisation, dont les résultats peuvent varier d'un modèle à l'autre. L'effet sur l'activité est bien plus fort que l'effet sur l'inflation, ce qui explique pourquoi il était impossible de contenir l'inflation à 2 % lors du choc inflationniste de 2022 sans provoquer une récession majeure."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "chiffre",
                 question: "Selon les estimations de la BCE (Lane, 2023), quel est l'ordre de grandeur de l'impact d'une hausse de 1 point de pourcentage des taux directeurs sur l'inflation ?",
                 answers: ["Une baisse de l'inflation de 1 point", "Une baisse de l'inflation de 0,5 point", "Une baisse de l'inflation de 0,3 point", "Une baisse de l'inflation de 0,1 point"],
@@ -913,7 +912,7 @@
                 explanation: "La BCE estime qu'une hausse de 1 point de ses taux réduit l'inflation de 0,3 point seulement au maximum de son effet. Il s'agit d'ordres de grandeur issus de travaux de modélisation, dont les résultats peuvent varier d'un modèle à l'autre. C'est le corollaire de la question précédente : freiner l'inflation par la politique monétaire a un coût élevé en termes d'activité (1 point de PIB pour seulement 0,3 point d'inflation en moins)."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "En principe, une hausse de taux décidée par la BCE provoque...",
                 answers: ["Une baisse du prix des actifs et une dépréciation de l'euro", "Une hausse du prix des actifs et une dépréciation de l'euro", "Une baisse du prix des actifs et une appréciation de l'euro", "Une hausse du prix des actifs et une appréciation de l'euro"],
@@ -921,7 +920,7 @@
                 explanation: "Une hausse des taux réduit la valeur actualisée des actifs (actions, obligations, immobilier). En effet, la valeur d'un actif correspond à la somme de ses revenus futurs actualisés : plus le taux d'actualisation est élevé, plus cette valeur est faible. Par ailleurs, des taux plus élevés attirent les capitaux étrangers, ce qui augmente la demande d'euros et provoque une appréciation de la monnaie. Ces deux canaux (effet richesse et canal du taux de change) contribuent à freiner la demande agrégée."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "Le taux d'intérêt réel naturel (ou « neutre ») est directement observable.",
                 answers: ["Vrai", "Faux"],
@@ -929,7 +928,7 @@
                 explanation: "Le taux d'intérêt réel naturel n'est pas directement observable. Il est défini comme le taux qui place l'économie sur un sentier de croissance équilibrée (écart de production nul), mais il doit être estimé à l'aide de modèles. Les estimations les plus récentes pour la zone euro s'inscrivent dans une large fourchette comprise entre - 0,5 % et + 0,5 %, ce qui témoigne de la grande incertitude qui entoure cette variable pourtant centrale pour la conduite de la politique monétaire."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "chiffre",
                 question: "Quelle est la cible d'inflation de la BCE ?",
                 answers: ["Inférieure à, mais proche de 2 %", "Inférieure à 2 %", "2 % à moyen terme", "Aucune de ces réponses"],
@@ -937,7 +936,7 @@
                 explanation: "Depuis juillet 2021, la BCE vise une cible d'inflation de 2 % à moyen terme. Cette formulation a remplacé l'ancienne définition (« inférieure à, mais proche de 2 % ») pour rendre la cible plus claire et symétrique : un dépassement temporaire au-dessus de 2 % est tout aussi indésirable qu'un passage en dessous. L'orientation à moyen terme permet de ne pas réagir à des chocs temporaires sur l'offre (énergie, goulets d'étranglement)."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "Le taux directeur nominal de la BCE est de 3 %. L'inflation est de 2,5 %. Le taux d'intérêt réel naturel est estimé à 0 %. La politique monétaire est...",
                 answers: ["Accommodante", "Restrictive", "Neutre", "On ne peut pas conclure"],
@@ -945,7 +944,7 @@
                 explanation: "Le taux d'intérêt réel = taux nominal - inflation = 3 % - 2,5 % = 0,5 %. Comme le taux réel (0,5 %) est supérieur au taux naturel (0 %), la politique monétaire freine l'activité : elle est restrictive. Si le taux réel était égal au taux naturel, la politique serait neutre ; s'il était inférieur, elle serait accommodante."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "Face à un choc temporaire d'offre (par exemple une hausse ponctuelle des prix de l'énergie), la banque centrale doit systématiquement relever ses taux pour contenir l'inflation.",
                 answers: ["Vrai", "Faux"],
@@ -953,7 +952,7 @@
                 explanation: "Il est inutile et contreproductif de freiner l'économie pour faire face à un choc d'offre ponctuel correctement interprété par les acteurs économiques, qui n'est pas de nature à remettre en cause l'objectif d'inflation à moyen terme. Cela amplifierait sans raison un choc déjà récessif. La banque centrale doit réagir lorsque l'inflation résulte d'un excès de demande ou d'un choc d'offre susceptible d'entraîner une boucle prix-salaires. On a d'ailleurs reproché à Jean-Claude Trichet d'avoir brutalement augmenté les taux en 2008 à cause d'une hausse temporaire du pétrole, juste avant la faillite de Lehman Brothers."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "Le programme d'achats d'actifs (quantitative easing) fait partie des instruments conventionnels de la BCE.",
                 answers: ["Vrai", "Faux"],
@@ -961,7 +960,7 @@
                 explanation: "Le programme d'achats d'actifs est un instrument non conventionnel, mobilisé lorsque les taux directeurs ont atteint leur plancher (proche de zéro ou négatif) et que les outils classiques ne suffisent plus. Les trois instruments conventionnels de la BCE sont : les opérations d'open market (appels d'offres pour fixer le taux directeur), les facilités permanentes (dépôt et prêt marginal, pour 24h) et les réserves obligatoires. Les principaux outils non conventionnels sont l'assouplissement quantitatif (achats d'actifs), la forward guidance (orientation prospective) et les taux d'intérêt négatifs sur les réserves excédentaires."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "En union monétaire, face à un choc asymétrique (qui ne touche qu'un pays membre), la politique monétaire est l'instrument le plus adapté pour stabiliser l'économie du pays touché.",
                 answers: ["Vrai", "Faux"],
@@ -969,7 +968,7 @@
                 explanation: "En union monétaire, la politique monétaire est unique et s'applique à l'ensemble de la zone. Face à un choc asymétrique (qui ne frappe qu'un pays), elle ne peut pas être calibrée pour répondre aux besoins spécifiques de ce pays sans déstabiliser les autres. C'est la politique budgétaire nationale qui constitue alors l'instrument de stabilisation le plus adapté."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "chiffre",
                 question: "Depuis un siècle, à quelle fréquence la France connaît-elle en moyenne une année de récession ?",
                 answers: ["Tous les 3 ans", "Tous les 7 ans", "Tous les 12 ans", "Tous les 20 ans"],
@@ -977,7 +976,7 @@
                 explanation: "Depuis un siècle, la France connaît en moyenne une année de récession tous les sept ans, avec des causes variées : chocs financiers (1929, 2008), chocs pétroliers (1975), crises monétaires et de change (1927, 1993), chocs sanitaires (2020) ou guerres. Cette fréquence relativement élevée justifie l'existence d'instruments de stabilisation macroéconomique (politique monétaire, politique budgétaire) capables de limiter l'ampleur et la durée des récessions."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "En 2023, le taux directeur de la BCE était de 4 % et l'inflation moyenne en zone euro de 5,4 %. En 2024, le taux directeur est de 3,75 % et l'inflation de 2,4 %. Au cours de laquelle de ces deux années la politique monétaire était-elle la plus restrictive ?",
                 answers: ["2023, car le taux directeur nominal était plus élevé", "2024, car le taux d'intérêt réel était plus élevé", "Les deux années sont équivalentes", "On ne peut pas conclure sans connaître le taux naturel"],
@@ -985,7 +984,7 @@
                 explanation: "Taux réel 2023 = 4 % - 5,4 % = - 1,4 % (accommodant). Taux réel 2024 = 3,75 % - 2,4 % = + 1,35 % (restrictif). Paradoxalement, la politique monétaire est devenue plus restrictive en 2024 alors même que le taux nominal a baissé, car l'inflation a reculé plus vite que le taux directeur. C'est un piège classique : un taux nominal élevé n'est pas synonyme de politique restrictive si l'inflation est encore plus élevée."
             },
             {
-                chapter: 3,
+                chapter: 2,
                 type: "concept",
                 question: "On observe simultanément une hausse de l'inflation et une baisse du PIB. Ce diagnostic est compatible avec :",
                 answers: ["Un choc de demande positif", "Un choc d'offre négatif", "Un choc de demande négatif", "Un choc d'offre positif"],
@@ -998,7 +997,7 @@
         // alt = version alternative avec des valeurs différentes pour réessayer
         const exercices = [
             {
-                chapter: 1,
+                chapter: 3,
                 question: "Si le PIB potentiel est de 2 850 milliards d'euros et le PIB effectif de 2 800 milliards d'euros, quel est l'écart de production ?",
                 answer: -1.8,
                 unit: "%",
@@ -1011,7 +1010,7 @@
                 }
             },
             {
-                chapter: 1,
+                chapter: 3,
                 question: "Si la croissance du PIB est de 2 % et que les contributions respectives du travail et du capital sont de 0,5 % et 0,7 %, quelle est la contribution de la productivité globale des facteurs (PGF) ?",
                 answer: 0.8,
                 unit: "%",
@@ -1024,7 +1023,7 @@
                 }
             },
             {
-                chapter: 1,
+                chapter: 3,
                 question: "Si la croissance du PIB en valeur (nominale) est de 3,5 % et l'inflation de 2,3 %, quel est le taux de croissance du PIB en volume (réel) ?",
                 answer: 1.2,
                 unit: "%",
@@ -1037,7 +1036,7 @@
                 }
             },
             {
-                chapter: 1,
+                chapter: 3,
                 question: "Calculez le PIB par habitant de la France à partir des données suivantes : part de la population en âge de travailler = 60 %, taux d'emploi = 68 %, heures travaillées par employé = 1 500 h/an, productivité horaire = 70 €/h.",
                 answer: 42840,
                 unit: "€",
@@ -1050,7 +1049,7 @@
                 }
             },
             {
-                chapter: 1,
+                chapter: 3,
                 question: "L'écart de production est initialement de -2 %. La croissance potentielle est de 1 % et la croissance effective de 2 %. Quel sera l'écart de production à l'issue de l'exercice ?",
                 answer: -1,
                 unit: "%",
@@ -1066,7 +1065,7 @@
             // CHAPITRE 2 : POLITIQUE BUDGÉTAIRE
             // ========================================
             {
-                chapter: 2,
+                chapter: 1,
                 question: `Un pays a un déficit public initial de 5 % du PIB. Le gouvernement décide d'un plan d'économies de 2 points de PIB. Si le multiplicateur budgétaire est de 0,8 et la semi-élasticité budgétaire de 0,6, quel sera le déficit public un an après le plan d'économies ?`,
                 answer: 4,
                 unit: "% du PIB",
@@ -1094,7 +1093,7 @@ Le plan d'économies de 1,5 point de PIB réduit le PIB de : 1,5 × 0,75 = 1,125
                 }
             },
             {
-                chapter: 2,
+                chapter: 1,
                 question: `Un pays a un taux d'endettement initial de 110 % du PIB. La croissance nominale (croissance réelle + inflation) est de 3 % et le taux d'intérêt moyen payé sur la dette est de 4 %. Le solde primaire est à l'équilibre (0 %). Quel sera le taux d'endettement l'année suivante ?`,
                 answer: 111.1,
                 unit: "% du PIB",
@@ -1120,7 +1119,7 @@ Malgré un excédent primaire de 1 %, l'endettement augmente car l'effet boule d
                 }
             },
             {
-                chapter: 2,
+                chapter: 1,
                 question: `Un pays souhaite stabiliser son ratio d'endettement à 112 % du PIB. Le taux d'intérêt moyen sur la dette est de 3,3 % et la croissance nominale de 3 %. Quel solde primaire (en points de PIB) doit-il dégager pour y parvenir ?`,
                 answer: 0.3,
                 unit: "% du PIB",
@@ -1145,7 +1144,7 @@ Avec un différentiel intérêt-croissance de 1,5 point et un endettement de 130
                 }
             },
             {
-                chapter: 2,
+                chapter: 1,
                 question: `Le déficit public de la France est de 5,5 % du PIB et l'écart de production est estimé à - 1,5 %. Si la semi-élasticité budgétaire est de 0,6, quel est le déficit structurel ?`,
                 answer: 4.6,
                 unit: "% du PIB",
@@ -1172,7 +1171,7 @@ Déficit structurel = <strong>4 % du PIB</strong><br><br>
             // CHAPITRE 3 : POLITIQUE MONÉTAIRE
             // ========================================
             {
-                chapter: 3,
+                chapter: 2,
                 question: "Un salarié gagne 2 500 € nets par mois. Il obtient une augmentation nominale de 1,5 %. L'inflation sur l'année est de 4 %. Quelle est l'évolution réelle de son pouvoir d'achat ?",
                 answer: -2.5,
                 unit: "%",
@@ -1191,7 +1190,7 @@ Concrètement, le livret rapporte 200 € en un an (10 000 × 2 %), mais les pri
                 }
             },
             {
-                chapter: 3,
+                chapter: 2,
                 question: "L'inflation en zone euro est de 2 %. Le taux d'intérêt réel naturel est estimé à 0,5 %. À quel niveau la BCE devrait-elle fixer son taux directeur nominal pour que sa politique monétaire soit neutre ?",
                 answer: 2.5,
                 unit: "%",
@@ -1215,19 +1214,19 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
         // Simulations - Les simulations sont gérées de manière spéciale avec des graphiques
         const simulations = [
             {
-                chapter: 1,
+                chapter: 3,
                 title: "Évolution de l'écart de production",
                 description: "Observez comment le PIB effectif converge vers le PIB potentiel (ou s'en éloigne) selon les taux de croissance.",
                 type: "output_gap_graph"
             },
             {
-                chapter: 2,
+                chapter: 1,
                 title: "Dynamique de l'endettement public",
                 description: "Explorez comment le ratio dette/PIB évolue selon la croissance, l'inflation, les taux d'intérêt et le solde primaire. Comprenez l'effet « boule de neige » en action.",
                 type: "debt_dynamics_graph"
             },
             {
-                chapter: 3,
+                chapter: 2,
                 title: "La règle de Taylor : dans la peau du banquier central",
                 description: "Face à une situation économique (inflation, conjoncture), quelle décision de taux prendriez-vous ? Comparez votre intuition à la règle de Taylor et comprenez la logique du banquier central.",
                 type: "taylor_rule_graph"
