@@ -662,7 +662,7 @@
             { id: 1, name: "La politique budgétaire", available: true },
             { id: 2, name: "La politique monétaire", available: true },
             { id: 3, name: "La croissance", available: true },
-            { id: 4, name: "L'environnement", available: false },
+            { id: 4, name: "L'environnement", available: true },
             { id: 5, name: "L'Union européenne et la zone euro face aux crises", available: false },
             { id: 6, name: "L'intégration commerciale", available: false },
             { id: 7, name: "L'intégration financière", available: false },
@@ -990,6 +990,98 @@
                 answers: ["Un choc de demande positif", "Un choc d'offre négatif", "Un choc de demande négatif", "Un choc d'offre positif"],
                 correct: 1,
                 explanation: "Un choc d'offre négatif (hausse des coûts, rupture d'approvisionnement…) fait monter les prix et baisser la production : prix et activité évoluent en sens opposé. À l'inverse, lors d'un choc de demande, prix et activité évoluent dans le <em>même</em> sens (tous deux à la hausse pour un choc positif, tous deux à la baisse pour un choc négatif). C'est cette divergence prix ↑ / activité ↓ qui permet d'identifier un choc d'offre. Cette distinction est essentielle pour la politique monétaire : face à un choc de demande, la banque centrale peut stabiliser simultanément prix et activité, tandis qu'un choc d'offre l'oblige à arbitrer entre lutte contre l'inflation et soutien à l'activité."
+            },
+
+            // ============================================================
+            // CHAPITRE 4 : L'ENVIRONNEMENT
+            // ============================================================
+            {
+                chapter: 4,
+                type: "chiffre",
+                question: "L'Accord de Paris (2015) vise à maintenir le réchauffement mondial nettement sous + 2 °C et si possible sous + 1,5 °C. En application de cet accord, quel est l'objectif de réduction des émissions de GES que l'Union européenne s'est fixé à horizon 2030 par rapport à 1990 ?",
+                answers: ["− 30 %", "− 42 %", "− 55 %", "− 70 %"],
+                correct: 2,
+                explanation: "L'UE s'est engagée à réduire ses émissions de GES de 55 % d'ici 2030 par rapport à 1990 (objectif « Fit for 55 » du paquet Climat adopté en 2021) et à atteindre la neutralité carbone dès 2050. Ces engagements figurent parmi les plus ambitieux au monde. L'Accord de Paris lui-même ne fixe pas d'objectif chiffré de réduction par pays, mais un objectif de température — chaque partie traduit ensuite cet objectif en contribution nationale déterminée (NDC)."
+            },
+            {
+                chapter: 4,
+                type: "concept",
+                question: "Le « découplage absolu » entre PIB et émissions de CO₂ est déjà une réalité au niveau mondial.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Au niveau mondial, seul un découplage relatif est observé : le PIB mondial a progressé de + 150 % depuis 1990 tandis que les émissions de CO₂ n'ont augmenté que de + 50 % (Our World in Data, 2025). En revanche, certains pays développés — dont la France, la Suède ou le Royaume-Uni — ont atteint le découplage absolu (PIB en hausse et émissions en baisse en valeur absolue). Le défi est d'étendre ce découplage aux pays émergents, qui concentrent l'essentiel des émissions mondiales, et de le renforcer dans les pays avancés."
+            },
+            {
+                chapter: 4,
+                type: "concept",
+                question: "La logique assurantielle (Weitzman, 2012) recommande d'aller au-delà de ce que prescrirait une analyse coûts-bénéfices classique pour lutter contre le changement climatique.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "L'aversion au risque couplée à l'existence possible de « points de bascule » vers des scénarios catastrophiques et non linéaires justifie une prime d'assurance, indépendamment des estimations moyennes des dommages. L'approche française penche pour cette logique assurantielle : elle a fixé un objectif (neutralité carbone en 2050) avant d'en déduire le prix du carbone compatible (France Stratégie, 2019). Cette démarche s'oppose à une approche coûts-bénéfices pure, qui conduisait Nordhaus en 2016 à un réchauffement « optimal » de 3,5 °C."
+            },
+            {
+                chapter: 4,
+                type: "concept",
+                question: "La réglementation environnementale (comme les normes de pollution dans le secteur automobile) est, pour un objectif environnemental donné, l'instrument de politique climatique le moins coûteux économiquement.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Les études (notamment Ito &amp; Sallee, 2018) montrent que les instruments de signal-prix — taxe carbone ou marché de quotas d'émission — permettent d'atteindre le même objectif environnemental à un coût social significativement inférieur. La raison : les instruments prix laissent les agents choisir librement les abattements les moins coûteux pour eux, tandis que les normes imposent une solution uniforme qui peut être sous-optimale."
+            },
+            {
+                chapter: 4,
+                type: "concept",
+                question: "En France, la trajectoire de hausse programmée de la taxe carbone est appliquée conformément à la programmation initiale.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "La composante carbone de la TICPE (taxe intérieure de consommation sur les produits énergétiques) a été gelée en 2019 sous la pression du mouvement des « Gilets jaunes », alors qu'elle devait progresser jusqu'à 100 €/tCO₂ en 2030. Depuis, aucune trajectoire de remontée n'a été adoptée. La France prive ainsi son économie d'un signal-prix essentiel et doit compenser par d'autres instruments — subventions, normes — souvent moins efficaces et parfois au coût implicite par tonne très élevé."
+            },
+            {
+                chapter: 4,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du produit des taxes environnementales en France en 2024, exprimé en pourcentage du PIB ?",
+                answers: ["0,8 % du PIB", "1,2 % du PIB", "1,8 % du PIB", "2,5 % du PIB"],
+                correct: 2,
+                explanation: "Selon Eurostat (2026), les taxes environnementales représentent 1,8 % du PIB en France, un niveau un peu inférieur à la moyenne de la zone euro et de l'Union européenne (2,1 %). Ce chiffre illustre le retard français en matière de fiscalité environnementale, accentué par le gel de la taxe carbone depuis 2019."
+            },
+            {
+                chapter: 4,
+                type: "chiffre",
+                question: "Selon le rapport Pisani-Ferry / Mahfouz (2022), la mise en œuvre des mesures de réduction des émissions permettant de respecter les objectifs climatiques de la France se traduirait par quel impact sur le PIB à horizon 2040 ?",
+                answers: ["− 5 points de PIB", "− 3 points de PIB", "− 1 point de PIB", "+ 2 points de PIB"],
+                correct: 2,
+                explanation: "Le rapport conclut que la transition climatique est quasiment neutre sur le PIB à moyen terme : − 1 point de PIB en 2040 par rapport au scénario tendanciel. Ce résultat reflète un double effet contradictoire : la transition est un choc d'offre négatif (ex : dépréciation des actifs fossiles) mais aussi un stimulus à la demande (investissements massifs dans la rénovation, les transports décarbonés, etc.). Il illustre également le fait qu'une dépense en faveur du climat peut être socialement bénéfique sans être économiquement profitable à cet horizon."
+            },
+            {
+                chapter: 4,
+                type: "chiffre",
+                question: "D'après le rapport Pisani-Ferry / Mahfouz (2023), quel est l'ordre de grandeur des besoins d'investissements supplémentaires nets pour financer la transition climatique en France en 2030 ?",
+                answers: ["~ 20 Md€", "~ 40 Md€", "~ 66 Md€", "~ 120 Md€"],
+                correct: 2,
+                explanation: "Le rapport évalue à 66 Md€ les investissements nets supplémentaires nécessaires en 2030. La part devant être prise en charge par le secteur public est estimée entre un tiers et la moitié de ce total selon les estimations, soit un coût de l'ordre de 1 point de PIB par an."
+            },
+            {
+                chapter: 4,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur des investissements bas-carbone en France en 2024 ?",
+                answers: ["~ 40 Md€", "~ 70 Md€", "~ 110 Md€", "~ 200 Md€"],
+                correct: 2,
+                explanation: "Les investissements bas-carbone atteignent 113 Md€ en 2024, contre 63 Md€ en 2011 (I4CE / SPAFTE). Les principaux postes sont la rénovation des bâtiments, les véhicules routiers bas-carbone et les infrastructures ferroviaires. Ce niveau est stable depuis quelques années et devra reprendre une croissance significative d'ici 2030 pour être compatible avec la SNBC3 (Stratégie Nationale Bas-Carbone)."
+            },
+            {
+                chapter: 4,
+                type: "definition",
+                question: "Les « fuites de carbone » désignent le phénomène par lequel des entreprises délocalisent leur production vers des pays aux régulations environnementales moins contraignantes pour contourner la tarification du carbone.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "C'est précisément pour lutter contre ce phénomène que l'Union européenne a adopté en 2023 le mécanisme d'ajustement carbone aux frontières (MACF), qui applique un prix du carbone équivalent aux importations de certains produits intermédiaires (acier, aluminium, ciment, engrais, électricité). Si l'objectif est pertinent, sa mise en œuvre reste partielle : en 2026, le mécanisme ne couvre que certains produits et devra être étendu pour éviter les stratégies de contournement."
+            },
+            {
+                chapter: 4,
+                type: "concept",
+                question: "La hausse des émissions importées a entièrement contrebalancé la baisse des émissions territoriales en France depuis 1990.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "En 2024, les émissions brutes territoriales de la France atteignent 404 Mt éqCO₂, soit une baisse de 31 % par rapport à 1990. L'empreinte carbone (qui inclut les émissions importées et exclut les exportations) s'élève à 563 Mt, en baisse de 20 % depuis 1990. Les émissions importées n'ont augmenté que de 2 % depuis 1990 — très loin d'annuler une baisse de 31 % des émissions domestiques. Les deux indicateurs affichent donc une baisse nette. En revanche, la différence de rythme (− 31 % territorial contre − 20 % empreinte) révèle que la France a partiellement « externalisé » une partie de ses émissions : les émissions importées représentent désormais 50 % de l'empreinte carbone. C'est ce défi croissant qui justifie le mécanisme d'ajustement carbone aux frontières (MACF) adopté par l'UE en 2023 (Baude &amp; S., 2025)."
             }
         ];
 
@@ -1208,6 +1300,23 @@ Taux nominal neutre = taux naturel + inflation = 0,5 % + 2 % = <strong>2,5 %</st
 Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
 <strong>Interprétation :</strong> Avec un taux directeur à 3,5 %, le taux réel serait de 0 %, égal au taux naturel : la politique monétaire ne stimule ni ne freine l'activité.`
                 }
+            },
+
+            // ============================================================
+            // CHAPITRE 4 : L'ENVIRONNEMENT — EXERCICE CHIFFRÉ
+            // ============================================================
+            {
+                chapter: 4,
+                question: "En 2010, des ménages français installant des panneaux photovoltaïques signent un contrat de vente de leur électricité à 60 centimes par kWh pendant 20 ans. Le prix du marché européen de l'électricité est alors de 6 centimes par kWh, et chaque kWh produit de façon verte évite l'émission de 296 grammes de CO₂. Calculez le coût par tonne de CO₂ évitée, en euros. Arrondir le résultat à la dizaine.",
+                answer: 1820,
+                unit: "€/tCO₂",
+                tolerance: 50,
+                explanation: "Surcoût par kWh = 60 − 6 = 54 centimes = 0,54 €. CO₂ évité par kWh = 296 g = 0,000296 tonne. Coût par tonne = 0,54 ÷ 0,000296 ≈ 1 824 €/tCO₂, soit ~1 820 €. À titre de comparaison : remplacement charbon → gaz ~40 €/tCO₂, pompe à chaleur ~50 €/tCO₂, voiture électrique (2025) ~250 €/tCO₂, prix ETS européen en 2024 ~65 €/tCO₂. Ce surcoût était intégralement supporté par les consommateurs via la CSPE (contribution au service public de l'électricité) de 2,25 c€/kWh sur leur facture. C'est l'illustration emblématique du « signal-prix implicite excessif » que peuvent engendrer des subventions mal calibrées, dénoncé par Gollier (2019). À noter que le coût du solaire est tombé à ~18 c€/kWh en 2021, soit un coût par tonne d'environ 400 €/tCO₂ — encore élevé, mais sans commune mesure avec 2010.",
+                alt: {
+                    question: "En 2010, des ménages français installant des panneaux photovoltaïques signent un contrat de vente de leur électricité à 45 centimes par kWh pendant 20 ans. Le prix du marché européen de l'électricité est alors de 6 centimes par kWh, et chaque kWh produit de façon verte évite l'émission de 296 grammes de CO₂. Calculez le coût par tonne de CO₂ évitée, en euros. Arrondir le résultat à la dizaine.",
+                    answer: 1320,
+                    explanation: "Surcoût par kWh = 45 − 6 = 39 centimes = 0,39 €. CO₂ évité par kWh = 296 g = 0,000296 tonne. Coût par tonne = 0,39 ÷ 0,000296 ≈ 1 318 €/tCO₂, soit ~1 320 €. Même avec un tarif de rachat moins élevé, le coût reste 20 fois supérieur au prix du marché carbone européen. La subvention solaire de 2010 illustre ainsi qu'une politique climatique peut être écologiquement justifiée mais économiquement très coûteuse si le calibrage du soutien public n'est pas adapté au stade de maturité de la technologie."
+                }
             }
         ];
 
@@ -1230,6 +1339,22 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                 title: "La règle de Taylor : dans la peau du banquier central",
                 description: "Face à une situation économique (inflation, conjoncture), quelle décision de taux prendriez-vous ? Comparez votre intuition à la règle de Taylor et comprenez la logique du banquier central.",
                 type: "taylor_rule_graph"
+            },
+
+            // ============================================================
+            // CHAPITRE 4 : L'ENVIRONNEMENT — SIMULATIONS
+            // ============================================================
+            {
+                chapter: 4,
+                title: "Taux d'actualisation et urgence climatique",
+                description: "Le taux d'actualisation est le paramètre le plus controversé de l'analyse économique du climat. Visualisez comment la valeur présente d'un dommage climatique futur change radicalement selon le taux retenu — au cœur de la controverse Stern / Nordhaus.",
+                type: "discount_rate_climate_graph"
+            },
+            {
+                chapter: 4,
+                title: "Identité de Kaya : les leviers du découplage",
+                description: "La SNBC3 impose à la France de réduire ses émissions de 5 % par an d'ici 2030 — soit l'équivalent de 30 années d'efforts en 9 ans. L'identité de Kaya décompose ce défi en trois leviers. Jouez sur chacun pour voir si la trajectoire est compatible avec les objectifs climatiques.",
+                type: "kaya_identity_graph"
             }
         ];
 
@@ -1444,7 +1569,7 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                                     Si la croissance effective est inférieure à la croissance potentielle, l'écart se creuse.
                                 </div>
                             </div>
-                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                            ${simNavButton()}
                         </div>
                     `;
                     updateOutputGapGraph();
@@ -1511,7 +1636,7 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                                     <strong>Effet « boule de neige » :</strong> Si r > g (différentiel positif), la dette « augmente toute seule » même avec un solde primaire équilibré. Plus la dette initiale est élevée, plus cet effet est important.
                                 </div>
                             </div>
-                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                            ${simNavButton()}
                         </div>
                     `;
                     updateDebtDynamicsGraph();
@@ -1577,10 +1702,130 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                                 <!-- Explication pédagogique (contenu généré dynamiquement) -->
                                 <div class="simulation-explanation" id="taylor-simulation-explanation"></div>
                             </div>
-                            <button class="btn-next show" onclick="backToMenu()">Retour au menu</button>
+                            ${simNavButton()}
                         </div>
                     `;
                     updateTaylorRuleGraph();
+                } else if (item.type === 'discount_rate_climate_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">${item.description}</p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Dommage climatique futur (% du PIB mondial)</label>
+                                        <input type="range" id="climate_damage" min="1" max="25" value="10" step="0.5" oninput="updateDiscountRateGraph()">
+                                        <div class="value" id="climate_damage-value">10,0 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Horizon temporel (années)</label>
+                                        <input type="range" id="climate_horizon" min="25" max="75" value="50" step="25" oninput="updateDiscountRateGraph()">
+                                        <div class="value" id="climate_horizon-value">2075 (n + 50 ans)</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Taux d'actualisation</label>
+                                        <input type="range" id="discount_rate" min="0.5" max="8" value="3" step="0.1" oninput="updateDiscountRateGraph()">
+                                        <div class="value" id="discount_rate-value">3,0 %</div>
+                                    </div>
+                                </div>
+                                <div class="graph-container">
+                                    <canvas id="discountRateCanvas" width="800" height="380"></canvas>
+                                </div>
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Valeur présente du dommage</div>
+                                        <div class="value" id="result-present-value">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Part du dommage conservée</div>
+                                        <div class="value" id="result-discount-fraction">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Référence économiste</div>
+                                        <div class="value" id="result-economist-ref">-</div>
+                                        <div id="discount-stance" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
+                                    </div>
+                                </div>
+                                <div class="simulation-explanation">
+                                    <strong>Qu'est-ce que le taux d'actualisation ?</strong><br><br>
+                                    Intuition de base : si le taux d'intérêt sans risque est de 3 %, investir <strong>100 € aujourd'hui</strong> rapporte 103 € dans un an. Autrement dit, 103 € dans un an ne valent que 100 € aujourd'hui. Généralement, pour obtenir X € dans <em>n</em> ans, il suffit d'investir X &divide; (1 + r)<sup>n</sup> euros maintenant. C'est la <strong>valeur présente</strong>.<br><br>
+                                    <strong>Le lien direct avec la politique climatique</strong><br><br>
+                                    La valeur présente d'un dommage futur est exactement le <strong>montant maximal qu'il est rationnel de dépenser aujourd'hui</strong> pour l'éviter. Si un dommage climatique de 100 € survenant dans 50 ans ne vaut que 23 € aujourd'hui (à r = 3 %), alors dépenser plus de 23 € maintenant pour l'éviter serait — selon cette logique — économiquement injustifié : il vaudrait mieux placer cet argent et laisser les générations futures régler le problème avec les intérêts accumulés.<br><br>
+                                    C'est pourquoi le taux d'actualisation est <em>le</em> paramètre central de toute analyse coûts-bénéfices du changement climatique : il détermine directement combien nous sommes prêts à investir en politiques climatiques aujourd'hui.<br><br>
+                                    <strong>Pourquoi y a-t-il débat ?</strong><br><br>
+                                    Les mathématiques ne sont pas en cause — c'est le <em>choix du taux</em> qui est un choix éthique :<br><br>
+                                    • <strong>Stern (~1,4 %)</strong> : les générations futures ont autant de valeur que les nôtres. On ne décote que faiblement le futur → les dommages en 2100 restent très lourds en valeur présente → on est prêt à financer une action immédiate et ambitieuse, même coûteuse.<br><br>
+                                    • <strong>Nordhaus (~5 %)</strong> : les générations futures seront beaucoup plus riches grâce à la croissance. Il est plus efficace d'investir dans l'économie aujourd'hui et de les laisser s'adapter avec leurs moyens plus importants → dommages futurs très atténués en valeur présente → on ne finance qu'une action graduelle et modeste aujourd'hui.<br><br>
+                                    • <strong>Administration Trump (~7 %)</strong> : taux proche des rendements boursiers historiques. Un dommage de 100 € en 2100 vaut à peine 2 à 3 € aujourd'hui → le montant qu'il est « rationnel » de dépenser maintenant devient si faible que toute politique climatique ambitieuse semble injustifiable économiquement.<br><br>
+                                    Choisir le taux d'actualisation, c'est donc choisir implicitement l'importance qu'on accorde aux générations futures — et donc l'ampleur de l'effort climatique que l'on juge légitime de financer. Autant un choix éthique qu'économique.
+                                </div>
+                            </div>
+                            ${simNavButton()}
+                        </div>
+                    `;
+                    updateDiscountRateGraph();
+                } else if (item.type === 'kaya_identity_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">
+                                <strong>CO₂ = (CO₂ / Énergie) &times; (Énergie / PIB) &times; PIB</strong><br><br>
+                                La SNBC3 fixe à la France un objectif de <strong>− 35 % d'émissions d'ici 2030</strong> par rapport à 2021, soit <strong>− 5 % par an</strong> — l'équivalent de la baisse réalisée sur les 30 années précédentes, mais en 9 ans seulement. Mais si le PIB continue de croître, il faut que l'intensité carbone de l'énergie <em>et</em> l'efficacité énergétique du PIB baissent conjointement pour compenser. Jouez sur les trois leviers pour voir si vous parvenez à respecter cette trajectoire.
+                            </p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Croissance annuelle du PIB (% par an)</label>
+                                        <input type="range" id="kaya_gdp" min="0" max="3" value="1" step="0.1" oninput="updateKayaGraph()">
+                                        <div class="value" id="kaya_gdp-value">1,0 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Amélioration de l'intensité carbone de l'énergie (% par an)</label>
+                                        <input type="range" id="kaya_carbon" min="0" max="10" value="2" step="0.1" oninput="updateKayaGraph()">
+                                        <div class="value" id="kaya_carbon-value">2,0 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Amélioration de l'intensité énergétique du PIB (% par an)</label>
+                                        <input type="range" id="kaya_energy" min="0" max="8" value="1.5" step="0.1" oninput="updateKayaGraph()">
+                                        <div class="value" id="kaya_energy-value">1,5 %</div>
+                                    </div>
+                                </div>
+                                <div class="graph-container">
+                                    <canvas id="kayaCanvas" width="800" height="380"></canvas>
+                                </div>
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Variation annuelle des émissions</div>
+                                        <div class="value" id="result-kaya-reduction">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Écart avec la cible SNBC3 (− 5 %/an)</div>
+                                        <div class="value" id="result-kaya-gap">-</div>
+                                        <div id="kaya-status" style="text-align: center; padding: 8px; border-radius: 8px; margin-top: 8px; font-weight: 600; font-size: 0.85em;"></div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Émissions en 2055 (base 100)</div>
+                                        <div class="value" id="result-kaya-2055">-</div>
+                                    </div>
+                                </div>
+                                <div class="simulation-explanation" id="kaya-explanation">
+                                    <strong>Identité de Kaya :</strong> variation annuelle des émissions ≈ croissance PIB − amélioration intensité carbone − amélioration efficacité énergétique.<br><br>
+                                    La SNBC3 impose − 5 %/an d'émissions jusqu'en 2030 (− 35 % par rapport à 2021, soit ~150 Mt éqCO₂ — l'équivalent des 30 années précédentes en 9 ans). Avec 1 % de croissance du PIB, atteindre cet objectif requiert que l'intensité carbone de l'énergie et l'efficacité énergétique du PIB s'améliorent conjointement d'au moins 6 % par an — un rythme sans précédent historique. Source : 3e Stratégie Nationale Bas-Carbone (SNBC3, 2025).
+                                </div>
+                            </div>
+                            ${simNavButton()}
+                        </div>
+                    `;
+                    updateKayaGraph();
                 }
             }
         }
@@ -2472,6 +2717,331 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
             // Mettre à jour le curseur
             document.getElementById('taylor_user_rate').value = taylorClamped.toFixed(2);
             updateTaylorRuleGraph();
+        }
+
+        // ============================================================
+        // SIMULATION : TAUX D'ACTUALISATION ET URGENCE CLIMATIQUE
+        // ============================================================
+        function updateDiscountRateGraph() {
+            const damage = parseFloat(document.getElementById('climate_damage').value);
+            const horizon = parseInt(document.getElementById('climate_horizon').value);
+            const rate = parseFloat(document.getElementById('discount_rate').value);
+
+            const horizonYear = 2025 + horizon;
+
+            document.getElementById('climate_damage-value').textContent = damage.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('climate_horizon-value').textContent = horizonYear + ' (n + ' + horizon + ' ans)';
+            document.getElementById('discount_rate-value').textContent = rate.toFixed(1).replace('.', ',') + ' %';
+
+            const presentValue = damage / Math.pow(1 + rate / 100, horizon);
+            const fraction = presentValue / damage * 100;
+
+            document.getElementById('result-present-value').textContent = presentValue.toFixed(2).replace('.', ',') + ' % du PIB';
+            document.getElementById('result-discount-fraction').textContent = fraction.toFixed(1).replace('.', ',') + ' %';
+
+            const refDiv = document.getElementById('result-economist-ref');
+            const stanceDiv = document.getElementById('discount-stance');
+            if (rate <= 1.5) {
+                refDiv.textContent = '≈ Stern (2006)';
+                stanceDiv.textContent = 'Action très urgente';
+                stanceDiv.style.background = '#dcfce7';
+                stanceDiv.style.color = '#16a34a';
+            } else if (rate <= 3.5) {
+                refDiv.textContent = '≈ Consensus GIEC';
+                stanceDiv.textContent = 'Action urgente';
+                stanceDiv.style.background = '#dbeafe';
+                stanceDiv.style.color = '#2563eb';
+            } else if (rate <= 6) {
+                refDiv.textContent = '≈ Nordhaus (2016)';
+                stanceDiv.textContent = 'Action modérée';
+                stanceDiv.style.background = '#fef3c7';
+                stanceDiv.style.color = '#d97706';
+            } else {
+                refDiv.textContent = '≈ Admin. Trump (~7 %)';
+                stanceDiv.textContent = 'Faible urgence perçue';
+                stanceDiv.style.background = '#fee2e2';
+                stanceDiv.style.color = '#dc2626';
+            }
+
+            const canvas = document.getElementById('discountRateCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 50, right: 30, bottom: 60, left: 80 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const rMin = 0.5, rMax = 8;
+            const points = [];
+            for (let r = rMin; r <= rMax; r += 0.05) {
+                points.push({ r, pv: damage / Math.pow(1 + r / 100, horizon) });
+            }
+            const yMax = damage * 1.1;
+            const yMin = 0;
+
+            const xScale = (r) => padding.left + ((r - rMin) / (rMax - rMin)) * graphWidth;
+            const yScale = (v) => padding.top + graphHeight - ((v - yMin) / (yMax - yMin)) * graphHeight;
+
+            // Grille
+            ctx.strokeStyle = '#e0e0e0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * graphHeight;
+                ctx.beginPath(); ctx.moveTo(padding.left, y); ctx.lineTo(width - padding.right, y); ctx.stroke();
+            }
+            for (let r = 1; r <= 8; r++) {
+                const x = xScale(r);
+                ctx.beginPath(); ctx.moveTo(x, padding.top); ctx.lineTo(x, height - padding.bottom); ctx.stroke();
+            }
+
+            // Marqueurs économistes
+            const economists = [
+                { r: 1.4, label: 'Stern', color: '#16a34a' },
+                { r: 5.0, label: 'Nordhaus', color: '#d97706' },
+                { r: 7.0, label: 'Trump', color: '#dc2626' }
+            ];
+            economists.forEach(e => {
+                ctx.strokeStyle = e.color; ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]);
+                ctx.beginPath(); ctx.moveTo(xScale(e.r), padding.top); ctx.lineTo(xScale(e.r), height - padding.bottom); ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.fillStyle = e.color; ctx.font = 'bold 11px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+                ctx.fillText(e.label, xScale(e.r), padding.top - 12);
+            });
+
+            // Axes
+            ctx.strokeStyle = '#333'; ctx.lineWidth = 2; ctx.setLineDash([]);
+            ctx.beginPath(); ctx.moveTo(padding.left, padding.top); ctx.lineTo(padding.left, height - padding.bottom); ctx.lineTo(width - padding.right, height - padding.bottom); ctx.stroke();
+
+            // Labels axe X
+            ctx.fillStyle = '#666'; ctx.font = '12px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+            for (let r = 1; r <= 8; r++) { ctx.fillText(r + ' %', xScale(r), height - padding.bottom + 18); }
+            ctx.fillText('Taux d\'actualisation', width / 2, height - 8);
+
+            // Labels axe Y
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const val = yMin + (i / 5) * (yMax - yMin);
+                const y = padding.top + graphHeight - (i / 5) * graphHeight;
+                ctx.fillText(val.toFixed(1).replace('.', ',') + ' %', padding.left - 8, y + 4);
+            }
+            ctx.save(); ctx.translate(16, height / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center';
+            ctx.fillText('Valeur présente (% PIB)', 0, 0); ctx.restore();
+
+            // Remplissage dégradé sous la courbe
+            const gradient = ctx.createLinearGradient(0, padding.top, 0, height - padding.bottom);
+            gradient.addColorStop(0, 'rgba(34, 197, 94, 0.2)');
+            gradient.addColorStop(1, 'rgba(34, 197, 94, 0.02)');
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.moveTo(xScale(points[0].r), yScale(points[0].pv));
+            points.forEach(p => ctx.lineTo(xScale(p.r), yScale(p.pv)));
+            ctx.lineTo(xScale(points[points.length - 1].r), height - padding.bottom);
+            ctx.lineTo(padding.left, height - padding.bottom);
+            ctx.closePath(); ctx.fill();
+
+            // Ligne dommage brut
+            ctx.strokeStyle = '#9ca3af'; ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
+            ctx.beginPath(); ctx.moveTo(padding.left, yScale(damage)); ctx.lineTo(width - padding.right, yScale(damage)); ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#9ca3af'; ctx.font = '11px Segoe UI, sans-serif'; ctx.textAlign = 'left';
+            ctx.fillText('Dommage brut = ' + damage.toFixed(1).replace('.', ',') + ' %', padding.left + 5, yScale(damage) - 5);
+
+            // Courbe principale
+            ctx.strokeStyle = '#16a34a'; ctx.lineWidth = 3;
+            ctx.beginPath();
+            points.forEach((p, i) => { if (i === 0) ctx.moveTo(xScale(p.r), yScale(p.pv)); else ctx.lineTo(xScale(p.r), yScale(p.pv)); });
+            ctx.stroke();
+
+            // Marqueur taux courant (vertical + horizontal)
+            ctx.strokeStyle = '#cc785c'; ctx.lineWidth = 1.5; ctx.setLineDash([4, 3]);
+            ctx.beginPath(); ctx.moveTo(xScale(rate), padding.top); ctx.lineTo(xScale(rate), height - padding.bottom); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(padding.left, yScale(presentValue)); ctx.lineTo(xScale(rate), yScale(presentValue)); ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Point sur la courbe
+            ctx.fillStyle = '#cc785c'; ctx.beginPath(); ctx.arc(xScale(rate), yScale(presentValue), 7, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(xScale(rate), yScale(presentValue), 3, 0, Math.PI * 2); ctx.fill();
+
+            // Label valeur
+            ctx.fillStyle = '#cc785c'; ctx.font = 'bold 11px Segoe UI, sans-serif';
+            const lx = xScale(rate) + 10;
+            const ly = yScale(presentValue) - 8;
+            ctx.textAlign = lx > width - padding.right - 60 ? 'right' : 'left';
+            ctx.fillText(presentValue.toFixed(1).replace('.', ',') + ' %', lx > width - padding.right - 60 ? xScale(rate) - 10 : lx, ly < padding.top + 15 ? yScale(presentValue) + 18 : ly);
+
+            // Titre
+            ctx.fillStyle = '#333'; ctx.font = 'bold 13px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Valeur présente d\'un dommage de ' + damage.toFixed(1).replace('.', ',') + ' % du PIB en ' + horizonYear, width / 2, padding.top - 25);
+        }
+
+        // ============================================================
+        // SIMULATION : IDENTITÉ DE KAYA
+        // ============================================================
+        function updateKayaGraph() {
+            const gGDP = parseFloat(document.getElementById('kaya_gdp').value);
+            const gCarbon = parseFloat(document.getElementById('kaya_carbon').value);
+            const gEnergy = parseFloat(document.getElementById('kaya_energy').value);
+
+            document.getElementById('kaya_gdp-value').textContent = gGDP.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('kaya_carbon-value').textContent = gCarbon.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('kaya_energy-value').textContent = gEnergy.toFixed(1).replace('.', ',') + ' %';
+
+            // Variation annuelle des émissions = croissance PIB - baisse intensité carbone - baisse intensité énergétique
+            const annualChange = gGDP - gCarbon - gEnergy;
+            const reductionRate = -annualChange;
+            const gap = reductionRate - 5.0;
+
+            const reductionStr = reductionRate >= 0
+                ? '− ' + reductionRate.toFixed(1).replace('.', ',') + ' %/an'
+                : '+ ' + Math.abs(reductionRate).toFixed(1).replace('.', ',') + ' %/an';
+            document.getElementById('result-kaya-reduction').textContent = reductionStr;
+
+            const gapStr = gap >= 0
+                ? '+ ' + gap.toFixed(1).replace('.', ',') + ' pts'
+                : '− ' + Math.abs(gap).toFixed(1).replace('.', ',') + ' pts';
+            document.getElementById('result-kaya-gap').textContent = gapStr;
+
+            // Émissions en 2055 (30 ans, base 100)
+            const em2055 = 100 * Math.pow(1 + annualChange / 100, 30);
+            document.getElementById('result-kaya-2055').textContent = em2055.toFixed(0);
+
+            // Statut
+            const statusDiv = document.getElementById('kaya-status');
+            if (gap >= 0) {
+                statusDiv.textContent = '✓ Objectif SNBC3 respecté';
+                statusDiv.style.background = 'var(--success-bg)';
+                statusDiv.style.color = 'var(--success)';
+            } else if (gap >= -1.5) {
+                statusDiv.textContent = '⚠️ Effort insuffisant';
+                statusDiv.style.background = '#fef3c7';
+                statusDiv.style.color = '#d97706';
+            } else {
+                statusDiv.textContent = '✗ Trajectoire incompatible';
+                statusDiv.style.background = 'var(--error-bg)';
+                statusDiv.style.color = 'var(--error)';
+            }
+
+            const canvas = document.getElementById('kayaCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const padding = { top: 40, right: 30, bottom: 60, left: 70 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const years = 31;
+            const emissions = [];
+            const target = [];
+            for (let i = 0; i < years; i++) {
+                emissions.push(100 * Math.pow(1 + annualChange / 100, i));
+                target.push(100 * Math.pow(1 - 5.0 / 100, i));
+            }
+
+            const allValues = [...emissions, ...target];
+            const yMin = Math.max(0, Math.min(...allValues) * 0.9);
+            const yMax = Math.max(115, ...allValues) * 1.05;
+
+            const xScale = (i) => padding.left + (i / (years - 1)) * graphWidth;
+            const yScale = (v) => padding.top + graphHeight - ((v - yMin) / (yMax - yMin)) * graphHeight;
+
+            // Grille
+            ctx.strokeStyle = '#e0e0e0'; ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * graphHeight;
+                ctx.beginPath(); ctx.moveTo(padding.left, y); ctx.lineTo(width - padding.right, y); ctx.stroke();
+            }
+            for (let i = 0; i < years; i += 5) {
+                const x = xScale(i);
+                ctx.beginPath(); ctx.moveTo(x, padding.top); ctx.lineTo(x, height - padding.bottom); ctx.stroke();
+            }
+
+            // Ligne de base 100
+            if (100 >= yMin && 100 <= yMax) {
+                ctx.strokeStyle = '#9ca3af'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+                ctx.beginPath(); ctx.moveTo(padding.left, yScale(100)); ctx.lineTo(width - padding.right, yScale(100)); ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            // Axes
+            ctx.strokeStyle = '#333'; ctx.lineWidth = 2; ctx.setLineDash([]);
+            ctx.beginPath(); ctx.moveTo(padding.left, padding.top); ctx.lineTo(padding.left, height - padding.bottom); ctx.lineTo(width - padding.right, height - padding.bottom); ctx.stroke();
+
+            // Labels axe X
+            const baseYear = 2025;
+            ctx.fillStyle = '#666'; ctx.font = '12px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+            for (let i = 0; i < years; i += 5) { ctx.fillText(baseYear + i, xScale(i), height - padding.bottom + 18); }
+            ctx.fillText('Année', width / 2, height - 8);
+
+            // Labels axe Y
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const val = yMin + (i / 5) * (yMax - yMin);
+                const y = padding.top + graphHeight - (i / 5) * graphHeight;
+                ctx.fillText(val.toFixed(0), padding.left - 8, y + 4);
+            }
+            ctx.save(); ctx.translate(16, height / 2); ctx.rotate(-Math.PI / 2); ctx.textAlign = 'center';
+            ctx.fillText('Émissions (base 100 en 2025)', 0, 0); ctx.restore();
+
+            // Zone colorée entre les deux courbes
+            ctx.fillStyle = gap >= 0 ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)';
+            ctx.beginPath();
+            ctx.moveTo(xScale(0), yScale(emissions[0]));
+            for (let i = 1; i < years; i++) ctx.lineTo(xScale(i), yScale(emissions[i]));
+            for (let i = years - 1; i >= 0; i--) ctx.lineTo(xScale(i), yScale(target[i]));
+            ctx.closePath(); ctx.fill();
+
+            // Courbe cible (vert pointillé)
+            ctx.strokeStyle = '#16a34a'; ctx.lineWidth = 2.5; ctx.setLineDash([8, 4]);
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) { if (i === 0) ctx.moveTo(xScale(i), yScale(target[i])); else ctx.lineTo(xScale(i), yScale(target[i])); }
+            ctx.stroke();
+
+            // Courbe trajectoire utilisateur
+            const trajColor = annualChange <= 0 ? '#2563eb' : '#dc2626';
+            ctx.strokeStyle = trajColor; ctx.lineWidth = 3; ctx.setLineDash([]);
+            ctx.beginPath();
+            for (let i = 0; i < years; i++) { if (i === 0) ctx.moveTo(xScale(i), yScale(emissions[i])); else ctx.lineTo(xScale(i), yScale(emissions[i])); }
+            ctx.stroke();
+
+            // Légende
+            ctx.font = '12px Segoe UI, sans-serif';
+            const legendX = width - padding.right - 210;
+            const legendY = padding.top + 10;
+
+            ctx.strokeStyle = trajColor; ctx.lineWidth = 3; ctx.setLineDash([]);
+            ctx.beginPath(); ctx.moveTo(legendX, legendY); ctx.lineTo(legendX + 25, legendY); ctx.stroke();
+            ctx.fillStyle = '#333'; ctx.textAlign = 'left';
+            ctx.fillText('Votre trajectoire', legendX + 35, legendY + 4);
+
+            ctx.strokeStyle = '#16a34a'; ctx.lineWidth = 2; ctx.setLineDash([6, 3]);
+            ctx.beginPath(); ctx.moveTo(legendX, legendY + 20); ctx.lineTo(legendX + 25, legendY + 20); ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#333';
+            ctx.fillText('Cible SNBC3 (− 5 %/an)', legendX + 35, legendY + 24);
+
+            // Titre
+            ctx.fillStyle = '#333'; ctx.font = 'bold 13px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Trajectoire des émissions de CO₂ (2025–2055)', width / 2, padding.top - 20);
+        }
+
+        function simNavButton() {
+            if (currentIndex < currentQuestions.length - 1) {
+                return `<div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
+                    <button class="btn-next show" onclick="nextSimulation()" style="flex:1;min-width:150px;">Simulation suivante →</button>
+                    <button class="btn-next show" onclick="backToMenu()" style="flex:1;min-width:150px;background:var(--bg-card);color:var(--primary-dark);border:2px solid var(--primary);">Retour au menu</button>
+                </div>`;
+            }
+            return `<button class="btn-next show" onclick="backToMenu()">Retour au menu</button>`;
+        }
+
+        function nextSimulation() {
+            currentIndex++;
+            updateProgress();
+            renderQuestion();
         }
 
         function nextQuestion() {
