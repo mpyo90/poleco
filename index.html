@@ -489,6 +489,9 @@
             padding: 15px;
             border-radius: 10px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .simulation-result-item .label {
@@ -666,7 +669,7 @@
             { id: 5, name: "L'Union européenne et la zone euro face aux crises", available: false },
             { id: 6, name: "L'intégration commerciale", available: false },
             { id: 7, name: "L'intégration financière", available: false },
-            { id: 8, name: "Marché du travail", available: false },
+            { id: 8, name: "Marché du travail", available: true },
             { id: 9, name: "Innovation et concurrence", available: false },
             { id: 10, name: "La politique fiscale", available: false },
             { id: 11, name: "Inégalités et pauvreté", available: false }
@@ -1082,7 +1085,88 @@
                 answers: ["Vrai", "Faux"],
                 correct: 1,
                 explanation: "En 2024, les émissions brutes territoriales de la France atteignent 404 Mt éqCO₂, soit une baisse de 31 % par rapport à 1990. L'empreinte carbone (qui inclut les émissions importées et exclut les exportations) s'élève à 563 Mt, en baisse de 20 % depuis 1990. Les émissions importées n'ont augmenté que de 2 % depuis 1990 — très loin d'annuler une baisse de 31 % des émissions domestiques. Les deux indicateurs affichent donc une baisse nette. En revanche, la différence de rythme (− 31 % territorial contre − 20 % empreinte) révèle que la France a partiellement « externalisé » une partie de ses émissions : les émissions importées représentent désormais 50 % de l'empreinte carbone. C'est ce défi croissant qui justifie le mécanisme d'ajustement carbone aux frontières (MACF) adopté par l'UE en 2023 (Baude &amp; S., 2025)."
-            }
+            },
+            // ============ CHAPITRE 8 : MARCHÉ DU TRAVAIL ============
+            {
+                chapter: 8,
+                type: "chiffre",
+                question: "L'écart de taux d'emploi entre la France et l'Allemagne (15-64 ans) est d'environ :",
+                answers: ["3 points de pourcentage", "8,5 points de pourcentage", "15 points de pourcentage", "20 points de pourcentage"],
+                correct: 1,
+                explanation: "En 2024, l'écart de taux d'emploi entre la France et l'Allemagne est de 8,5 points de pourcentage (environ 69 % en France contre 77 % en Allemagne). Cet écart tient essentiellement à la faiblesse du taux d'emploi des jeunes et des seniors."
+            },
+            {
+                chapter: 8,
+                type: "chiffre",
+                question: "En 2024, le taux de chômage en France (environ 7,5 %) est supérieur à la moyenne de l'OCDE. De combien environ ?",
+                answers: ["D'environ 1 point", "D'environ 2,5 points", "D'environ 5 points", "D'environ 7 points"],
+                correct: 1,
+                explanation: "Le taux de chômage de l'OCDE est de 4,9 % en 2024, soit un écart d'environ 2,5 points avec la France (7,5 %). Le taux de chômage français n'est jamais revenu à son niveau du début des années 1970. Contrairement aux États-Unis, où le chômage retrouve son plus bas historique dès la fin des années 1990, le taux de chômage en France semble bloqué à un niveau plancher entre 7 et 8 %, ce qui suggère l'existence d'un chômage structurel important."
+            },
+            {
+                chapter: 8,
+                type: "chiffre",
+                question: "La hausse du PIB qui résulterait d'un alignement du taux d'emploi français sur celui de l'Allemagne est estimée à :",
+                answers: ["0,5 %", "1,5 %", "3,2 %", "6,5 %"],
+                correct: 2,
+                explanation: "Selon Ducoulombier (2024), un alignement du taux d'emploi français sur celui de l'Allemagne permettrait d'augmenter le PIB de 3,2 %. Étalé sur dix ans, cet alignement augmenterait temporairement le taux de croissance annuel moyen de l'économie française de 0,3 point. Cela illustre l'importance du taux d'emploi comme levier de croissance, bien au-delà du seul taux de chômage."
+            },
+            {
+                chapter: 8,
+                type: "chiffre",
+                question: "La réforme des retraites de 2023 (relèvement de l'âge de 62 à 64 ans) devrait permettre d'augmenter le PIB d'ici 2030 de :",
+                answers: ["0,3 point de PIB", "1,1 point de PIB", "2,5 points de PIB", "4 points de PIB"],
+                correct: 1,
+                explanation: "La réforme des retraites entrée en vigueur le 1er septembre 2023 devrait permettre d'augmenter le PIB de 1,1 point d'ici 2030, grâce à son effet positif attendu sur le taux d'emploi (+ 300 000 emplois, soit environ 0,7 point de taux d'emploi sur une population de 42 millions de 15-64 ans). Cet effet est loin d'être négligeable mais ne suffit pas à combler l'écart de 8,5 points avec l'Allemagne."
+            },
+            {
+                chapter: 8,
+                type: "concept",
+                question: "Parmi les indicateurs suivants, lequel est le plus déterminant pour la croissance économique ?",
+                answers: ["Le taux de chômage", "Le taux d'activité", "Le taux d'emploi", "Les trois sont également importants"],
+                correct: 2,
+                explanation: "C'est le taux d'emploi qui est le plus déterminant pour la croissance, car il mesure la proportion de la population qui travaille effectivement. Le taux de chômage n'en capture qu'une partie : un pays peut avoir un taux de chômage faible mais un taux d'emploi faible si beaucoup de personnes sont inactives (retraités précoces, jeunes hors du marché du travail). Le taux d'activité, lui, ne tient pas compte du chômage. Seul le taux d'emploi combine les deux dimensions. C'est le piège dans lequel la France est tombée dans les années 1990 : les politiques de pré-retraites ont fait baisser le chômage au prix d'une réduction de la participation au marché du travail, ce qui n'a pas d'effet positif sur le PIB."
+            },
+            {
+                chapter: 8,
+                type: "concept",
+                question: "Une hausse du salaire minimum détruit nécessairement de l'emploi.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "L'effet du salaire minimum sur l'emploi dépend de son niveau et du contexte économique. Dans le modèle néoclassique standard, un salaire minimum supérieur au salaire d'équilibre réduit la demande de travail. Mais la théorie du monopsone (Manning, 2003) montre que lorsque les entreprises disposent d'un pouvoir de marché, le salaire minimum peut au contraire augmenter l'emploi en corrigeant une distorsion. Empiriquement, dans les pays à salaire minimum faible (comme les États-Unis), l'effet sur l'emploi est très limité (Card &amp; Krueger, 1994). En revanche, en Hongrie, une hausse à un niveau comparable à la France a fait perdre leur emploi à 10 % des salariés concernés (Harasztosi &amp; Lindner, 2019). L'effet dépend donc du niveau relatif du salaire minimum."
+            },
+            {
+                chapter: 8,
+                type: "definition",
+                question: "Le plein emploi correspond à un taux de chômage nul.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le plein emploi, tel que défini par Beveridge (1944), correspond à une situation où le chômage se ramène à de brefs intervalles d'attente. Ce n'est pas un taux de chômage nul, car le fonctionnement normal de l'économie entraîne en permanence des créations et destructions d'emplois (environ 10 000 par jour en France). En situation de plein emploi, le taux de chômage atteint un niveau dit « frictionnel », estimé entre 3 et 5 %, correspondant aux transitions temporaires entre emplois."
+            },
+            {
+                chapter: 8,
+                type: "definition",
+                question: "Le taux d'emploi a pour dénominateur la population active.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le taux d'emploi rapporte le nombre de personnes en emploi à la population en âge de travailler (15-64 ans), et non à la population active. C'est le taux de chômage qui a pour dénominateur la population active (actifs occupés + chômeurs). La distinction est cruciale : le taux de chômage peut baisser si des chômeurs se retirent du marché du travail (et deviennent inactifs), sans qu'aucun emploi ne soit créé. Le taux d'emploi, lui, ne peut augmenter que si davantage de personnes travaillent effectivement. C'est pourquoi il est un indicateur plus fiable de la performance du marché du travail."
+            },
+            {
+                chapter: 8,
+                type: "chiffre",
+                question: "En comptabilité élargie, le montant total des dépenses publiques en faveur de l'emploi et du marché du travail en France en 2023 est d'environ :",
+                answers: ["67 milliards d'euros (2,5 % du PIB)", "120 milliards d'euros (4,2 % du PIB)", "190 milliards d'euros (6,7 % du PIB)", "250 milliards d'euros (8,9 % du PIB)"],
+                correct: 2,
+                explanation: "Une comptabilité élargie estime à 190 milliards d'euros le montant total des dépenses publiques en faveur de l'emploi (6,7 % du PIB). Ce chiffre est bien supérieur aux 67 milliards recensés par l'OCDE (2,5 % du PIB), car le décompte de l'OCDE omet les allègements de cotisations sociales et les aides sectorielles, qui représentent à eux seuls 95 milliards d'euros, soit la moitié du total (DARES, 2025)."
+            },
+            {
+                chapter: 8,
+                type: "concept",
+                question: "Le faible taux d'emploi français par rapport à l'Allemagne s'explique principalement par un écart sur la tranche d'âge des 30-54 ans.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "C'est faux : dans la tranche des 30-54 ans, aucune différence de taux d'emploi n'est observable entre la France, les États-Unis, l'Allemagne ou le Royaume-Uni (CAE, 2025). Le faible taux d'emploi français tient quasi exclusivement à la faiblesse du taux d'emploi des jeunes (15-24 ans : 35 % en France contre 51 % en Allemagne, soit un écart de 17 points) et des seniors (55-64 ans : 60 % contre 75 %, soit un écart de 15 points). Pour les jeunes, un tiers de l'écart s'explique par la plus forte proportion de décrocheurs en France. Pour les seniors, les principaux déterminants sont l'âge de départ à la retraite et la durée minimum de cotisation."
+            },
         ];
 
         // Exercices chiffrés - Format: { chapter, question, answer, unit, tolerance, explanation, alt }
@@ -1317,6 +1401,33 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                     answer: 1320,
                     explanation: "Surcoût par kWh = 45 − 6 = 39 centimes = 0,39 €. CO₂ évité par kWh = 296 g = 0,000296 tonne. Coût par tonne = 0,39 ÷ 0,000296 ≈ 1 318 €/tCO₂, soit ~1 320 €. Même avec un tarif de rachat moins élevé, le coût reste 20 fois supérieur au prix du marché carbone européen. La subvention solaire de 2010 illustre ainsi qu'une politique climatique peut être écologiquement justifiée mais économiquement très coûteuse si le calibrage du soutien public n'est pas adapté au stade de maturité de la technologie."
                 }
+            },
+            // ============ CHAPITRE 8 : MARCHÉ DU TRAVAIL ============
+            {
+                chapter: 8,
+                question: "En France en 2024, le taux d'activité des 15-64 ans est de 74,4 % et le taux de chômage est de 7,5 %. Calculez le taux d'emploi des 15-64 ans (arrondir à une décimale).",
+                answer: 68.8,
+                unit: "%",
+                tolerance: 0.5,
+                explanation: "On utilise la relation fondamentale : taux d'emploi = taux d'activité × (1 − taux de chômage) = 74,4 % × (1 − 0,075) = 74,4 % × 0,925 = 68,82 %, soit environ 68,8 %. Cette formule montre que le taux d'emploi dépend à la fois de la participation au marché du travail (activité) et de la capacité à trouver un emploi (chômage). Un écart de taux d'emploi entre deux pays peut venir de l'un ou l'autre facteur.",
+                alt: {
+                    question: "Dans un pays, le taux d'activité des 15-64 ans est de 80 % et le taux de chômage est de 3,5 %. Calculez le taux d'emploi des 15-64 ans (arrondir à une décimale).",
+                    answer: 77.2,
+                    explanation: "Taux d'emploi = taux d'activité × (1 − taux de chômage) = 80 % × (1 − 0,035) = 80 % × 0,965 = 77,2 %. Ce profil correspond approximativement à celui de l'Allemagne (taux d'activité élevé et chômage faible). L'écart avec la France (environ 69 %) tient pour les deux tiers au taux d'activité plus élevé et pour un tiers au taux de chômage plus faible."
+                }
+            },
+            {
+                chapter: 8,
+                question: "L'écart de taux d'emploi entre la France et l'Allemagne est de 8,5 points de pourcentage en 2024. En utilisant le graphique de décomposition, 65 % de cet écart est dû au taux d'activité et 35 % au taux de chômage. Quel est l'écart de taux d'emploi attribuable au seul taux de chômage, en points de pourcentage ? (arrondir à une décimale)",
+                answer: 3.0,
+                unit: "pp",
+                tolerance: 0.3,
+                explanation: "Écart dû au taux de chômage = 8,5 × 35 % = 8,5 × 0,35 = 2,975 pp, soit environ 3,0 points. Les 5,5 points restants (65 %) sont dus à un taux d'activité plus faible en France — c'est-à-dire que davantage de Français en âge de travailler ne se présentent pas du tout sur le marché du travail, notamment les jeunes (étudiants à temps plein) et les seniors (retraités précoces). Réduire le chômage est donc nécessaire mais loin d'être suffisant pour combler l'écart avec l'Allemagne.",
+                alt: {
+                    question: "L'écart de taux d'emploi entre la France et l'Allemagne est de 8,5 points de pourcentage en 2024. 65 % de cet écart est dû au taux d'activité. Quel est l'écart de taux d'emploi attribuable au seul taux d'activité, en points de pourcentage ? (arrondir à une décimale)",
+                    answer: 5.5,
+                    explanation: "Écart dû au taux d'activité = 8,5 × 65 % = 8,5 × 0,65 = 5,525 pp, soit environ 5,5 points. L'essentiel de l'écart de taux d'emploi avec l'Allemagne ne vient donc pas du chômage (3 points) mais de la moindre participation au marché du travail (5,5 points), en particulier chez les jeunes et les seniors."
+                }
             }
         ];
 
@@ -1355,6 +1466,18 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                 title: "Identité de Kaya : les leviers du découplage",
                 description: "La SNBC3 impose à la France de réduire ses émissions de 5 % par an d'ici 2030 — soit l'équivalent de 30 années d'efforts en 9 ans. L'identité de Kaya décompose ce défi en trois leviers. Jouez sur chacun pour voir si la trajectoire est compatible avec les objectifs climatiques.",
                 type: "kaya_identity_graph"
+            },
+            {
+                chapter: 8,
+                title: "Taux d'emploi par tranche d'âge : où se joue l'écart avec l'Allemagne ?",
+                description: "Ajustez les taux d'emploi français par tranche d'âge et observez l'effet sur le taux d'emploi global. Vous constaterez que le curseur des 25-54 ans ne sert presque à rien : l'écart avec l'Allemagne se joue quasi exclusivement sur les jeunes et les seniors.",
+                type: "employment_age_decomposition"
+            },
+            {
+                chapter: 8,
+                title: "190 milliards pour l'emploi : retrouvez les montants",
+                description: "La France consacre 190 milliards d'euros aux politiques de l'emploi, répartis en cinq catégories. Reliez chaque politique à son coût.",
+                type: "policy_cost_matching"
             }
         ];
 
@@ -1826,6 +1949,100 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                         </div>
                     `;
                     updateKayaGraph();
+                } else if (item.type === 'employment_age_decomposition') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">
+                                Le taux d'emploi global est la moyenne pondérée des taux d'emploi par tranche d'âge.
+                                Bougez les curseurs pour essayer de combler l'écart avec l'Allemagne (données 2024). L'écart se joue principalement sur les <strong>jeunes</strong> et les <strong>seniors</strong>.
+                            </p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls">
+                                    <div class="control-group">
+                                        <label>Taux d'emploi des jeunes (15-24 ans)</label>
+                                        <input type="range" id="empl_youth" min="20" max="65" value="35" step="1" oninput="updateEmploymentAgeGraph()">
+                                        <div class="value" id="empl_youth-value">35 %</div>
+                                        <div style="font-size:0.75em;color:#888;margin-top:2px;">Allemagne : 51 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Taux d'emploi des adultes (25-54 ans)</label>
+                                        <input type="range" id="empl_adult" min="70" max="95" value="83" step="1" oninput="updateEmploymentAgeGraph()">
+                                        <div class="value" id="empl_adult-value">83 %</div>
+                                        <div style="font-size:0.75em;color:#888;margin-top:2px;">Allemagne : 85 %</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Taux d'emploi des seniors (55-64 ans)</label>
+                                        <input type="range" id="empl_senior" min="30" max="85" value="60" step="1" oninput="updateEmploymentAgeGraph()">
+                                        <div class="value" id="empl_senior-value">60 %</div>
+                                        <div style="font-size:0.75em;color:#888;margin-top:2px;">Allemagne : 75 %</div>
+                                    </div>
+                                </div>
+                                <div class="graph-container">
+                                    <canvas id="employmentAgeCanvas" width="800" height="380"></canvas>
+                                </div>
+                                <div class="simulation-results-row">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Taux d'emploi France (votre scénario)</div>
+                                        <div class="value" id="result-empl-france">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Taux d'emploi Allemagne</div>
+                                        <div class="value" id="result-empl-germany">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Écart restant</div>
+                                        <div class="value" id="result-empl-gap">-</div>
+                                        <div id="result-empl-comble" style="font-size:0.75em;color:#888;margin-top:4px;"></div>
+                                    </div>
+                                </div>
+                                <div class="simulation-explanation" id="empl-age-explanation">
+                                    <strong>Pourquoi l'écart se joue sur les jeunes et les seniors ?</strong><br><br>
+                                    L'écart de taux d'emploi entre la France (69,0 %) et l'Allemagne (77,5 %) atteint <strong>8,5 points en 2024</strong>.<br><br>
+                                    Chez les <strong>jeunes (35 % vs 51 %, soit − 16 points)</strong>, l'écart se décompose en deux : environ 60 % vient d'un taux d'activité plus faible (42,5 % vs 54,7 %) et 40 % d'un taux de chômage plus élevé (18,8 % vs 6,6 % en 2024).<br><br>
+                                    Chez les <strong>seniors (60 % vs 75 %, soit − 15 points)</strong>, il s'explique par l'âge effectif de départ en retraite plus bas en France.<br><br>
+                                    Les <strong>25-54 ans (83 % vs 85 %)</strong> ont des taux très proches et contribuent peu à l'écart.<br><br>
+                                    Lorsque les trois curseurs sont alignés, un résidu d'environ 1 point subsiste car la structure démographique diffère : l'Allemagne compte proportionnellement plus de seniors (25 % des 15-64 ans contre 21 % en France), une tranche où le taux d'emploi est élevé.                                </div>
+                            </div>
+                            ${simNavButton()}
+                        </div>
+                    `;
+                    updateEmploymentAgeGraph();
+                } else if (item.type === 'policy_cost_matching') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Jeu interactif</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">
+                                En 2023, la France consacre <strong>190 milliards d'euros</strong> aux politiques de l'emploi, soit <strong>6,7 % du PIB</strong>. Associez chaque politique à son coût.
+                            </p>
+                            <div class="simulation-container">
+                                <div id="matching-game" style="max-width:600px;margin:0 auto;"></div>
+                                <div id="matching-feedback" style="margin-top:20px;text-align:center;"></div>
+                                <div style="text-align:center;margin-top:15px;">
+                                    <button id="matching-validate-btn" class="btn-next show" onclick="validateMatching()">Valider mes réponses</button>
+                                    <button id="matching-reset-btn" class="btn-next" onclick="resetMatching()" style="background:var(--bg-card);color:var(--primary-dark);border:2px solid var(--primary);margin-left:10px;">Recommencer</button>
+                                </div>
+                                <div class="simulation-explanation" id="matching-explanation" style="display:none;">
+                                    <strong>Répartition des 190 Md€ (2023, 6,7 % du PIB) :</strong><br><br>
+                                    <strong>Allègements de cotisations sociales (95 Md€ — 50 %)</strong> : le poste de loin le plus lourd, qui vise à réduire le coût du travail, notamment au niveau du SMIC.<br>
+                                    <strong>Allocations chômage et activité partielle (47 Md€ — 25 %)</strong> : indemnisation des demandeurs d'emploi et dispositif d'activité partielle.<br>
+                                    <strong>Formation professionnelle (30 Md€ — 16 %)</strong> : formation des actifs et des demandeurs d'emploi.<br>
+                                    <strong>Incitations à l'activité (12 Md€ — 6 %)</strong> : prime d'activité, incitations financières à la reprise d'emploi.<br>
+                                    <strong>Accompagnement, ex : France Travail (7 Md€ — 4 %)</strong> : fonctionnement du service public de l'emploi.
+                                </div>
+                            </div>
+                            ${simNavButton()}
+                        </div>
+                    `;
+                    initMatchingGame();
                 }
             }
         }
@@ -3028,6 +3245,218 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
             ctx.fillText('Trajectoire des émissions de CO₂ (2025–2055)', width / 2, padding.top - 20);
         }
 
+        function updateEmploymentAgeGraph() {
+            const youth = parseFloat(document.getElementById('empl_youth').value);
+            const adult = parseFloat(document.getElementById('empl_adult').value);
+            const senior = parseFloat(document.getElementById('empl_senior').value);
+
+            document.getElementById('empl_youth-value').textContent = youth + ' %';
+            document.getElementById('empl_adult-value').textContent = adult + ' %';
+            document.getElementById('empl_senior-value').textContent = senior + ' %';
+
+            // Poids réels dans la pop. 15-64 française (Eurostat demo_pjan, 2024)
+            const wYouth = 0.195, wAdult = 0.599, wSenior = 0.206;
+
+            // France (scénario utilisateur)
+            const franceTaux = youth * wYouth + adult * wAdult + senior * wSenior;
+
+            // Allemagne : taux global fixe Eurostat 2024 (poids allemands différents)
+            const deYouth = 51, deAdult = 85, deSenior = 75;
+            const deTaux = 77.5;
+
+            const gap = franceTaux - deTaux;
+
+            document.getElementById('result-empl-france').textContent = formatNumber(franceTaux, 1) + ' %';
+            document.getElementById('result-empl-germany').textContent = '77,5 %';
+            const initialGap = 8.6;
+            const comble = Math.max(0, Math.round((1 - Math.abs(gap) / initialGap) * 100));
+            document.getElementById('result-empl-gap').textContent = (gap >= 0 ? '+ ' : '− ') + formatNumber(Math.abs(gap), 1) + ' pts';
+            document.getElementById('result-empl-gap').style.color = gap >= 0 ? '#16a34a' : '#dc2626';
+            document.getElementById('result-empl-comble').textContent = '(' + comble + ' % de l\'écart comblé)';
+
+            // Dessin du graphique en barres groupées
+            const canvas = document.getElementById('employmentAgeCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            ctx.clearRect(0, 0, width, height);
+
+            const padding = { top: 50, right: 30, bottom: 60, left: 50 };
+            const chartW = width - padding.left - padding.right;
+            const chartH = height - padding.top - padding.bottom;
+
+            const categories = [
+                { label: '15-24 ans', fr: youth, de: deYouth },
+                { label: '25-54 ans', fr: adult, de: deAdult },
+                { label: '55-64 ans', fr: senior, de: deSenior },
+                { label: 'Global', fr: franceTaux, de: deTaux }
+            ];
+
+            const groupWidth = chartW / categories.length;
+            const barWidth = groupWidth * 0.3;
+            const barGap = 6;
+
+            // Grille
+            ctx.strokeStyle = '#e5e7eb'; ctx.lineWidth = 1;
+            for (let v = 0; v <= 100; v += 20) {
+                const y = padding.top + chartH - (v / 100) * chartH;
+                ctx.beginPath(); ctx.moveTo(padding.left, y); ctx.lineTo(width - padding.right, y); ctx.stroke();
+                ctx.fillStyle = '#888'; ctx.font = '11px Segoe UI, sans-serif'; ctx.textAlign = 'right';
+                ctx.fillText(v + ' %', padding.left - 8, y + 4);
+            }
+
+            const frColor = '#3b82f6';
+            const deColor = '#f59e0b';
+
+            categories.forEach((cat, i) => {
+                const cx = padding.left + groupWidth * i + groupWidth / 2;
+
+                // Barre France
+                const frH = (cat.fr / 100) * chartH;
+                const frX = cx - barWidth - barGap / 2;
+                const frY = padding.top + chartH - frH;
+                ctx.fillStyle = frColor;
+                ctx.fillRect(frX, frY, barWidth, frH);
+
+                // Valeur France
+                ctx.fillStyle = '#333'; ctx.font = 'bold 11px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+                ctx.fillText(Math.round(cat.fr) + ' %', frX + barWidth / 2, frY - 6);
+
+                // Barre Allemagne
+                const deH = (cat.de / 100) * chartH;
+                const deX = cx + barGap / 2;
+                const deY = padding.top + chartH - deH;
+                ctx.fillStyle = deColor;
+                ctx.fillRect(deX, deY, barWidth, deH);
+
+                // Valeur Allemagne
+                ctx.fillStyle = '#333'; ctx.font = 'bold 11px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+                ctx.fillText(Math.round(cat.de) + ' %', deX + barWidth / 2, deY - 6);
+
+                // Écart
+                const ecart = cat.fr - cat.de;
+                if (i < 3) {
+                    const ecartY = Math.min(frY, deY) - 22;
+                    ctx.fillStyle = ecart >= 0 ? '#16a34a' : '#dc2626';
+                    ctx.font = 'bold 10px Segoe UI, sans-serif';
+                    ctx.fillText((ecart >= 0 ? '+' : '') + Math.round(ecart) + ' pts', cx, ecartY);
+                }
+
+                // Label catégorie
+                ctx.fillStyle = '#333'; ctx.font = (i === 3 ? 'bold ' : '') + '12px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+                ctx.fillText(cat.label, cx, padding.top + chartH + 20);
+            });
+
+            // Séparateur avant "Global"
+            const sepX = padding.left + groupWidth * 3;
+            ctx.strokeStyle = '#ccc'; ctx.lineWidth = 1; ctx.setLineDash([4, 4]);
+            ctx.beginPath(); ctx.moveTo(sepX, padding.top); ctx.lineTo(sepX, padding.top + chartH); ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Légende
+            ctx.font = '12px Segoe UI, sans-serif';
+            const lx = width - padding.right - 220;
+            const ly = padding.top + 5;
+
+            ctx.fillStyle = frColor; ctx.fillRect(lx, ly - 5, 16, 12);
+            ctx.fillStyle = '#333'; ctx.textAlign = 'left'; ctx.fillText('France (votre scénario)', lx + 22, ly + 5);
+
+            ctx.fillStyle = deColor; ctx.fillRect(lx, ly + 15, 16, 12);
+            ctx.fillStyle = '#333'; ctx.fillText('Allemagne', lx + 22, ly + 25);
+
+            // Titre
+            ctx.fillStyle = '#333'; ctx.font = 'bold 13px Segoe UI, sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Taux d\'emploi par tranche d\'âge : France vs Allemagne', width / 2, padding.top - 20);
+        }
+
+        // --- Matching game: 190 Md€ politiques de l'emploi ---
+        const matchingPolicies = [
+            { id: 'allegements', label: 'Allègements de cotisations sociales', cost: 95 },
+            { id: 'chomage', label: 'Allocations chômage et activité partielle', cost: 47 },
+            { id: 'formation', label: 'Formation professionnelle', cost: 30 },
+            { id: 'incitations', label: 'Incitations à l\'activité (prime d\'activité...)', cost: 12 },
+            { id: 'accompagnement', label: 'Accompagnement (ex : France Travail)', cost: 7 }
+        ];
+        let matchingValidated = false;
+
+        function initMatchingGame() {
+            matchingValidated = false;
+            const costs = [95, 47, 30, 12, 7];
+            const shuffled = costs.slice().sort(() => Math.random() - 0.5);
+            const optionsHtml = '<option value="">Choisir...</option>' + shuffled.map(c => `<option value="${c}">${c} Md€</option>`).join('');
+
+            const gameDiv = document.getElementById('matching-game');
+            const shuffledPolicies = matchingPolicies.slice().sort(() => Math.random() - 0.5);
+            gameDiv.innerHTML = shuffledPolicies.map(p => `
+                <div id="row-${p.id}" style="display:flex;align-items:center;gap:12px;padding:12px 16px;
+                     border:2px solid #e5e7eb;border-radius:10px;margin-bottom:10px;background:#fff;
+                     flex-wrap:wrap;">
+                    <span style="flex:1;min-width:200px;font-weight:500;font-size:0.9em;">${p.label}</span>
+                    <select id="select-${p.id}" style="padding:8px 12px;
+                        border:2px solid var(--primary);border-radius:8px;font-size:0.95em;font-weight:600;
+                        color:var(--primary-dark);background:#f0f4ff;cursor:pointer;min-width:120px;">
+                        ${optionsHtml}
+                    </select>
+                </div>
+            `).join('');
+
+            document.getElementById('matching-validate-btn').classList.add('show');
+            document.getElementById('matching-reset-btn').classList.remove('show');
+            document.getElementById('matching-feedback').innerHTML = '';
+            document.getElementById('matching-explanation').style.display = 'none';
+        }
+
+        function validateMatching() {
+            // Vérifier que tous les menus sont remplis
+            const allFilled = matchingPolicies.every(p => document.getElementById('select-' + p.id).value !== '');
+            if (!allFilled) {
+                document.getElementById('matching-feedback').innerHTML = '<div style="padding:12px;background:#fff3cd;border-radius:8px;color:#856404;font-weight:600;">Associez un montant à chaque politique avant de valider.</div>';
+                return;
+            }
+
+            matchingValidated = true;
+            let correct = 0;
+
+            matchingPolicies.forEach(p => {
+                const sel = document.getElementById('select-' + p.id);
+                const row = document.getElementById('row-' + p.id);
+                const chosen = parseInt(sel.value);
+                sel.disabled = true;
+
+                if (chosen === p.cost) {
+                    row.style.borderColor = '#16a34a';
+                    row.style.background = '#f0fdf4';
+                    sel.style.borderColor = '#16a34a';
+                    sel.style.color = '#16a34a';
+                    correct++;
+                } else {
+                    row.style.borderColor = '#dc2626';
+                    row.style.background = '#fef2f2';
+                    sel.style.borderColor = '#dc2626';
+                    sel.style.color = '#dc2626';
+                    const correction = document.createElement('span');
+                    correction.style.cssText = 'font-weight:700;color:#16a34a;font-size:0.95em;margin-left:8px;';
+                    correction.textContent = '→ ' + p.cost + ' Md€';
+                    sel.parentNode.appendChild(correction);
+                }
+            });
+
+            const feedbackEl = document.getElementById('matching-feedback');
+            if (correct === 5) {
+                feedbackEl.innerHTML = '<div style="padding:12px;background:#f0fdf4;border-radius:8px;color:#16a34a;font-weight:600;">Parfait ! 5/5 — Vous maîtrisez la répartition des 190 Md€.</div>';
+            } else {
+                feedbackEl.innerHTML = `<div style="padding:12px;background:#fef2f2;border-radius:8px;color:#dc2626;font-weight:600;">${correct}/5 — Les bonnes réponses sont affichées en vert.</div>`;
+            }
+
+            document.getElementById('matching-validate-btn').classList.remove('show');
+            document.getElementById('matching-reset-btn').classList.add('show');
+            document.getElementById('matching-explanation').style.display = '';
+        }
+
+        function resetMatching() {
+            initMatchingGame();
+        }
+
         function simNavButton() {
             if (currentIndex < currentQuestions.length - 1) {
                 return `<div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
@@ -3035,7 +3464,7 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                     <button class="btn-next show" onclick="backToMenu()" style="flex:1;min-width:150px;background:var(--bg-card);color:var(--primary-dark);border:2px solid var(--primary);">Retour au menu</button>
                 </div>`;
             }
-            return `<button class="btn-next show" onclick="backToMenu()">Retour au menu</button>`;
+            return `<button class="btn-next show" onclick="backToMenu()" style="background:var(--bg-card);color:var(--primary-dark);border:2px solid var(--primary);">Retour au menu</button>`;
         }
 
         function nextSimulation() {
