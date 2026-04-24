@@ -297,6 +297,12 @@
             color: var(--text) !important;
         }
 
+        .answer-btn.selected {
+            border-color: var(--primary);
+            background: var(--bg);
+            font-weight: 600;
+        }
+
         /* Explication */
         .explanation {
             margin-top: 20px;
@@ -475,6 +481,32 @@
             height: auto;
         }
 
+        .deind-controls {
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+        }
+
+        .deind-controls .control-group {
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .deind-controls .control-group label {
+            min-height: 72px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .deind-controls .control-group input[type="range"] {
+            margin-top: auto;
+        }
+
+        .deind-graph canvas {
+            display: block;
+            width: 100%;
+            height: clamp(320px, 52vw, 460px);
+        }
+
         .simulation-results-row {
             display: flex;
             gap: 15px;
@@ -504,6 +536,18 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-dark);
+        }
+
+        .deind-results .simulation-result-item {
+            min-height: 96px;
+            justify-content: space-between;
+        }
+
+        .deind-results .simulation-result-item .label {
+            min-height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Résultats finaux */
@@ -595,6 +639,14 @@
                 width: 100%;
                 margin-top: 10px;
             }
+
+            .deind-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .deind-graph canvas {
+                height: 320px;
+            }
         }
     </style>
 </head>
@@ -670,7 +722,7 @@
             { id: 6, name: "L'intégration commerciale", available: false },
             { id: 7, name: "L'intégration financière", available: false },
             { id: 8, name: "Marché du travail", available: true },
-            { id: 9, name: "Innovation et concurrence", available: false },
+            { id: 9, name: "Innovation et concurrence", available: true },
             { id: 10, name: "La politique fiscale", available: false },
             { id: 11, name: "Inégalités et pauvreté", available: false }
         ];
@@ -771,6 +823,78 @@
 <tr style="font-weight: bold; background: var(--bg);"><td style="padding: 8px;">PIB</td><td style="padding: 8px; text-align: right;">2 920</td><td style="padding: 8px; text-align: right;">100 %</td></tr>
 </table>
 <p style="margin-top: 10px; font-size: 0.85em; color: var(--text-light);">Source : Insee, comptes nationaux 2024</p>`
+            },
+            // ========================================
+            // CHAPITRE 9 : INNOVATION ET CONCURRENCE
+            // ========================================
+            {
+                chapter: 9,
+                type: "concept",
+                question: "Les gains collectifs liés aux dépenses de R&D sont du même ordre de grandeur que les gains privés.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Les économistes soulignent au contraire que les gains sociaux de la R&D peuvent être beaucoup plus élevés que les gains privés. Selon Jones et Summers (2022), ils seraient environ dix fois supérieurs. C'est cette externalité qui justifie une intervention publique : le marché tend spontanément à sous-investir dans l'innovation."
+            },
+            {
+                chapter: 9,
+                type: "concept",
+                question: "La diffusion des innovations compte souvent plus que leur production domestique pour les gains de productivité.",
+                answers: ["Vrai", "Faux"],
+                correct: 0,
+                explanation: "Les effets économiques de l'innovation passent avant tout par la diffusion des innovations, qui se déploie sur le long terme. Eaton et Kortum (1999) montrent que la part de la croissance de productivité imputable à la R&D domestique n'est que de 11 à 16 % en Allemagne, en France et au Royaume-Uni, autour de 35 % au Japon, contre 60 % aux États-Unis. Sauf pour les économies très proches de la frontière technologique, les gains viennent donc surtout de l'adoption et de la diffusion des innovations produites."
+            },
+            {
+                chapter: 9,
+                type: "chiffre",
+                question: "Quelle était approximativement la part des dépenses de R&D dans le PIB français en 2023 ?",
+                answers: ["1,2 %", "2,2 %", "3,5 %", "6,3 %"],
+                correct: 1,
+                explanation: "La part des dépenses de R&D dans le PIB français était d'environ 2,2 % en 2023. Elle reste inférieure à l'objectif de 3 % fixé par la stratégie de Lisbonne, et nettement plus faible que dans les pays proches de la frontière technologique, comme Israël, la Corée du Sud ou les États-Unis."
+            },
+            {
+                chapter: 9,
+                type: "concept",
+                question: "Le retard français en matière de R&D s'explique principalement par un sous-investissement dans la recherche publique.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "Le retard français en matière de R&D s'explique principalement par la faiblesse de la R&D privée, et non par un sous-investissement spécifique dans la recherche publique."
+            },
+            {
+                chapter: 9,
+                type: "concept",
+                question: "La désindustrialisation française s'explique principalement par la concurrence étrangère.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "La concurrence étrangère peut contribuer à certaines destructions d'emplois industriels, mais elle n'est pas le principal facteur de la désindustrialisation. Dans le cas français, les études mettent surtout en avant des facteurs structurels : des gains de productivité plus élevés dans l'industrie, une demande qui se déforme au profit des services, et l'externalisation d'activités de services auparavant comptabilisées dans l'industrie."
+            },
+            {
+                chapter: 9,
+                type: "concept",
+                question: "Selon Philippe Aghion, plus la concurrence est forte, plus les entreprises innovent.",
+                answers: ["Vrai", "Faux"],
+                correct: 1,
+                explanation: "La relation entre concurrence et innovation n'est pas mécanique. Une hausse de la concurrence peut stimuler l'innovation, car les entreprises cherchent à échapper à leurs concurrents. Mais au-delà d'un certain seuil, une concurrence trop intense réduit les rentes attendues de l'innovation et peut donc décourager l'investissement en R&D. Les travaux d'Aghion mettent ainsi en avant une relation en U inversé entre concurrence et innovation."
+            },
+            {
+                chapter: 9,
+                type: "chiffre",
+                question: "Quel est l'ordre de grandeur du coût annuel du Crédit d'impôt recherche (CIR) ?",
+                answers: ["Environ 300 millions d'euros par an", "Environ 1,2 milliard d'euros par an", "Environ 7,9 milliards d'euros par an", "Environ 30 milliards d'euros par an"],
+                correct: 2,
+                explanation: "Le Crédit d'impôt recherche (CIR) diminue le coût des activités de R&D pour les entreprises. Le cours indique qu'il a bénéficié à 16 000 entreprises en 2024, pour un coût de 7,9 milliards d'euros. Il s'agit du principal dispositif fiscal de soutien à la R&D en France, mais son efficacité est discutée, notamment en raison des effets d'aubaine pour les grands groupes."
+            },
+            {
+                chapter: 9,
+                type: "concept",
+                question: "Quelles affirmations décrivent correctement les politiques sectorielles dites « à mission » ?",
+                answers: [
+                    "Elles sont ciblées sur des priorités jugées importantes sur le plan sociétal, sans prescrire les choix technologiques.",
+                    "Elles consistent à soutenir directement des entreprises individuelles choisies par l'État.",
+                    "Elles cherchent à préserver les mécanismes concurrentiels, notamment par des appels à projets.",
+                    "Elles reposent principalement sur des droits de douane et des barrières à l'entrée."
+                ],
+                correct: [0, 2],
+                explanation: "Les politiques sectorielles « à mission » cherchent à combiner les avantages des approches verticales et horizontales. Comme dans une politique verticale, l'État identifie des priorités jugées importantes sur le plan sociétal, par exemple la transition écologique ou la santé. Mais les recommandations de la littérature insistent sur le fait qu'il faut fixer des objectifs finaux plutôt que prescrire les choix technologiques, et préserver les mécanismes concurrentiels, notamment par des appels à projets."
             },
             // ========================================
             // CHAPITRE 2 : POLITIQUE BUDGÉTAIRE
@@ -1478,6 +1602,12 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                 title: "190 milliards pour l'emploi : retrouvez les montants",
                 description: "La France consacre 190 milliards d'euros aux politiques de l'emploi, répartis en cinq catégories. Reliez chaque politique à son coût.",
                 type: "policy_cost_matching"
+            },
+            {
+                chapter: 9,
+                title: "Pourquoi la part de l'industrie baisse-t-elle dans le PIB ?",
+                description: "Isolez trois mécanismes : l'écart de productivité entre industrie et services, qui fait baisser le prix relatif des biens industriels ; l'élasticité-prix, qui indique si la hausse des volumes compense cette baisse de prix ; et l'élasticité-revenu, qui traduit la déformation de la demande vers les services lorsque le niveau de vie augmente.",
+                type: "deindustrialization_graph"
             }
         ];
 
@@ -1491,6 +1621,7 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
         let currentIndex = 0;
         let score = 0;
         let usingAltVersion = false;
+        let multiAnswerSelection = [];
 
         // Initialisation
         function init() {
@@ -1586,6 +1717,9 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
             const chapter = chapters.find(c => c.id === item.chapter);
 
             if (currentMode === 'qcm') {
+                const isMultipleChoice = Array.isArray(item.correct);
+                multiAnswerSelection = [];
+
                 container.innerHTML = `
                     <div class="question-card">
                         <div class="question-meta">
@@ -1593,15 +1727,17 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                             <span class="badge badge-type">${getTypeLabel(item.type)}</span>
                         </div>
                         <p class="question-text">${item.question}</p>
+                        ${isMultipleChoice ? '<p style="margin-top: -10px; margin-bottom: 20px; color: var(--text-light);">Plusieurs réponses possibles.</p>' : ''}
                         <div class="answers">
                             ${item.answers.map((a, i) => `
-                                <button class="answer-btn" onclick="checkAnswer(${i})">${a}</button>
+                                <button class="answer-btn" onclick="${isMultipleChoice ? `toggleMultiAnswer(${i})` : `checkAnswer(${i})`}">${a}</button>
                             `).join('')}
                         </div>
                         <div class="explanation" id="explanation">
                             <h4>Explication</h4>
                             <p>${item.explanation}</p>
                         </div>
+                        ${isMultipleChoice ? '<button class="btn-validate" id="btn-validate-multi" onclick="checkMultiAnswer()" disabled style="margin-top: 20px; width: 100%;">Valider mes réponses</button>' : ''}
                         <div style="display: flex; gap: 10px; margin-top: 20px;">
                             <button class="btn-next show" id="btn-skip" onclick="nextQuestion()" style="background: var(--text-light);">Passer</button>
                             <button class="btn-next" id="btn-next" onclick="nextQuestion()">Question suivante</button>
@@ -2043,6 +2179,58 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                         </div>
                     `;
                     initMatchingGame();
+                } else if (item.type === 'deindustrialization_graph') {
+                    container.innerHTML = `
+                        <div class="question-card">
+                            <div class="question-meta">
+                                <span class="badge badge-chapter">${chapter.name}</span>
+                                <span class="badge badge-type">Simulation interactive</span>
+                            </div>
+                            <h3 style="margin-bottom: 15px;">${item.title}</h3>
+                            <p class="question-text">${item.description}</p>
+                            <div class="simulation-container">
+                                <div class="simulation-controls deind-controls">
+                                    <div class="control-group">
+                                        <label>Écart de productivité industrie-services</label>
+                                        <input type="range" id="deind_productivity_gap" min="0" max="4" value="2.5" step="0.1" oninput="updateDeindustrializationGraph()">
+                                        <div class="value" id="deind_productivity_gap-value">+ 2,5 pts/an</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Élasticité-prix de la demande de biens industriels</label>
+                                        <input type="range" id="deind_elasticity" min="0.2" max="1.8" value="0.6" step="0.1" oninput="updateDeindustrializationGraph()">
+                                        <div class="value" id="deind_elasticity-value">0,6</div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Élasticité-revenu de la demande de biens industriels</label>
+                                        <input type="range" id="deind_income_elasticity" min="0.4" max="1.4" value="0.7" step="0.1" oninput="updateDeindustrializationGraph()">
+                                        <div class="value" id="deind_income_elasticity-value">0,7</div>
+                                    </div>
+                                </div>
+                                <div class="graph-container deind-graph">
+                                    <canvas id="deindustrializationCanvas" width="800" height="430"></canvas>
+                                </div>
+                                <div class="simulation-results-row deind-results">
+                                    <div class="simulation-result-item">
+                                        <div class="label">Part initiale de l'industrie</div>
+                                        <div class="value" id="result-deind-initial-share">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Part industrie dans le PIB en n+30</div>
+                                        <div class="value" id="result-deind-final-share">-</div>
+                                    </div>
+                                    <div class="simulation-result-item">
+                                        <div class="label">Variation de la part</div>
+                                        <div class="value" id="result-deind-share-change">-</div>
+                                    </div>
+                                </div>
+                                <div class="simulation-explanation" id="deind-explanation">
+                                    <strong>Idée centrale :</strong> la part de l'industrie dans le PIB est mesurée en valeur, donc prix × quantité. Si l'industrie gagne plus vite en productivité que les services, son prix relatif baisse. Tout dépend alors de l'élasticité-prix : les volumes compensent-ils cette baisse du prix ?
+                                </div>
+                            </div>
+                            ${simNavButton()}
+                        </div>
+                    `;
+                    updateDeindustrializationGraph();
                 }
             }
         }
@@ -2054,6 +2242,67 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
                 'definition': 'Définition'
             };
             return labels[type] || type;
+        }
+
+        function toggleMultiAnswer(index) {
+            const selectedIndex = multiAnswerSelection.indexOf(index);
+            if (selectedIndex === -1) {
+                multiAnswerSelection.push(index);
+            } else {
+                multiAnswerSelection.splice(selectedIndex, 1);
+            }
+
+            const buttons = document.querySelectorAll('.answer-btn');
+            buttons[index].classList.toggle('selected', multiAnswerSelection.includes(index));
+
+            const validateBtn = document.getElementById('btn-validate-multi');
+            if (validateBtn) {
+                validateBtn.disabled = multiAnswerSelection.length === 0;
+            }
+        }
+
+        function checkMultiAnswer() {
+            const item = currentQuestions[currentIndex];
+            const correctAnswers = item.correct;
+            const selectedAnswers = [...multiAnswerSelection].sort((a, b) => a - b);
+            const expectedAnswers = [...correctAnswers].sort((a, b) => a - b);
+            const isCorrect = selectedAnswers.length === expectedAnswers.length &&
+                selectedAnswers.every((answer, i) => answer === expectedAnswers[i]);
+            const buttons = document.querySelectorAll('.answer-btn');
+
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                btn.classList.remove('selected');
+                if (correctAnswers.includes(i)) {
+                    btn.classList.add('correct');
+                } else if (selectedAnswers.includes(i)) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            const validateBtn = document.getElementById('btn-validate-multi');
+            if (validateBtn) {
+                validateBtn.disabled = true;
+            }
+
+            const explanationDiv = document.getElementById('explanation');
+            if (isCorrect) {
+                score++;
+                document.getElementById('score').textContent = score;
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--success);">Bonne réponse</h4>
+                    <p>${item.explanation}</p>
+                `;
+            } else {
+                explanationDiv.innerHTML = `
+                    <h4 style="color: var(--error);">Mauvaise réponse</h4>
+                    <p>${item.explanation}</p>
+                `;
+            }
+
+            explanationDiv.classList.add('show');
+            document.getElementById('btn-skip').style.display = 'none';
+            document.getElementById('btn-next').classList.add('show');
         }
 
         function checkAnswer(index) {
@@ -2140,6 +2389,171 @@ Taux nominal neutre = 0 % + 3,5 % = <strong>3,5 %</strong><br><br>
         function retryExercise() {
             usingAltVersion = true;
             renderQuestion();
+        }
+
+        function updateDeindustrializationGraph() {
+            const productivityGap = parseFloat(document.getElementById('deind_productivity_gap').value);
+            const elasticity = parseFloat(document.getElementById('deind_elasticity').value);
+            const incomeElasticity = parseFloat(document.getElementById('deind_income_elasticity').value);
+
+            document.getElementById('deind_productivity_gap-value').textContent = '+ ' + formatNumber(productivityGap, 1) + ' pts/an';
+            document.getElementById('deind_elasticity-value').textContent = formatNumber(elasticity, 1);
+            document.getElementById('deind_income_elasticity-value').textContent = formatNumber(incomeElasticity, 1);
+
+            const years = 31;
+            const initialShare = 25;
+            const incomeGrowth = 1.2;
+            const industryShare = [];
+            const industryVolume = [];
+            const initialOdds = initialShare / (100 - initialShare);
+
+            for (let year = 0; year < years; year++) {
+                const relativePrice = Math.pow(1 + productivityGap / 100, -year);
+                const incomeIndex = Math.pow(1 + incomeGrowth / 100, year);
+                const priceVolumeEffect = Math.pow(relativePrice, -elasticity);
+                const incomeDemandEffect = Math.pow(incomeIndex, incomeElasticity - 1);
+                const relativeValue = Math.pow(relativePrice, 1 - elasticity) * incomeDemandEffect;
+                const odds = initialOdds * relativeValue;
+                industryShare.push(odds / (1 + odds) * 100);
+                industryVolume.push(priceVolumeEffect * Math.pow(incomeIndex, incomeElasticity) * 100);
+            }
+
+            const finalShare = industryShare[years - 1];
+            const finalVolume = industryVolume[years - 1];
+            const shareChange = finalShare - initialShare;
+            const shareChangeText = (shareChange >= 0 ? '+ ' : '- ') + formatNumber(Math.abs(shareChange), 1) + ' pts';
+
+            document.getElementById('result-deind-initial-share').textContent = formatNumber(initialShare, 1) + ' % du PIB';
+            document.getElementById('result-deind-final-share').textContent = formatNumber(finalShare, 1) + ' % du PIB';
+            document.getElementById('result-deind-share-change').textContent = shareChangeText;
+
+            const explanation = document.getElementById('deind-explanation');
+            const relativePriceDrop = (1 - Math.pow(1 + productivityGap / 100, -(years - 1))) * 100;
+            const shareText = shareChange < 0
+                ? `la part de l'industrie dans le PIB baisse de ${formatNumber(Math.abs(shareChange), 1)} points`
+                : `la part de l'industrie dans le PIB augmente de ${formatNumber(shareChange, 1)} points`;
+            const volumeDirection = finalVolume > 100 ? ", même si la production industrielle en volume augmente" : "";
+            let elasticityText;
+            if (elasticity > 1) {
+                elasticityText = "comme l'élasticité est supérieure à 1, la baisse du prix entraîne une hausse plus que proportionnelle des quantités demandées : l'effet volume l'emporte sur l'effet prix";
+            } else if (elasticity < 1) {
+                elasticityText = "comme l'élasticité est inférieure à 1, les quantités demandées augmentent moins que proportionnellement à la baisse du prix : l'effet prix l'emporte sur l'effet volume";
+            } else {
+                elasticityText = "avec une élasticité égale à 1, la baisse du prix et la hausse des quantités se compensent exactement : la part en valeur reste stable";
+            }
+            let incomeElasticityText;
+            if (incomeElasticity > 1) {
+                incomeElasticityText = "comme l'élasticité-revenu est supérieure à 1, la demande de biens industriels augmente plus vite que le revenu réel";
+            } else if (incomeElasticity < 1) {
+                incomeElasticityText = "comme l'élasticité-revenu est inférieure à 1, la demande de biens industriels augmente moins vite que le revenu réel : une partie de la dépense se déplace vers les services";
+            } else {
+                incomeElasticityText = "avec une élasticité-revenu égale à 1, la hausse du revenu réel ne déforme pas la demande entre biens industriels et services";
+            }
+
+            explanation.innerHTML = `
+                <strong>Lecture du scénario :</strong> avec un écart de productivité de ${formatNumber(productivityGap, 1)} points par an, le prix relatif des biens industriels baisse d'environ ${formatNumber(relativePriceDrop, 0)} % en trente ans. ${elasticityText}. ${incomeElasticityText}. Au total, ${shareText}${volumeDirection}.<br><br>
+                <strong>Mécanisme :</strong> la part de l'industrie dans le PIB est une part en valeur : prix × quantité. Les gains de productivité industriels font baisser le prix relatif des biens industriels, ce qui tire leur part en valeur vers le bas. Cette baisse de prix peut toutefois stimuler les volumes achetés. À cela s'ajoute un effet revenu : quand le niveau de vie augmente, les ménages consacrent une part croissante de leur dépense aux services.<br><br>
+                <strong>Rôle des élasticités :</strong> l'élasticité-prix indique si les volumes réagissent fortement à la baisse du prix des biens industriels. L'élasticité-revenu indique si la demande de biens industriels augmente aussi vite que le revenu. Si l'élasticité-prix est inférieure à 1, l'effet prix domine l'effet volume. Si l'élasticité-revenu est inférieure à 1, la hausse du niveau de vie déforme la demande au profit des services.<br><br>
+                <strong>Repère historique :</strong> En 2024, la valeur ajoutée manufacturière est d'environ 279 Md€ en France, soit 10,7 % du PIB. Entre 1990 et 2019, le prix de la valeur ajoutée manufacturière a baissé de 2 % tandis qu'il augmentait de 53 % dans l'ensemble de l'économie. En parallèle, la structure du panier de biens des consommateurs tend à se modifier au profit de services au fur et à mesure que leur revenu réel augmente : le poids des biens industriels dans la consommation s'élevait à 57,3 % en 1950, contre 36,5 % en 2000, 33,4 % en 2010 et 32,1 % en 2017.
+            `;
+
+            const canvas = document.getElementById('deindustrializationCanvas');
+            const ctx = canvas.getContext('2d');
+            const dpr = (typeof window !== 'undefined' && window.devicePixelRatio) ? Math.min(window.devicePixelRatio, 2) : 1;
+            const rect = canvas.getBoundingClientRect ? canvas.getBoundingClientRect() : null;
+            const width = Math.round((rect && rect.width) || canvas.clientWidth || canvas.width || 800);
+            const height = Math.round((rect && rect.height) || canvas.clientHeight || canvas.height || 430);
+            const targetWidth = Math.round(width * dpr);
+            const targetHeight = Math.round(height * dpr);
+            if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+                canvas.width = targetWidth;
+                canvas.height = targetHeight;
+            }
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const padding = { top: 46, right: 88, bottom: 62, left: 78 };
+            const graphWidth = width - padding.left - padding.right;
+            const graphHeight = height - padding.top - padding.bottom;
+
+            ctx.clearRect(0, 0, width, height);
+
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            const yMax = Math.max(30, Math.ceil((Math.max(...industryShare) + 1) / 5) * 5);
+            const yScale = value => padding.top + graphHeight - (value / yMax) * graphHeight;
+            const xScale = index => padding.left + (index / (years - 1)) * graphWidth;
+
+            ctx.strokeStyle = '#e7e5df';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (i / 5) * graphHeight;
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y + 0.5);
+                ctx.lineTo(width - padding.right, y + 0.5);
+                ctx.stroke();
+            }
+
+            ctx.strokeStyle = '#3f3a35';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding.left + 0.5, padding.top);
+            ctx.lineTo(padding.left + 0.5, height - padding.bottom);
+            ctx.lineTo(width - padding.right, height - padding.bottom + 0.5);
+            ctx.lineTo(width - padding.right, padding.top);
+            ctx.stroke();
+
+            ctx.fillStyle = '#5f5a54';
+            ctx.font = '13px Segoe UI, sans-serif';
+            ctx.textAlign = 'center';
+            for (let year = 0; year <= 30; year += 5) {
+                ctx.fillText('n+' + year, xScale(year), height - padding.bottom + 22);
+            }
+            ctx.fillText('Années', padding.left + graphWidth / 2, height - 14);
+
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 5; i++) {
+                const value = (i / 5) * yMax;
+                const y = yScale(value);
+                ctx.fillText(formatNumber(value, 0) + ' %', padding.left - 12, y + 4);
+            }
+            ctx.save();
+            ctx.translate(20, padding.top + graphHeight / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            ctx.font = '13px Segoe UI, sans-serif';
+            ctx.fillText("Part de l'industrie (% du PIB)", 0, 0);
+            ctx.restore();
+
+            function drawLine(values, scale, color) {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                values.forEach((value, index) => {
+                    const x = xScale(index);
+                    const y = scale(value);
+                    if (index === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.stroke();
+            }
+
+            drawLine(industryShare, yScale, '#dc2626');
+
+            ctx.fillStyle = '#dc2626';
+            ctx.beginPath();
+            ctx.arc(xScale(years - 1), yScale(finalShare), 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.font = '600 13px Segoe UI, sans-serif';
+            ctx.fillStyle = '#dc2626';
+            ctx.textAlign = 'left';
+            ctx.fillText(formatNumber(initialShare, 1) + ' %', xScale(0) + 10, yScale(initialShare) - 10);
+            ctx.fillText(formatNumber(finalShare, 1) + ' %', xScale(years - 1) + 10, yScale(finalShare) + 4);
+
+            ctx.font = '600 14px Segoe UI, sans-serif';
+            ctx.fillStyle = '#3f3a35';
+            ctx.textAlign = 'left';
+            ctx.fillText("Part de l'industrie dans le PIB", padding.left + 14, padding.top + 18);
         }
 
         function updateOutputGapGraph() {
